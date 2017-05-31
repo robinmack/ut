@@ -1,0 +1,50 @@
+extends menuBar
+append body
+    div(id="notification")
+    form
+        input#id.form-control(type="hidden" name="id" value=user.id)
+        table.table.table
+            thead
+                tr
+                    th Username
+                    th Email
+                    th Role
+                    th Password
+            tbody
+                tr
+                    td(class="span3") 
+                        input#username(type="text" name="username" value= user.username)
+                    td(class="span3") 
+                        input#email(value=user.email)
+                    td(class="span3") 
+                        input#role(value=user.role)
+                    td(class="span3") 
+                        input#password(value=user.password)
+        input(type="submit" onclick="submitClick(event)" class="submit" value=buttonText)
+        script.
+            function submitClick(event){
+                event.preventDefault();
+                $.ajax({
+                    url: "#{action}", 
+                    type: "#{method}", 
+                    contentType: "application/json",
+                    data: JSON.stringify({
+                        username:$("#username").val(),
+                        password:$("#password").val(),
+                        email:$("#email").val(),
+                        role:$("#role").val(),
+                        id:$("#id").val()
+                        }),
+                    success: function(result){
+                       $("#notification").empty()
+                       .append("Successfully updated user.")
+                       .addClass("success");
+                    },
+                    error: function(jXQHR, errString) {
+                        $("#notification").empty()
+                       .append("Failed operation on user.  Error was:" + errString);
+                       .addClass("error");
+                    }
+                });
+            }
+            

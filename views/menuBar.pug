@@ -1,0 +1,22 @@
+extends ..\node_modules\pug-bootstrap\_bootstrap.pug
+append styles
+ link(href='/stylesheets/style.css', rel='stylesheet')
+ script(src='/javascripts/jquery-3.2.1.min.js')
+block body
+ block header
+ div(class="logo")
+  img(src='/images/UTLogo.png')
+ // UltraThin navbar
+ +navbar-fixed(appTitle,"navbar")
+  +nav_item_dropdown("#")(label="Users")
+   +nav_item("/users/list") List
+   +nav_item("#new-user") New
+  +nav_item_dropdown("#")(label="Customers")
+   +nav_item("#find-customer") Find
+   +nav_item("#new-customer") New
+  +nav_item_dropdown("#")(label="Orders")
+   +nav_item("#find-order") Find
+   +nav_item("#new-order") New Order
+   +nav_item("#process-orders") Process Web Orders
+  +nav_item("#logout")(label="Logout")
+ .container

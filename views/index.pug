@@ -1,0 +1,15 @@
+doctype html
+html
+body
+include ./header.pug
+h1= title
+p Welcome to #{title} system
+form(action="/api/login", method="post")
+  div(class="span2") Username:
+  div(class="span2")
+    input#username(name="username")
+  div(class="span2") Password:
+  div(class="span2")
+    input#password(class="span-2" type="password" name="password")
+  div(class="span2")
+    input(type="submit" class="submit" value="Sign In")
