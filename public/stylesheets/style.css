@@ -47,5 +47,21 @@ table {
   display: inline-block;
 }
 .logo {
-  display: inline-block;
+  padding-top: 5px;
+}
+.logo .appTitle
+{
+    text-align: center;
+    width: 100%;
+}
+fieldset label {
+  min-width: 100%;
+}
+
+.navbar-default {
+  background-image: -webkit-linear-gradient(top, #cccccc 0%, #ffffff 100%);
+  background-image: -o-linear-gradient(top, #cccccc 0%, #ffffff 100%);
+  background-image: linear-gradient(to bottom, #cccccc 0%, #ffffff 100%);
+  background-repeat: repeat-x;
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ff004400', endColorstr='#ff009900', GradientType=0);
 }

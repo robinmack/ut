@@ -149,7 +149,7 @@ module.exports = {
                     } else {
                         data.password = "";
                     }
-                    res.render("userView",{appName:"Edit User", method:"PUT", action:"/api/users/" + id, appName:"Edit User", user:data, buttonText:"Submit Changes"});
+                    res.render("userView",{appName:"Edit User", method:"PUT", action:"/api/users/" + id, appTitle:"Edit User", user:data, buttonText:"Submit Changes"});
                 } else {
                     next(err);
                 }

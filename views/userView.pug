@@ -2,24 +2,30 @@ extends menuBar
 append body
     form
         input#id.form-control(type="hidden" name="id" value=!!user ? user.id : "")
-        table.table.table
-            thead
-                tr
-                    th Username
-                    th Email
-                    th Role
-                    th Password
-            tbody
-                tr
-                    td(class="span3") 
-                        input#username(type="text" name="username" value= !!user ? user.username : "")
-                    td(class="span3") 
-                        input#email(value= !!user ? user.email : "")
-                    td(class="span3") 
-                        input#role(value=!!user ? user.role : "")
-                    td(class="span3") 
-                        input#password(value=!!user ? user.password: "")
-        input(type="submit" onclick="submitClick(event)" class="submit" value=buttonText)
+        div(class="container-fluid")
+            div(class="col-md-3")
+                fieldset(class="span12")
+                    label(for="username") Username
+                        input#username.form-control.input-medium(value= !!user ? user.username : "")
+            div(class="col-md-3")
+                fieldset
+                    label(for="email") Email
+                        input#email.form-control.input-medium(value= !!user ? user.email : "")
+            div(class="col-md-3")
+                fieldset
+                    label Role
+                        select#role.select.form-control.input-medium
+                            option(value=0 selected=user.role == 0) Admin
+                            option(value=1 selected=user.role == 1) Accounting
+                            option(value=2 selected=user.role == 2) Support
+                            option(value=3 selected=user.role == 3) Rack Builder
+            div(class="col-md-3")
+                fieldset
+                    label Password
+                        input#password.form-control.input-large(value=!!user ? user.password: "")
+                        p (leave blank to keep existing password)
+        div(class="span12")
+            input(type="submit" onclick="submitClick(event)" class="submit" value=buttonText)
         script.
             function submitClick(event){
                 event.preventDefault();

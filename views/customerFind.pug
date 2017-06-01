@@ -1,0 +1,48 @@
+extends menuBar
+append body
+    form(action="/customers/find" method="POST")
+        div(class="container-fluid")
+            div(class="col-md-3")
+                fieldset
+                    label(for="lastname") Last Name
+                        input#lastname.form-control.input-medium(name="lastname")
+            div(class="col-md-3")
+                fieldset(class="span12")
+                    label(for="firstname") First Name
+                        input#firstname.form-control.input-medium(name="firstname")
+            div(class="col-md-3")
+                fieldset
+                    label(for="email") Email
+                        input#email.form-control.input-medium(name="email")
+            div(class="col-md-3")
+                fieldset
+                    label Phone
+                        input#phone.form-control.input-large(name="phone")
+    
+            div(class="col-md-12")
+                input(type="submit" class="submit" value=buttonText)
+                p Use * as a wildcard, for instance looking for a last name "Abdelaziz" try "*del*"
+    if !!customers && customers.length > 0
+        table.table.table-striped
+            thead
+                tr
+                    th Last Name
+                    th First Name
+                    th Email
+                    th Phone
+                    th Service
+                    th City
+                    th State
+            tbody
+                each customer in customers
+                    tr
+                        td #{customer.lastname}
+                        td #{customer.firstname}
+                        td #{customer.email}
+                        td #{customer.phone}
+                        td #{customer.service}
+                        td #{customer.city}
+                        td #{customer.state}
+                        td
+                            a(class="action" href="/customers/edit/" + customer.id) edit
+                            

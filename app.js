@@ -31,7 +31,8 @@ app.use('/api', index);
 app.use('/api/login',index);
 app.use('/api/users/',index);
 app.use('/main', index);
-app.use('/main', index);
+app.use('/customers', index);
+app.use('/orders', index);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

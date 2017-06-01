@@ -1,0 +1,98 @@
+extends menuBar
+append body
+    form
+        input#id.form-control(type="hidden" name="id" value=!!user ? user.id : "")
+        div(class="container-fluid")
+            div(class="col-md-3")
+                fieldset
+                    label(for="firstname") First Name
+                        input#firstname.form-control.input-medium(value= !!customer ? customer.firstname : "")
+            div(class="col-md-3")
+                fieldset
+                    label(for="lastname") Last Name
+                        input#lastname.form-control.input-medium(value= !!customer ? customer.lastname : "")
+            div(class="col-md-3")
+                fieldset
+                    label(for="email") Email Address
+                        input#email.form-control.input-medium(value= !!customer ? customer.email : "")
+            div(class="col-md-3")
+                fieldset
+                    label(for="phone") Phone Number
+                        input#phone.form-control.input-medium(value= !!customer ? customer.phone : "")
+        div(class="container-fluid")
+            div(class="col-md-9")
+                fieldset
+                    label(for="addr1") Address
+                        input#addr1.form-control.input-medium(value= !!customer ? customer.addr1 : "")
+                        
+        div(class="container-fluid")                        
+            div(class="col-md-9")
+                fieldset
+                    label(for="addr2") Address Line 2
+                        input#addr2.form-control.input-medium(value= !!customer ? customer.addr2 : "")
+        div(class="container-fluid")
+            div(class="col-md-3")
+                fieldset
+                    label(for="city") City
+                        input#city.form-control.input-medium(value= !!customer ? customer.city : "")
+            div(class="col-md-3")
+                fieldset
+                    label(for="state") State
+                        input#state.form-control.input-medium(value= !!customer ? customer.state : "")
+            div(class="col-md-3")
+                fieldset
+                    label(for="zip") Zip Code
+                        input#zip.form-control.input-medium(value= !!customer ? customer.zip : "")
+        div(class="container-fluid")
+            div(class="col-md-3 offset-md-3")
+                fieldset
+                    label(for="service") Service Branch
+                        select#service.select.form-control.input-medium
+                            option(value="Army" selected=customer.service == "Army") Army
+                            option(value="Navy" selected=customer.service == "Navy") Navy
+                            option(value="Air Force" selected=customer.service == "Air Force") Air Force
+                            option(value="Marine Corps" selected=customer.service == "Marine Corps") Marine Corps
+                            option(value="Coast Guard" selected=customer.service == "Coast Guard") Coast Guard
+                            option(value="Civil Air Patrol" selected=customer.service == "Civil Air Patrol") Civil Air Patrol
+                            option(value="Coast Guard Auxiliary" selected=customer.service == "Coast Guard Auxiliary") Coast Guard Auxiliary
+                            option(value="Public Health Service" selected=customer.service == "Public Health Service") Public Health Service
+                            option(value="NOAA" selected=customer.service == "NOAA") NOAA
+                            option(value="Merchant Marine" selected=customer.service == "Merchant Marine") Merchant Marine
+                            
+            div(class="col-md-3 ")
+                fieldset
+                    label(for="gender") Gender
+                        select#gender.form-control.input-medium
+                            option(value="Male" selected=customer.gender == "Male") Male
+                            option(value="Female" selected=customer.gender == "Female") Female
+        div(class="container-fluid") 
+            div(class="col-md-12")
+                input(type="submit" onclick="submitClick(event)" class="submit" value=buttonText)
+        script.
+            function submitClick(event){
+                event.preventDefault();
+                $.ajax({
+                    url: "#{action}", 
+                    type: "#{method}", 
+                    contentType: "application/json",
+                    data: JSON.stringify({
+                        username:$("#username").val(),
+                        password:$("#password").val(),
+                        email:$("#email").val(),
+                        role:$("#role").val(),
+                        id:$("#id").val()
+                        }),
+                    success: function(result){
+                       $("#notification").empty()
+                       .attr("class","")
+                       .append(result.message)
+                       .addClass("success");
+                    },
+                    error: function(jXQHR, errString) {
+                        $("#notification").empty()
+                        .attr("class","")
+                        .append("Failed operation on user.  Error was:" + errString)
+                        .addClass("error");
+                    }
+                });
+            }
