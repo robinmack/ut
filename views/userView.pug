@@ -1,8 +1,7 @@
 extends menuBar
 append body
-    div(id="notification")
     form
-        input#id.form-control(type="hidden" name="id" value=user.id)
+        input#id.form-control(type="hidden" name="id" value=!!user ? user.id : "")
         table.table.table
             thead
                 tr
@@ -13,13 +12,13 @@ append body
             tbody
                 tr
                     td(class="span3") 
-                        input#username(type="text" name="username" value= user.username)
+                        input#username(type="text" name="username" value= !!user ? user.username : "")
                     td(class="span3") 
-                        input#email(value=user.email)
+                        input#email(value= !!user ? user.email : "")
                     td(class="span3") 
-                        input#role(value=user.role)
+                        input#role(value=!!user ? user.role : "")
                     td(class="span3") 
-                        input#password(value=user.password)
+                        input#password(value=!!user ? user.password: "")
         input(type="submit" onclick="submitClick(event)" class="submit" value=buttonText)
         script.
             function submitClick(event){
@@ -37,13 +36,15 @@ append body
                         }),
                     success: function(result){
                        $("#notification").empty()
-                       .append("Successfully updated user.")
+                       .attr("class","")
+                       .append(result.message)
                        .addClass("success");
                     },
                     error: function(jXQHR, errString) {
                         $("#notification").empty()
-                       .append("Failed operation on user.  Error was:" + errString);
-                       .addClass("error");
+                        .attr("class","")
+                        .append("Failed operation on user.  Error was:" + errString)
+                        .addClass("error");
                     }
                 });
             }

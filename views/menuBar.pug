@@ -10,7 +10,7 @@ block body
  +navbar-fixed(appTitle,"navbar")
   +nav_item_dropdown("#")(label="Users")
    +nav_item("/users/list") List
-   +nav_item("#new-user") New
+   +nav_item("/users/new") New
   +nav_item_dropdown("#")(label="Customers")
    +nav_item("#find-customer") Find
    +nav_item("#new-customer") New
@@ -20,3 +20,4 @@ block body
    +nav_item("#process-orders") Process Web Orders
   +nav_item("#logout")(label="Logout")
  .container
+  div(id="notification")

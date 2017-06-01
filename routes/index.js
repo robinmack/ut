@@ -25,4 +25,5 @@ router.put('/api/users/:id',usersController.updateUser);
 router.delete('/api/users/:id', usersController.removeUser);
 router.get('/users/list', usersController.viewUsers);
 router.get('/users/edit/:id', usersController.editUser);
+router.get('/users/new', usersController.newUser);
 module.exports = router;

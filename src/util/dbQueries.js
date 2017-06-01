@@ -61,7 +61,7 @@ function authenticateUser(req, res, next) {
             res.session = session;
             res.redirect("/main");
         } else {
-            res.render("views/index.html");
+            res.render("index");
         }
     }) .catch(function (err) {
         return next(err);
@@ -85,7 +85,7 @@ function updateUser(user, callback){
     user.id = parseInt(user.id);
     user.role = parseInt(user.role);
 
-    if (user.password.length > 0){
+    if (user.password.length == 0){
         db.none('UPDATE users SET username=$1, email=$2, role=$3 WHERE id=$4',
             [user.username, user.email, user.role, user.id])
         .then(function() {

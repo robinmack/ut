@@ -15,7 +15,27 @@ append body
                     td #{user.email}
                     td #{user.role}
                     td 
-                        a(href="/users/edit/" + user.id) edit
-                        |
-                        a(href="/users/delete/" + user.id) delete
-                
+                        a(class="action" href="/users/edit/" + user.id) edit
+                        
+                        a(class="action" href="#" + user.id onclick="deleteClick(event, "+user.id+")") delete
+        script.
+            function deleteClick(event, id){
+                event.preventDefault();
+                $.ajax({
+                    url: "/api/users/" + id, 
+                    type: "DELETE", 
+                    success: function(result){
+                       $("#notification").empty()
+                       .attr("class","")
+                       .append(result.message)
+                       .addClass("success");
+                       location.reload();
+                    },
+                    error: function(jXQHR, errString) {
+                        $("#notification").empty()
+                        .attr("class","")
+                        .append("Failed operation on user.  Error was:" + errString)
+                        .addClass("error");
+                    }
+                });
+            }        

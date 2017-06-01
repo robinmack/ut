@@ -38,6 +38,11 @@ table {
   margin-top: 10px;
 }
 
+.action {
+  padding-left: 2px;
+  padding-right: 2px;
+}
+
 .navbar {
   display: inline-block;
 }

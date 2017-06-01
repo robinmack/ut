@@ -44,13 +44,14 @@ module.exports = {
             for(let property in req.body){
                 property = db.sanitizeField(property);
             }
-            let user = new user();
-            user.username = req.body.username;
-            user.password = req.body.password;
-            user.role = req.body.role;
-            user.email = req.body.email;
+            let user = {
+                username: req.body.username,
+                password: req.body.password,
+                role: req.body.role,
+                email: req.body.email
+            }
 
-            db.createUser(user,function(err){
+            db.createUser(user, function(err){
                 if (!!!err) {
                     res.status(200)
                     .json({
@@ -83,7 +84,7 @@ module.exports = {
                     res.status(200)
                     .json({
                         status: 'success',
-                        message: 'updated user'
+                        message: 'Successfully updated user.'
                     });
                 } else {
                     next(err);
@@ -96,16 +97,13 @@ module.exports = {
 
     removeUser: function(req,res,next) {
         if (req.session.role == 0){
-            for(let property in req.body){
-                property = db.sanitizeField(property);
-            }
-            let id = req.body.id;
+            let id = req.params.id;
             db.removeUser(id, function(err){
                 if (!!!err) {
                     res.status(200)
                     .json({
                         status: 'success',
-                        message: 'removed user'
+                        message: 'Successfully removed user.'
                     });
                 } else {
                     next(err);
@@ -156,6 +154,14 @@ module.exports = {
                     next(err);
                 }
             });
+        } else {
+            return next("Only administrators can perform this action");
+        }
+    },
+
+    newUser: function(req, res, next){
+        if (req.session.role == 0){
+            res.render("userView",{appName:"New User", method:"POST", action:"/api/users/", buttonText:"Create User"});
         } else {
             return next("Only administrators can perform this action");
         }
