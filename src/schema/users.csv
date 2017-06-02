@@ -1,0 +1,3 @@
+"id","username","password","role","email"
+1,"admin","$2a$10$G5eCjke8IWPEMtYWX20lP.G0D3aFcthbV6WTv1RriXBk9lCKIBOxq","0","writer.robin.mack@gmail.com"
+3,"sally","$2a$10$DAMCys6Ep.xoo/2NPfadQuajndpxiI2NXUHIYXVx5UonFotgmStgO","1","accounting@ultrathin.com"
