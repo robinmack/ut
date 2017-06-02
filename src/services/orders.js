@@ -21,8 +21,8 @@ module.exports = {
         //criteria:  email is the same
         let orderFields = order.split(";");
         let customer = {
-            lastname: orderFields[0],
-            firstname: orderFields[1],
+            lastname: orderFields[1],
+            firstname: orderFields[0],
             addr1: orderFields[2],
             addr2: orderFields[3],
             city: orderFields[4],

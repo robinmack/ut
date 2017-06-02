@@ -129,7 +129,7 @@ module.exports = {
                         data=[{username:"no users found", email:"n/a", role:"n/a"}];
                     }
 
-                    res.render("users",{appName:"List Users", users:data});
+                    res.render("users",{appName:"List Users", users:data, loggedIn: true});
                 } else {
                     next(err);
                 }
@@ -149,7 +149,7 @@ module.exports = {
                     } else {
                         data.password = "";
                     }
-                    res.render("userView",{appName:"Edit User", method:"PUT", action:"/api/users/" + id, appTitle:"Edit User", user:data, buttonText:"Submit Changes"});
+                    res.render("userView",{appName:"Edit User", loggedIn: true, method:"PUT", action:"/api/users/" + id, appTitle:"Edit User", user:data, buttonText:"Submit Changes"});
                 } else {
                     next(err);
                 }
@@ -161,7 +161,7 @@ module.exports = {
 
     newUser: function(req, res, next){
         if (req.session.role == 0){
-            res.render("userView",{appName:"New User", method:"POST", action:"/api/users/", buttonText:"Create User"});
+            res.render("userView",{appName:"New User", loggedIn: true, method:"POST", action:"/api/users/", buttonText:"Create User"});
         } else {
             return next("Only administrators can perform this action");
         }

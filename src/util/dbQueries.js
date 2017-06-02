@@ -26,7 +26,9 @@ module.exports = {
   sanitizeField: sanitizeField,
   upsertCustomer: upsertCustomer,
   findCustomer: findCustomer,
-  getSingleCustomer: getSingleCustomer
+  getSingleCustomer: getSingleCustomer,
+  createCustomer, createCustomer,
+  updateCustomer, updateCustomer
 };
 
 function getAllUsers(callback) {
@@ -205,13 +207,13 @@ function createCustomer(customer, callback){
 }
 
 function updateCustomer(customer, callback){
-    let id = parseInt(customer.id);
+    customer.id = parseInt(customer.id);
     db.none('UPDATE customer SET firstname=${firstname}, lastname=${lastname}, addr1=${addr1}, addr2=${addr2}, city=${city}, state=${state}, zip=${zip}, email=${email}, phone=${phone}, service=${service}, gender=${gender} '+
         'WHERE id=${id}', customer)
     .then(function(){
         callback(null);
     })
-    .catch(function(){
+    .catch(function(err){
         callback(err);
     })
 }

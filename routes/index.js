@@ -1,21 +1,23 @@
-var express = require('express');
-var router = express.Router();
-var usersController = require('../src/controllers/users');
-var ordersController = require('../src/controllers/orders')
-var customersController = require('../src/controllers/customers');
+let express = require('express'),
+router = express.Router(),
+usersController = require('../src/controllers/users'),
+ordersController = require('../src/controllers/orders'),
+customersController = require('../src/controllers/customers'),
+mainController = require('../src/controllers/main');
 
 /* GET index/main (depending on session) */
 router.get('/', function(req, res) {
   if (!! req.session.role){
     res.redirect('/main');
   } else {
-    res.render('index', { appTitle: '' });
+    res.render('index', { appTitle: '', loggedIn: false });
   }
 });
-router.get('/main', function(req, res){
-  res.render('main', {appTitle: ''});
-})
-
+router.get('/main', mainController.motd);
+router.get('/main/logout', function(req, res){
+  req.session.destroy();
+  res.redirect("/")
+});
 
 // users controller routes
 router.get('/api/users',usersController.getAllUsers);
@@ -32,10 +34,12 @@ router.get('/users/new', usersController.newUser);
 router.get('/api/orders/new', ordersController.getNewOrders);
 
 // customer routes
-router.get('/customer/find', function(req, res){
+router.get('/customers/find', function(req, res){
   res.render('customerFind');
 });
 router.post('/customers/find', customersController.find);
 router.get('/customers/edit/:id', customersController.edit);
-router.get('/customers/new/:id', customersController.new);
+router.get('/customers/new/', customersController.new);
+router.post('/api/customers/', customersController.createCustomer);
+router.put('/api/customers/:id', customersController.updateCustomer)
 module.exports = router;

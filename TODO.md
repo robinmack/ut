@@ -1,8 +1,7 @@
 # Todo...
 bug - ensure user names are unique
 mailto on customer find list email addresses
-Add support for new customer
-Add support for edit customer
+logout
 
 Add support for pulling orders from order file
 Add support for downloading orders file, then performing above ops

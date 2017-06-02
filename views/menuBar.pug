@@ -9,16 +9,18 @@ block body
   a(class="navbar-brand logo" href="#")
     img(src="/images/logo-transparent.png" height="30" alt="UltraThin")
     label(class="appTitle") #{appTitle}
-  +nav_item_dropdown("#")(label="Users")
-   +nav_item("/users/list") List
-   +nav_item("/users/new") New
-  +nav_item_dropdown("#")(label="Customers")
-   +nav_item("/customer/find") Find
-   +nav_item("#new-customer") New
-  +nav_item_dropdown("#")(label="Orders")
-   +nav_item("#find-order") Find
-   +nav_item("#new-order") New Order
-   +nav_item("/api/orders/new") Process Web Orders
-  +nav_item("#logout")(label="Logout")
+  if(loggedIn)
+   +nav_item_dropdown("#")(label="Users")
+    +nav_item("/users/list") List
+    +nav_item("/users/new") New
+   +nav_item_dropdown("#")(label="Customers")
+    +nav_item("/customers/find") Find
+    +nav_item("/customers/new") New
+   +nav_item_dropdown("#")(label="Orders")
+    +nav_item("#find-order") Find
+    +nav_item("#new-order") New Order
+    +nav_item("/api/orders/new") Process Web Orders
+   +nav_item_dropdown("#")(label="Account")
+    +nav_item("/main/logout")(label="Logout")
  .container
   div(id="notification")

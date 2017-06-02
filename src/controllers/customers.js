@@ -15,7 +15,7 @@ module.exports = {
                     if (data.length == 0){
                     data=[{firstname:"None Found",lastname:"N/A",email:"N/A",phone:"N/A",city:"N/A", state:"N/A"}];
                     }
-                    res.render('customerFind', {appTitle:"Find Customer", customers: data});
+                    res.render('customerFind', {appTitle:"Find Customer", loggedIn: true, customers: data});
                 }
             });
         } else {
@@ -30,7 +30,7 @@ module.exports = {
                 if(err){
                     next (err);
                 } else {
-                    res.render('customerView', {appTitle:"Edit Customer", method:"PUT", action:"/api/users/" + customerId, buttonText: "Submit Changes", customer: data});
+                    res.render('customerView', {appTitle:"Edit Customer", loggedIn: true, method:"PUT", action:"/api/customers/" + customerId, buttonText: "Submit Changes", customer: data});
                 }
             });
         } else {
@@ -40,19 +40,13 @@ module.exports = {
 
     new: function(req, res, next){
         if (req.session.role < 3 && req.session.role > -1){
-            let customerId = parseInt(req.params.id);
-            dbUtil.getSingleCustomer(customerId, function (data, err){
-                if(err){
-                    next (err);
-                } else {
-                    res.render('customerView', {appTitle:"New Customer", method:"POST", action:"/api/users/", buttonText: "Create User"});
-                }
-            });
+            res.render('customerView', {appTitle:"New Customer", loggedIn: true, method:"POST", action:"/api/customers/", buttonText: "Create User"});
         } else {
             return next("Your account does not have privileges to perform this action");
         }
     },
 
+//api stuff here
     createCustomer: function(req,res,next) {
         if (req.session.role < 3 && req.session.role > -1){
             for(let property in req.body){
@@ -94,6 +88,7 @@ module.exports = {
                 property = dbUtil.sanitizeField(property);
             }
             let customer = {
+                id: req.params.id,
                 lastname: req.body.lastname,
                 firstname: req.body.firstname,
                 addr1: req.body.addr1,

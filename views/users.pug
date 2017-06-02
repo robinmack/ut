@@ -15,9 +15,9 @@ append body
                     td #{user.email}
                     td #{user.role}
                     td 
-                        a(class="action" href="/users/edit/" + user.id) edit
+                        a(class="action button" href="/users/edit/" + user.id) edit
                         
-                        a(class="action" href="#" + user.id onclick="deleteClick(event, "+user.id+")") delete
+                        a(class="action button" href="#" + user.id onclick="deleteClick(event, "+user.id+")") delete
         script.
             function deleteClick(event, id){
                 event.preventDefault();

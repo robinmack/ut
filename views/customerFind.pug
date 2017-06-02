@@ -20,7 +20,7 @@ append body
                         input#phone.form-control.input-large(name="phone")
     
             div(class="col-md-12")
-                input(type="submit" class="submit" value=buttonText)
+                input(type="submit" class="button" value=buttonText)
                 p Use * as a wildcard, for instance looking for a last name "Abdelaziz" try "*del*"
     if !!customers && customers.length > 0
         table.table.table-striped
@@ -44,5 +44,5 @@ append body
                         td #{customer.city}
                         td #{customer.state}
                         td
-                            a(class="action" href="/customers/edit/" + customer.id) edit
+                            a(class="action button" href="/customers/edit/" + customer.id) edit
                             
