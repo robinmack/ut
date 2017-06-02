@@ -10,7 +10,7 @@ router.get('/', function(req, res) {
   if (!! req.session.role){
     res.redirect('/main');
   } else {
-    res.render('index', { appTitle: '', loggedIn: false });
+    res.render('index', { appTitle: 'Login', loggedIn: false });
   }
 });
 router.get('/main', mainController.motd);
@@ -35,7 +35,7 @@ router.get('/api/orders/new', ordersController.getNewOrders);
 
 // customer routes
 router.get('/customers/find', function(req, res){
-  res.render('customerFind');
+  res.render('customerFind',{appTitle:"Find Customer", loggedIn: true});
 });
 router.post('/customers/find', customersController.find);
 router.get('/customers/edit/:id', customersController.edit);

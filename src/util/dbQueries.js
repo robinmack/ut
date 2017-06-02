@@ -66,7 +66,7 @@ function authenticateUser(req, res, next) {
             res.session = session;
             res.redirect("/main");
         } else {
-            res.render("index");
+            res.render("index",{appTitle: "Log In", loggedIn: false});
         }
     }) .catch(function (err) {
         return next(err);

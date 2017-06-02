@@ -4,7 +4,7 @@ module.exports = {
         if (req.session.role == 0){
             userService.parseFile(function(data, err){
                 if (!!data) {
-                    res.render('main',{})
+                    res.redirect('main');
                 } else {
                     next(err);
                 }
