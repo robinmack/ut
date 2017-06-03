@@ -38,7 +38,8 @@ append body
                     tr
                         td #{customer.lastname}
                         td #{customer.firstname}
-                        td #{customer.email}
+                        td 
+                            a(href="mailto:" + customer.email) #{customer.email}
                         td #{customer.phone}
                         td #{customer.service}
                         td #{customer.city}

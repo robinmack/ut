@@ -36,6 +36,7 @@ module.exports = {
         dbQueries.upsertCustomer(customer, this.extractOrder);
     },
     extractOrder: function(customerId){
-        //before insert, make certain order is not a dupe
+        //before insert, make certain order is not a dupe\
+        console.log(customerId);
     },
 }

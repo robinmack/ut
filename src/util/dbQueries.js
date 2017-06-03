@@ -5,7 +5,7 @@ var options = {
   promiseLib: promise
 };
 var cn = {
-    host: 'localhost',
+    host: '127.0.0.1',
     port: 5432,
     database: 'ut',
     user: 'postgres',
@@ -138,7 +138,7 @@ function upsertCustomer(customer, callback){
     'ON CONFLICT ON CONSTRAINT unique_email_addr DO UPDATE SET lastname=excluded.lastname, firstname=excluded.firstname, addr1=excluded.addr1, addr2=excluded.addr2, city=excluded.city, state=excluded.state, zip=excluded.zip, email=excluded.email, phone = excluded.phone, service = excluded.service, gender=excluded.gender ' +
     'RETURNING id', customer)
     .then(function(data){
-        callback(data.id);
+        callback(data.rows[0].id);
     })
     .catch(function(error){
         console.log(error);
