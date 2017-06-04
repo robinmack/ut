@@ -31,8 +31,11 @@ router.get('/users/edit/:id', usersController.editUser);
 router.get('/users/new', usersController.newUser);
 
 // orders routes
-router.get('/api/orders/new', ordersController.getNewOrders);
-
+router.get('/api/orders/process', ordersController.getNewOrders);
+router.get('/orders/find', function(req, res){
+  res.render('orderFind',{appTitle: "Find Order",loggedIn: true});
+});
+router.post('/orders/find', ordersController.find);
 // customer routes
 router.get('/customers/find', function(req, res){
   res.render('customerFind',{appTitle:"Find Customer", loggedIn: true});

@@ -1,7 +1,12 @@
 var fs = require('fs');
 var dbQueries = require('../util/dbQueries');
+var dataOrder = require('../data/order');
 
 module.exports = {
+    orders: 0,
+    ribbonSets:0,
+    medalSets:0,
+    
     parseFile: function(callback){
         let filename = 'orders/webdata.txt';
         var orders = fs.readFileSync(filename).toString().split("\n");
@@ -9,8 +14,7 @@ module.exports = {
         let that = this;
         orders.forEach(function(order){
             if(! order == "") {
-                let customerId = that.extractCustomer(order);
-                that.extractOrder(customerId);
+                that.extractCustomer(order);
                 i++;
             }
         });
@@ -33,10 +37,15 @@ module.exports = {
             service: orderFields[9],
             gender: orderFields[10]
         };
-        dbQueries.upsertCustomer(customer, this.extractOrder);
+        dbQueries.upsertCustomer(customer, orderFields, this.extractOrder);
     },
-    extractOrder: function(customerId){
+
+    extractOrder: function(customerId, orderFields){
         //before insert, make certain order is not a dupe\
-        console.log(customerId);
+        let order = dataOrder.orderFromStringArray(orderFields);
+        order.customerId = customerId;
+        dbQueries.upsertOrder(order, function(){
+            this.orders++;
+        });
     },
 }

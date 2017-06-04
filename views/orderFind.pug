@@ -1,0 +1,74 @@
+extends menuBar
+append body
+    form(action="/orders/find" method="POST")
+        div(class="container-fluid")
+            div(class="col-md-3")
+                fieldset
+                    label(for="lastname") Last Name
+                        input#lastname.form-control.input-medium(name="lastname")
+            div(class="col-md-3")
+                fieldset(class="span12")
+                    label(for="firstname") First Name
+                        input#firstname.form-control.input-medium(name="firstname")
+            div(class="col-md-3")
+                fieldset
+                    label(for="email") Email
+                        input#email.form-control.input-medium(name="email")
+            div(class="col-md-3")
+                fieldset
+                    label Date
+                        input#date.form-control.input-large(name="date")
+        div(class="container-fluid")
+            div(class="col-md-3")
+                fieldset
+                    label City
+                        input#phone.form-control.input-large(name="city")
+            div(class="col-md-3")
+                fieldset
+                    label Phone
+                        input#phone.form-control.input-large(name="state")
+            div(class="col-md-3")
+                fieldset
+                    label Service Branch
+                        select#service.select.form-control.input-medium
+                            option(value="" selected=!!!customer) -- Choose --
+                            option(value="Army" selected=!!customer ? customer.service == "Army": false) Army
+                            option(value="Navy" selected=!!customer ? customer.service == "Navy": false) Navy
+                            option(value="Air Force" selected=!!customer ? customer.service == "Air Force": false) Air Force
+                            option(value="Marine Corps" selected=!!customer ? customer.service == "Marine Corps": false) Marine Corps
+                            option(value="Coast Guard" selected=!!customer ? customer.service == "Coast Guard": false) Coast Guard
+                            option(value="Civil Air Patrol" selected=!!customer ? customer.service == "Civil Air Patrol": false) Civil Air Patrol
+                            option(value="Coast Guard Auxiliary" selected=!!customer ? customer.service == "Coast Guard Auxiliary": false) Coast Guard Auxiliary
+                            option(value="Public Health Service" selected=!!customer ? customer.service == "Public Health Service": false) Public Health Service
+                            option(value="NOAA" selected=customer ? !!customer.service == "NOAA": false) NOAA
+                            option(value="Merchant Marine" selected=!!customer ? customer.service == "Merchant Marine": false) Merchant Marine
+    
+            div(class="col-md-12")
+                input(type="submit" class="button" value=buttonText)
+                p Use * as a wildcard, for instance looking for a last name "Abdelaziz" try "*del*"
+    if !!customerOrders && customerOrders.length > 0
+        table.table.table-striped
+            thead
+                tr
+                    th Last Name
+                    th First Name
+                    th Email
+                    th City
+                    th State
+                    th Service
+                    th Date
+                    th Total
+                    th
+            tbody
+                each customerOrder in customerOrders
+                    tr
+                        td #{customerOrder.lastname}
+                        td #{customerOrder.firstname}
+                        td 
+                            a(href="mailto:" + orders.email) #{customerOrder.email}
+                        td #{customerOrder.city}
+                        td #{customerOrder.state}
+                        td #{customerOrder.service}
+                        td #{customerOrder.date}
+                        td #{customerOrder.total}
+                        td a(class="action button" href="/orders/edit/" + customerOrder.id) edit
