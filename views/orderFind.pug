@@ -22,11 +22,11 @@ append body
             div(class="col-md-3")
                 fieldset
                     label City
-                        input#phone.form-control.input-large(name="city")
+                        input#city.form-control.input-large(name="city")
             div(class="col-md-3")
                 fieldset
-                    label Phone
-                        input#phone.form-control.input-large(name="state")
+                    label State
+                        input#state.form-control.input-large(name="state")
             div(class="col-md-3")
                 fieldset
                     label Service Branch
@@ -46,7 +46,7 @@ append body
             div(class="col-md-12")
                 input(type="submit" class="button" value=buttonText)
                 p Use * as a wildcard, for instance looking for a last name "Abdelaziz" try "*del*"
-    if !!customerOrders && customerOrders.length > 0
+    if (!!customerOrders && customerOrders.length > 0)
         table.table.table-striped
             thead
                 tr

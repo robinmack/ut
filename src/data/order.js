@@ -3,7 +3,7 @@ let dbUtil = require("../util/dbQueries");
 
 module.exports = {
     update : function(order){
-        let sql = pgFormat("UPDATE orders SET " +
+        let sql = pgFormat("UPDATE order SET " +
         "customer_id=${customerId}," +
         "card_type=${cardType}," +
         "card_name=${cardName}," +
@@ -42,9 +42,9 @@ module.exports = {
         "price_per_medal_set=${pricePerMedalSet}," +
         "number_large_medal_device=${numberMedalDevice}," +
         "number_large_medal_attach=${numberMedalAttach}," +
-        "annodize=${annodize}," +
+        "anodize=${anodize}," +
         "list_large_medals=${listLargeMedals}," +
-        "annodized_total=${annodizedTotal}," +
+        "anodized_total=${anodizedTotal}," +
         "total_medals_large=${medalsTotal}," +
         "choice_1_pin=${choice1Pin}," +
         "choice_2_pin=${choice2Pin}," +
@@ -55,122 +55,127 @@ module.exports = {
         return sql;
     },
 
-    insert: function(order, upsert, db, callback) {
-        if (upsert){
-            upsert = " ON CONFLICT ON CONSTRAINT unique_orders DO NOTHING";
-        } else {
-            upsert = "";
-        }
-        db.result("INSERT INTO orders (" +
-        "customer_id, " +
-        "card_type, " +
-        "card_name, " +
-        "card_number, " +
-        "card_expire, " +
-        "card_civ, " +
-        "shipping, " +
-        "number_ribbons, " +
-        "number_devices, " +
-        "number_attachments, " +
-        "number_pins, " +
-        "number_magnetic, " +
-        "row_fill, " +
-        "total_ribbons, " +
-        "list_ribbons, " +
-        "number_mini_medal_sets, " +
-        "total_mini_medals, " +
-        "number_mini_medal_device, " +
-        "number_mini_medal_attach, " +
-        "total_medals," +    
-        "list_mini_medals, " +
-        "name_tag_line_1, " +
-        "name_tag_line_2, " +
-        "number_pin_tag, " +
-        "number_magnetic_tag, " +
-        "tag_branch, " +
-        "total_name_tag, " +
-        "comments, " +
-        "total_order, " +
-        "total_grand, " +
-        "number_ribbons_2, " +
-        "number_devices_2, " +
-        "number_attach_2, " + 
-        "number_pin_2, " +
-        "number_magnetic_2, " +
-        "row_fill_2, " +
-        "list_ribbon_2, " +
-        "number_large_medal_sets, " +
-        "price_per_large_medal_set, " +
-        "number_large_medal_device, " +
-        "number_large_medal_attach, " +
-        "annodize, " +
-        "list_large_medals, " +
-        "annodized_total, " +
-        "total_medals_large, " +
-        "choice_1_pin, " +
-        "choice_2_pin, " +
-        "reverse, " +
-        "title, " +
-        "date" +
-        ") VALUES (" +
-        "${customerId}," + 
-        "${cardType}," +
-        "${cardName}," +
-        "${cardNumber}," +
-        "${cardExpire}," +
-        "${cardCiv}," +
-        "${shipping}," +
-        "${numberRibbons}," +
-        "${numberDevices}," +
-        "${numberAttach}," +
-        "${numberPin}," +
-        "${numberMagnetic}," +
-        "${rowFill}," +
-        "${totalRibbons}," +
-        "${listRibbons}," +
-        "${numberMiniMedalSets}," +
-        "${totalMiniMedals}," +
-        "${numberMiniMedalDevice}," +
-        "${numberMiniMedalAttach}," +
-        "${totalMedals}," +
-        "${listMiniMedals}," +
-        "${nameTagLine1}," +
-        "${nameTagLine2}," +
-        "${numberPinTag}," +
-        "${numberMagneticTag}," +
-        "${tagBranch}," +
-        "${totalNameTag}," +
-        "${comments}," +
-        "${totalOrder}," +
-        "${totalGrand}," +
-        "${numberRibbons2}," +
-        "${numberDevices2}," +
-        "${numberAttach2}," +
-        "${numberPin2}," +
-        "${numberMagnetic2}," +
-        "${rowFill2}," +
-        "${listRibbon2}," +
-        "${numberLargeMedalSets}," +
-        "${pricePerLargeMedalSet}," +
-        "${numberLargeMedalDevice}," +
-        "${numberLargeMedalAttach}," +
-        "${annodize}," +
-        "${listLargeMedals}," +
-        "${annodizedTotal}," +
-        "${totalMedalsLarge}," +
-        "${choice1Pin}," +
-        "${choice2Pin}," +
-        "${reverse}," +
-        "${title}," +
-        "${date}" +
-        ") " + upsert + " RETURNING id", order)
-        .then(function(data){
-            callback(data);
-        })
-        .catch(function(err){
-            console.log(err);
-            callback();
-        });       
+    insert: function (order, upsert, db) {
+        return new Promise(function (resolve, reject) {
+            if (upsert) {
+                upsert = " ON CONFLICT ON CONSTRAINT unique_order DO NOTHING";
+            } else {
+                upsert = "";
+            }
+            console.log("Inserting Order");
+            db.result('INSERT INTO "order" (' +
+                "customer_id, " +
+                "card_type, " +
+                "card_name, " +
+                "card_number, " +
+                "card_expire, " +
+                "card_civ, " +
+                "shipping, " +
+                "number_ribbons, " +
+                "number_devices, " +
+                "number_attachments, " +
+                "number_pins, " +
+                "number_magnetic, " +
+                "row_fill, " +
+                "total_ribbons, " +
+                "list_ribbons, " +
+                "number_mini_medal_sets, " +
+                "total_mini_medals, " +
+                "number_mini_medal_device, " +
+                "number_mini_medal_attach, " +
+                "total_medals," +
+                "list_mini_medals, " +
+                "name_tag_line_1, " +
+                "name_tag_line_2, " +
+                "number_pin_tag, " +
+                "number_magnetic_tag, " +
+                "tag_branch, " +
+                "total_name_tag, " +
+                "comments, " +
+                "total_order, " +
+                "total_grand, " +
+                "number_ribbons_2, " +
+                "number_devices_2, " +
+                "number_attach_2, " +
+                "number_pin_2, " +
+                "number_magnetic_2, " +
+                "row_fill_2, " +
+                "list_ribbon_2, " +
+                "number_large_medal_sets, " +
+                "price_per_large_medal_set, " +
+                "number_large_medal_device, " +
+                "number_large_medal_attach, " +
+                "anodize, " +
+                "list_large_medals, " +
+                "anodized_total, " +
+                "total_medals_large, " +
+                "choice_1_pin, " +
+                "choice_2_pin, " +
+                "reverse, " +
+                "title, " +
+                "date" +
+                ") VALUES (" +
+                "${customerId}," +
+                "${cardType}," +
+                "${cardName}," +
+                "${cardNumber}," +
+                "${cardExpire}," +
+                "${cardCiv}," +
+                "${shipping}," +
+                "${numberRibbons}," +
+                "${numberDevices}," +
+                "${numberAttach}," +
+                "${numberPin}," +
+                "${numberMagnetic}," +
+                "${rowFill}," +
+                "${totalRibbons}," +
+                "${listRibbons}," +
+                "${numberMiniMedalSets}," +
+                "${totalMiniMedals}," +
+                "${numberMiniMedalDevice}," +
+                "${numberMiniMedalAttach}," +
+                "${totalMedals}," +
+                "${listMiniMedals}," +
+                "${nameTagLine1}," +
+                "${nameTagLine2}," +
+                "${numberPinTag}," +
+                "${numberMagneticTag}," +
+                "${tagBranch}," +
+                "${totalNameTag}," +
+                "${comments}," +
+                "${totalOrder}," +
+                "${totalGrand}," +
+                "${numberRibbons2}," +
+                "${numberDevices2}," +
+                "${numberAttach2}," +
+                "${numberPin2}," +
+                "${numberMagnetic2}," +
+                "${rowFill2}," +
+                "${listRibbon2}," +
+                "${numberLargeMedalSets}," +
+                "${pricePerLargeMedalSet}," +
+                "${numberLargeMedalDevice}," +
+                "${numberLargeMedalAttach}," +
+                "${anodize}," +
+                "${listLargeMedals}," +
+                "${anodizedTotal}," +
+                "${totalMedalsLarge}," +
+                "${choice1Pin}," +
+                "${choice2Pin}," +
+                "${reverse}," +
+                "${title}," +
+                "${date}" +
+                ") " + upsert + " RETURNING id", order)
+                .then((data) => function(data){
+                    data.numberRibbons = order.numberRibbons;
+                    data.numberMiniMedalSets = order.numberMiniMedalSets;
+                    data.numberLargeMedalSets = order.numberLargeMedalSets;
+                    data.numberMagnetic = order.numberMagnetic;
+                    data.totalGrand = order.totalGrand;
+                    resolve(data);
+                })
+                .catch((err) => reject(err));
+        });
     },
 
     populateOrder: function(bodyProps){
@@ -216,9 +221,9 @@ module.exports = {
             pricePerLargeMedalSet: parseFloat(bodyProps.pricePerLargeMedalSet),
             numberLargeMedalDevice: parseInt(bodyProps.numberLargeMedalDevice),
             numberLargeMedalAttach: parseInt(bodyProps.numberLargeMedalAttach),
-            annodize: bodyProps.annodize,
+            anodize: bodyProps.anodize,
             listLargeMedals: bodyProps.listLargeMedals,
-            annodized_total: parseFloat(bodyProps.annodized_total),
+            anodized_total: parseFloat(bodyProps.anodized_total),
             largeMedalsTotal: parseFloat(bodyProps.medalsTotal),
             choice1Pin: bodyProps.choice1Pin,
             choice2Pin: bodyProps.choice2Pin,
@@ -272,9 +277,9 @@ module.exports = {
             pricePerLargeMedalSet: array[48] == "" ? 0 :  parseFloat(array[48]),
             numberLargeMedalDevice: array[49] == "" ? 0 :  parseInt(array[49]),
             numberLargeMedalAttach: array[50] == "" ? 0 :  parseInt(array[50]),
-            annodize: array[51],
+            anodize: array[51],
             listLargeMedals: array[52],
-            annodizedTotal: array[53] == "" ? 0 :  parseFloat(array[53]),
+            anodizedTotal: array[53] == "" ? 0 :  parseFloat(array[53]),
             totalMedalsLarge: array[54] == "" ? 0 :  parseFloat(array[54]),
             choice1Pin: array[55],
             choice2Pin: array[56],
@@ -286,43 +291,57 @@ module.exports = {
     },
 
     findOrder: function(order, db, callback){
-        let query = "SELECT id, firstname, lastname, email, phone, service, city, state FROM customer WHERE ";
-    let useAnd = false;
-    if (!!order.firstname){
-        query += useAnd ? "AND ": "";
-        query += dbUtil.setQueryField("firstname", order.firstname);
-        useAnd = true;
-    }
-    if (!!order.lastname){
-        query += useAnd ? "AND ": "";
-        query += dbUtil.setQueryField("lastname", order.lastname);
-        useAnd = true;
-    }
-    if (!!order.email){
-        query += useAnd ? "AND ": "";
-        query += dbUtil.setQueryField("email", order.email);
-        useAnd = true;
-    }
-    if (!!order.city){
-        query += useAnd ? "AND ": "";
-        query += dbUtil.setQueryField("city", order.city);
-        useAnd = true;
-    }
-    if (!!order.state){
-        query += useAnd ? "AND ": "";
-        query += dbUtil.setQueryField("city", order.state)
-    }
-    if (!!order.date){
-        query += useAnd ? "AND ": "";
-        query += "date = '"+ order.date +"' ";
-    }
-    query += "ORDER BY lastname ASC, firstname ASC date ASC"
-        db.result(query)
-        .then(function(data){
-            callback(data);
+        let query = "SELECT id, firstname, lastname, email, service, city, state, date, total_grand FROM customer_order WHERE ";
+        let useAnd = false;
+        if (!!order.firstname){
+            query += useAnd ? "AND ": "";
+            query += setQueryField("firstname", order.firstname);
+            useAnd = true;
+        }
+        if (!!order.lastname){
+            query += useAnd ? "AND ": "";
+            query += setQueryField("lastname", order.lastname);
+            useAnd = true;
+        }
+        if (!!order.email){
+            query += useAnd ? "AND ": "";
+            query += setQueryField("email", order.email);
+            useAnd = true;
+        }
+        if (!!order.city){
+            query += useAnd ? "AND ": "";
+            query += setQueryField("city", order.city);
+            useAnd = true;
+        }
+        if (!!order.state){
+            query += useAnd ? "AND ": "";
+            query += setQueryField("state", order.state)
+            useAnd = true;
+        }
+        if (!!order.service){
+            query += useAnd ? "AND ": "";
+            query += "service = " + order.service;
+            useAnd = true;
+        }
+        if (!!order.date){
+            query += useAnd ? "AND ": "";
+            query += "date = '"+ order.date +"' ";
+
+        }
+        //query += " ORDER BY lastname ASC, firstname ASC, date ASC"
+            db.result(query)
+            .then(function(data){
+                callback(data);
         })
-        .catch(function(){
-            callback(null);
+        .catch(function(error){
+            console.log(error);
+            callback(null, error);
         })
     }
+};
+function setQueryField(fieldName, value){
+    return fieldName + " LIKE " + fixWildcards(value);
+}
+function fixWildcards(val){
+    return "'" + val.replace(/\*/g, '%') + "'";
 }

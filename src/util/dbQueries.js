@@ -25,14 +25,26 @@ module.exports = {
   removeUser: removeUser,
   authenticateUser: authenticateUser,
   sanitizeField: sanitizeField,
-  upsertCustomer: upsertCustomer,
+  upsertCustomer: function (customer) {
+      return new Promise(function (resolve, reject) {
+          db.result('INSERT INTO customer (lastname, firstname, addr1, addr2, city, state, zip, phone, email, service, gender) ' +
+              'VALUES (${firstname}, ${lastname}, ${addr1}, ${addr2}, ${city}, ${state}, ${zip}, ${phone}, ${email}, ${service}, ${gender}) ' +
+              'ON CONFLICT ON CONSTRAINT unique_email_addr DO UPDATE SET lastname=excluded.lastname, firstname=excluded.firstname, addr1=excluded.addr1, addr2=excluded.addr2, city=excluded.city, state=excluded.state, zip=excluded.zip, email=excluded.email, phone = excluded.phone, service = excluded.service, gender=excluded.gender ' +
+              'RETURNING id', customer)
+              .then((data) => resolve(data.rows[0].id))
+              .catch((error) => reject(error));
+      });
+  },
   findCustomer: findCustomer,
   getSingleCustomer: getSingleCustomer,
-  createCustomer, createCustomer,
-  updateCustomer, updateCustomer,
-  upsertOrder, upsertOrder,
-  findOrder, findOrder,
-  setQueryField, setQueryField
+  createCustomer: createCustomer,
+  updateCustomer: updateCustomer,
+  upsertOrder: function(order) {
+      return new Promise(function (resolve, reject) {
+          dataOrder.insert(order, true, db).then((data) => resolve(data).catch((err) => reject(err)));
+      });
+  },
+  findOrder: findOrder
 };
 
 function getAllUsers(callback) {
@@ -136,19 +148,6 @@ function encryptField(val) {
     return bcrypt.hashSync(val, bcrypt.genSaltSync());
 }
 
-function upsertCustomer(customer, orderFields, callback){
-    db.result('INSERT INTO customer (lastname, firstname, addr1, addr2, city, state, zip, phone, email, service, gender) ' +
-    'VALUES (${firstname}, ${lastname}, ${addr1}, ${addr2}, ${city}, ${state}, ${zip}, ${phone}, ${email}, ${service}, ${gender}) ' +
-    'ON CONFLICT ON CONSTRAINT unique_email_addr DO UPDATE SET lastname=excluded.lastname, firstname=excluded.firstname, addr1=excluded.addr1, addr2=excluded.addr2, city=excluded.city, state=excluded.state, zip=excluded.zip, email=excluded.email, phone = excluded.phone, service = excluded.service, gender=excluded.gender ' +
-    'RETURNING id', customer)
-    .then(function(data){
-        callback(data.rows[0].id, orderFields);
-    })
-    .catch(function(error){
-        console.log(error);
-    });
-};
-
 function findCustomer(customerQuery, callback){
     let query = "SELECT id, firstname, lastname, email, phone, service, city, state FROM customer WHERE ";
     let useAnd = false;
@@ -220,10 +219,6 @@ function updateCustomer(customer, callback){
     .catch(function(err){
         callback(err);
     });
-}
-
-function upsertOrder (order, callback){
-    dataOrder.insert(order, true, db, callback);
 }
 
 function findOrder (order, callback){

@@ -41,15 +41,15 @@ module.exports = {
 
     createUser: function(req,res,next) {
         if (req.session.role == 0){
-            for(let property in req.body){
+            for(var property in req.body){
                 property = db.sanitizeField(property);
             }
-            let user = {
+            var user = {
                 username: req.body.username,
                 password: req.body.password,
                 role: req.body.role,
                 email: req.body.email
-            }
+            };
 
             db.createUser(user, function(err){
                 if (!!!err) {
@@ -69,10 +69,10 @@ module.exports = {
 
     updateUser: function(req,res,next) {
         if (req.session.role == 0){
-            for(let property in req.body){
+            for(var property in req.body){
                 property = db.sanitizeField(property);
             }
-            let user = {
+            var user = {
                 username: req.body.username,
                 password: req.body.password,
                 role: req.body.role,
@@ -97,7 +97,7 @@ module.exports = {
 
     removeUser: function(req,res,next) {
         if (req.session.role == 0){
-            let id = req.params.id;
+            var id = req.params.id;
             db.removeUser(id, function(err){
                 if (!!!err) {
                     res.status(200)
@@ -140,7 +140,7 @@ module.exports = {
     },
 
     editUser: function(req, res, next){
-        let id = parseInt(req.params.id);
+        var id = parseInt(req.params.id);
         if (req.session.role == 0){
             db.getSingleUser(id,function(data, err){
                 if (!!data) {
