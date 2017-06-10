@@ -1,4 +1,4 @@
-﻿﻿-- Database: ut
+﻿-- Database: ut
 
 -- DROP DATABASE ut;
 
@@ -11,13 +11,13 @@ LC_CTYPE = 'en_US.UTF-8'
 TABLESPACE = pg_default
 CONNECTION LIMIT = -1;
 
-﻿-- Table: public.customer
+-- Table: public.customer
 
 -- DROP TABLE public.customer;
 
 CREATE TABLE public.customer
 (
-    id integer NOT NULL DEFAULT nextval('customer_id_seq'::regclass),
+    id SERIAL UNIQUE,
     lastname character varying COLLATE pg_catalog."default" NOT NULL,
     firstname character varying COLLATE pg_catalog."default" NOT NULL,
     addr1 character varying COLLATE pg_catalog."default" NOT NULL,
@@ -58,13 +58,13 @@ CREATE UNIQUE INDEX email_addr_key
     (email COLLATE pg_catalog."default")
 TABLESPACE pg_default;
 
-﻿-- Table: public."order"
+-- Table: public."order"
 
 -- DROP TABLE public."order";
 
 CREATE TABLE public."order"
 (
-    id integer NOT NULL DEFAULT nextval('order_id_seq'::regclass),
+    id SERIAL UNIQUE,
     customer_id integer NOT NULL,
     card_type character varying COLLATE pg_catalog."default" NOT NULL,
     card_name character varying COLLATE pg_catalog."default" NOT NULL,
@@ -137,13 +137,13 @@ CREATE INDEX "order-customer"
     (customer_id)
 TABLESPACE pg_default;
 
-﻿-- Table: public.users
+-- Table: public.users
 
 -- DROP TABLE public.users;
 
 CREATE TABLE public.users
 (
-    id integer NOT NULL DEFAULT nextval('users_id_seq'::regclass),
+    id SERIAL UNIQUE,
     username character varying COLLATE pg_catalog."default" NOT NULL,
     password character varying COLLATE pg_catalog."default" NOT NULL,
     role bigint NOT NULL,
