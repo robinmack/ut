@@ -26,14 +26,10 @@ module.exports = {
   authenticateUser: authenticateUser,
   sanitizeField: sanitizeField,
   upsertCustomer: function (customer) {
-      return new Promise(function (resolve, reject) {
-          db.result('INSERT INTO customer (lastname, firstname, addr1, addr2, city, state, zip, phone, email, service, gender) ' +
-              'VALUES (${firstname}, ${lastname}, ${addr1}, ${addr2}, ${city}, ${state}, ${zip}, ${phone}, ${email}, ${service}, ${gender}) ' +
-              'ON CONFLICT ON CONSTRAINT unique_email_addr DO UPDATE SET lastname=excluded.lastname, firstname=excluded.firstname, addr1=excluded.addr1, addr2=excluded.addr2, city=excluded.city, state=excluded.state, zip=excluded.zip, email=excluded.email, phone = excluded.phone, service = excluded.service, gender=excluded.gender ' +
-              'RETURNING id', customer)
-              .then((data) => resolve(data.rows[0].id))
-              .catch((error) => reject(error));
-      });
+      return db.one('INSERT INTO customer (lastname, firstname, addr1, addr2, city, state, zip, phone, email, service, gender) ' +
+          'VALUES (${firstname}, ${lastname}, ${addr1}, ${addr2}, ${city}, ${state}, ${zip}, ${phone}, ${email}, ${service}, ${gender}) ' +
+          'ON CONFLICT ON CONSTRAINT unique_email_addr DO UPDATE SET lastname=excluded.lastname, firstname=excluded.firstname, addr1=excluded.addr1, addr2=excluded.addr2, city=excluded.city, state=excluded.state, zip=excluded.zip, email=excluded.email, phone = excluded.phone, service = excluded.service, gender=excluded.gender ' +
+          'RETURNING id', customer, a => a.id);
   },
   findCustomer: findCustomer,
   getSingleCustomer: getSingleCustomer,
@@ -72,7 +68,7 @@ function authenticateUser(req, res, next) {
     var password = req.body.password;
     var session = req.session;
 
-    db.one("SELECT * FROM users WHERE USERNAME = '" + username + "'")
+    db.one("SELECT * FROM users WHERE USERNAME = $1", username)
     .then(function(data){
         
         if (bcrypt.compareSync(password,data.password)) {
