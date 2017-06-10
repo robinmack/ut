@@ -131,6 +131,29 @@ ALTER TABLE public."order"
 -- Index: order-customer
 
 -- DROP INDEX public."order-customer";
+-- View: public.customer_order
+
+-- DROP VIEW public.customer_order;
+
+CREATE OR REPLACE VIEW public.customer_order AS
+    SELECT a.firstname,
+        a.lastname,
+        a.email,
+        a.service,
+        a.state,
+        a.zip,
+        b.id,
+        b.total_grand,
+        b.date,
+        a.city
+    FROM customer a,
+        "order" b
+    WHERE a.id = b.customer_id
+    ORDER BY a.lastname, a.firstname, b.date;
+
+ALTER TABLE public.customer_order
+    OWNER TO postgres;
+
 
 CREATE INDEX "order-customer"
     ON public."order" USING btree

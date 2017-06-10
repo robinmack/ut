@@ -2,58 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="7863d19a-8b91-4366-9aa2-e5e174114940" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/0/3/0333f8807830075a4205d7f38738ccf61237bccc" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/0/3/03fb6e70f5c76d66540905b64cfd7eede2875f2a" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/0/8/088779ad9663d36d11c87a1e939a8ee3179a4ec7" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/1/6/16bf847b0e127b946bb60b06c60cda3ef3d546c8" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/2/c/2cf6c3f09c747b1f59d402e9d6ab7808b69b4029" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/3/0/30dfc417d69af8ed298ed4111dcab68f38ca7f54" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/4/b/4bbafabbef2f0b01588f569aa1a0bcc237cd1f8b" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/4/e/4ed215e5b51f574cb877561ef5da4db2359cd35d" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/5/3/530f6b5867073d9184e2fbd0b1544a7563f0d209" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/5/8/584155fc90284ed91c55120d408f1c5491f24584" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/5/d/5de4f4e7d5518fbc9458503852713347b954b24f" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/5/e/5ec111e9713e052909aff6fc4a72e0055fa2357f" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/8/e/8ec9a00bfd09b3190ac6b22251dbb1aa95a0579d" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/8/f/8f4d4e4f86cee392b434e16c8eaa12c6b744e037" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/9/5/953693b2d63e95bcc1aa7b873596bf04cf1b5af2" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/9/8/985a2b1d192030ddb6a7f009a4bfdfbd5b71f395" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/b/4/b463082f08b736a8bab10cc267dc65909b0cc592" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/b/5/b5b096f958319b1c7782c800c78c4c358a58d709" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/b/a/ba500a8839e3b69b74853003cd02a8440af573a5" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/c/7/c7ab0502033727c3fb192b528d1e2fce3819a7bb" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/c/f/cf67fc718fe39af70bf1bf5d028424eed8d681a4" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/d/0/d077eb916f90a5d9ad66adb3869660f3d58f95f5" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/e/0/e06b7a21508b4ac29f0dcad618dbdb0d494704c4" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/e/4/e465e003ac3202407b8d16efb96736719f4cb6ad" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/f/9/f9f3ad31c1666c9d010b84cbbe24e70370a40411" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/compiler.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/dataSources.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/modules.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/php.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/sqldialects.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/ut.iml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/views/switchRole.pug" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/jsLibraryMappings.xml" afterPath="$PROJECT_DIR$/.idea/jsLibraryMappings.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/TODO.md" afterPath="$PROJECT_DIR$/TODO.md" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/www" afterPath="$PROJECT_DIR$/bin/www" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/routes/index.js" afterPath="$PROJECT_DIR$/routes/index.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/controllers/customers.js" afterPath="$PROJECT_DIR$/src/controllers/customers.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/controllers/main.js" afterPath="$PROJECT_DIR$/src/controllers/main.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/controllers/orders.js" afterPath="$PROJECT_DIR$/src/controllers/orders.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/controllers/users.js" afterPath="$PROJECT_DIR$/src/controllers/users.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/data/order.js" afterPath="$PROJECT_DIR$/src/data/order.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/schema/database.sql" afterPath="$PROJECT_DIR$/src/schema/database.sql" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/services/orders.js" afterPath="$PROJECT_DIR$/src/services/orders.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/util/dbQueries.js" afterPath="$PROJECT_DIR$/src/util/dbQueries.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/customerView.pug" afterPath="$PROJECT_DIR$/views/customerView.pug" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/menuBar.pug" afterPath="$PROJECT_DIR$/views/menuBar.pug" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/orderFind.pug" afterPath="$PROJECT_DIR$/views/orderFind.pug" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/orderView.pug" afterPath="$PROJECT_DIR$/views/orderView.pug" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -145,8 +94,8 @@
       <file leaf-file-name="database.sql" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/schema/database.sql">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="352">
-              <caret line="140" column="0" lean-forward="true" selection-start-line="140" selection-start-column="0" selection-end-line="140" selection-end-column="0" />
+            <state relative-caret-position="205">
+              <caret line="133" column="0" lean-forward="true" selection-start-line="133" selection-start-column="0" selection-end-line="133" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -1374,15 +1323,16 @@
       <updated>1496428315974</updated>
       <workItem from="1496428317512" duration="13731000" />
       <workItem from="1496618018030" duration="57937000" />
-      <workItem from="1497108715922" duration="555000" />
+      <workItem from="1497108715922" duration="701000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="72223000" />
+    <option name="totallyTimeSpent" value="72369000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="22" width="1440" height="874" extended-state="0" />
+    <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -1964,8 +1914,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/schema/database.sql">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="352">
-          <caret line="140" column="0" lean-forward="true" selection-start-line="140" selection-start-column="0" selection-end-line="140" selection-end-column="0" />
+        <state relative-caret-position="205">
+          <caret line="133" column="0" lean-forward="true" selection-start-line="133" selection-start-column="0" selection-end-line="133" selection-end-column="0" />
           <folding />
         </state>
       </provider>
