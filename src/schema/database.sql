@@ -158,4 +158,5 @@ TABLESPACE pg_default;
 ALTER TABLE public.users
     OWNER to postgres;
 
-
+INSERT INTO public.users (username, password, role, email)
+values ("admin", "$2a$10$t0EcKIw7PmSQg2Wu1HX0FeuUlcyenwBhwN1VbZdDqYcHn6FuwUDAK", 0, "writer.robin.mack@gmail.com");

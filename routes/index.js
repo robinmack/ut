@@ -10,7 +10,7 @@ router.get('/', function(req, res) {
   if (!! req.session.role){
     res.redirect('/main');
   } else {
-    res.render('index', { appTitle: 'Login', loggedIn: false });
+    res.render('index', { appTitle: 'Login', loggedIn: false, role: req.session.role });
   }
 });
 router.get('/main', mainController.motd);
@@ -18,6 +18,13 @@ router.get('/main/logout', function(req, res){
   req.session.destroy();
   res.redirect("/")
 });
+router.get('/main/switchRole', function(req, res){
+  res.render('switchRole',{ appTitle: 'Login', loggedIn: false, role: req.session.role });
+});
+router.post('/main/switchRole', function(req, res){
+  req.session.role=req.body.role;
+  res.redirect('/main');
+})
 
 // users controller routes
 router.get('/api/users',usersController.getAllUsers);
@@ -33,12 +40,13 @@ router.get('/users/new', usersController.newUser);
 // orders routes
 router.get('/api/orders/process', ordersController.getNewOrders);
 router.get('/orders/find', function(req, res){
-  res.render('orderFind',{appTitle: "Find Order",loggedIn: true});
+  res.render('orderFind',{appTitle: "Find Order",loggedIn: true, role: req.session.role});
 });
+router.get('/orders/edit/:id', ordersController.edit);
 router.post('/orders/find', ordersController.find);
 // customer routes
 router.get('/customers/find', function(req, res){
-  res.render('customerFind',{appTitle:"Find Customer", loggedIn: true});
+  res.render('customerFind',{appTitle:"Find Customer", loggedIn: true, role: req.session.role});
 });
 router.post('/customers/find', customersController.find);
 router.get('/customers/edit/:id', customersController.edit);

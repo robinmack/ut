@@ -65,8 +65,8 @@ append body
                     label(for="gender") Gender
                         select#gender.form-control.input-medium
                             option(value="" selected=!!!customer) -- Choose --
-                            option(value="Male" selected=customer ? !!customer.gender == "Male": false) Male
-                            option(value="Female" selected=customer ? !!customer.gender == "Female": false) Female
+                            option(value="Male" selected=customer ? customer.gender === "Male": false) Male
+                            option(value="Female" selected=customer ? customer.gender === "Female": false) Female
         div(class="container-fluid") 
             div(class="col-md-12")
                 input(type="submit" onclick="submitClick(event)" class="submit button" value=buttonText)

@@ -1,4 +1,4 @@
-var db = require("../util/dbQueries");
+let db = require("../util/dbQueries");
 module.exports = {
     getAllUsers: function(req, res, next) {
         if (req.session.role == 0){
@@ -129,7 +129,7 @@ module.exports = {
                         data=[{username:"no users found", email:"n/a", role:"n/a"}];
                     }
 
-                    res.render("users",{appTitle:"List Users", users:data, loggedIn: true});
+                    res.render("users",{appTitle:"List Users", role: req.session.role, users:data, loggedIn: true});
                 } else {
                     next(err);
                 }
@@ -149,7 +149,7 @@ module.exports = {
                     } else {
                         data.password = "";
                     }
-                    res.render("userView",{appTitle:"Edit User", loggedIn: true, method:"PUT", action:"/api/users/" + id, appTitle:"Edit User", user:data, buttonText:"Submit Changes"});
+                    res.render("userView",{appTitle:"Edit User", loggedIn: true, role: req.session.role, method:"PUT", action:"/api/users/" + id, appTitle:"Edit User", user:data, buttonText:"Submit Changes"});
                 } else {
                     next(err);
                 }
@@ -161,7 +161,7 @@ module.exports = {
 
     newUser: function(req, res, next){
         if (req.session.role == 0){
-            res.render("userView",{appTitle:"New User", loggedIn: true, method:"POST", action:"/api/users/", buttonText:"Create User"});
+            res.render("userView",{appTitle:"New User", loggedIn: true, role: req.session.role, method:"POST", action:"/api/users/", buttonText:"Create User"});
         } else {
             return next("Only administrators can perform this action");
         }

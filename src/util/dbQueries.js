@@ -1,16 +1,19 @@
-let promise = require('promise');
+let Promise = require('promise');
 let bcrypt = require('bcrypt');
 let dataOrder = require('../data/order');
-var options = {
+
+let options = {
   // Initialization Options
-  promiseLib: promise
+  promiseLib: Promise
 };
+
 let cn = {
     host: '127.0.0.1',
     port: 5432,
     database: 'ut',
     user: 'postgres',
-    password: '4nubis!'
+    password: '4nubis!',
+    poolSize: 30
 };
 let pgp = require('pg-promise')(options);
 let db = pgp(cn);
@@ -18,29 +21,19 @@ let db = pgp(cn);
 // add query functions
 
 module.exports = {
-  getAllUsers: getAllUsers,
-  getSingleUser: getSingleUser,
-  createUser: createUser,
-  updateUser: updateUser,
-  removeUser: removeUser,
-  authenticateUser: authenticateUser,
-  sanitizeField: sanitizeField,
-  upsertCustomer: function (customer) {
-      return db.one('INSERT INTO customer (lastname, firstname, addr1, addr2, city, state, zip, phone, email, service, gender) ' +
-          'VALUES (${firstname}, ${lastname}, ${addr1}, ${addr2}, ${city}, ${state}, ${zip}, ${phone}, ${email}, ${service}, ${gender}) ' +
-          'ON CONFLICT ON CONSTRAINT unique_email_addr DO UPDATE SET lastname=excluded.lastname, firstname=excluded.firstname, addr1=excluded.addr1, addr2=excluded.addr2, city=excluded.city, state=excluded.state, zip=excluded.zip, email=excluded.email, phone = excluded.phone, service = excluded.service, gender=excluded.gender ' +
-          'RETURNING id', customer, a => a.id);
-  },
-  findCustomer: findCustomer,
-  getSingleCustomer: getSingleCustomer,
-  createCustomer: createCustomer,
-  updateCustomer: updateCustomer,
-  upsertOrder: function(order) {
-      return new Promise(function (resolve, reject) {
-          dataOrder.insert(order, true, db).then((data) => resolve(data).catch((err) => reject(err)));
-      });
-  },
-  findOrder: findOrder
+    db:db,
+    getAllUsers: getAllUsers,
+    getSingleUser: getSingleUser,
+    createUser: createUser,
+    updateUser: updateUser,
+    removeUser: removeUser,
+    authenticateUser: authenticateUser,
+    sanitizeField: sanitizeField,
+    findCustomer: findCustomer,
+    getSingleCustomer: getSingleCustomer,
+    createCustomer: createCustomer,
+    updateCustomer: updateCustomer,
+    findOrder: findOrder
 };
 
 function getAllUsers(callback) {

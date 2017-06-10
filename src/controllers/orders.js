@@ -1,20 +1,23 @@
-var orderService = require("../services/orders");
-var dbUtil = require("../util/dbQueries.js");
-Promise = require('promise'),
+let orderService = require("../services/orders"),
+    dbUtil = require("../util/dbQueries.js"),
+    dataOrder = require('../data/order'),
+    Promise = require('promise');
 module.exports = {
     getNewOrders: function(req, res, next) {
-        //if (req.session.role == 0){
-            console.log("in getNewOrders");
+        if (req.session.role == 0){
             orderService.processFile()
-                .then((data)=>function(data){
-                    let motd = "Successfully processed: " + data.numOrders + " orders, " + data.numberRibbons + " ribbons, " +
+                .then(function(data){
+                    let motd = "Successfully processed: " + data.orders + " orders, " + data.numberRibbons + " ribbons, " +
                         data.numberMiniMedalSets + " mini medal sets, " + data.numberLargeMedalSets + " large medal sets, " +
-                        data.numberMagnetic + "magnetics, and $" + data.totalGrand + "in orders.";
+                        data.numberMagnetic + " magnetics, and $" + data.totalGrand.toFixed(2) + " in orders.";
                     res.render('main', {appTitle:"Processed Orders", motd: motd, loggedIn: true});
                 })
                 .catch((err)=>next(err));
+        } else {
+            return next("Your account does not have privileges to perform this action");
+        }
     },
-        find: function(req, res, next){
+    find: function(req, res, next){
         if (req.session.role < 3 && req.session.role > -1){
             let customerOrder = {
                 firstname: req.body.firstname,
@@ -30,14 +33,31 @@ module.exports = {
                     next (err);
                 } else {
                     if (data.rows.length == 0){
-                    data=[{firstname:"N/A",lastname:"None Found",email:"N/A",date:"N/A",city:"N/A", state:"N/A", totalGrand:"N/A"}];
+                        data=[{firstname:"None Found",lastname:"N/A",email:"N/A",date:"N/A",city:"N/A", state:"N/A", totalGrand:"N/A"}];
                     }
-                    res.render('orderFind', {appTitle:"Find Order", loggedIn: true, customerOrder: data.rows});
+                    res.render('orderFind', {appTitle:"Find Order", loggedIn: true, role: req.session.role, customerOrders: data.rows});
                 }
+            });
+            // dbUtil.editOrder(customerOrder, function (data, err){
+            //
+            // });
+        } else {
+            return next("Your account does not have privileges to perform this action");
+        }
+    },
+
+    edit: function(req, res, next){
+        if (req.session.role < 4 && req.session.role > -1){
+            let orderId = parseInt(req.params.id);
+            dataOrder.getSingleOrder(orderId)
+            .then(function(data){
+                res.render('orderView', {appTitle:"Edit Order", loggedIn: true, role: req.session.role, method:"PUT", action:"/api/orders/" + orderId, buttonText: "Submit Changes", order: data});
+            })
+            .catch(function(err){
+                next (err);
             });
         } else {
             return next("Your account does not have privileges to perform this action");
         }
-    }
-
+    },
 }

@@ -5,22 +5,34 @@ append styles
 block body
  block header
  // UltraThin navbar
+ - var admin = parseInt(role)==0
+ - var biggerThanBuilder = parseInt(role)<3
+
  +navbar-fixed("","navbar", "default")
-  a(class="navbar-brand logo" href="#")
+  a(class="navbar-brand logo" href="/main")
     img(src="/images/logo-transparent.png" height="30" alt="UltraThin")
     label(class="appTitle") #{appTitle}
   if(loggedIn)
    +nav_item_dropdown("#")(label="Users")
-    +nav_item("/users/list") List
-    +nav_item("/users/new") New
+    if admin
+     +nav_item("/users/list") List
+     +nav_item("/users/new") New
+    else
+     +nav_item("#") Not available
    +nav_item_dropdown("#")(label="Customers")
-    +nav_item("/customers/find") Find
-    +nav_item("/customers/new") New
+    if biggerThanBuilder
+     +nav_item("/customers/find") Find
+     +nav_item("/customers/new") New
+    else
+     +nav_item("#") Not available
    +nav_item_dropdown("#")(label="Orders")
     +nav_item("/orders/find") Find
-    +nav_item("#new-order") New Order
-    +nav_item("/api/orders/process") Process Web Orders
+    if biggerThanBuilder
+     +nav_item("#new-order") New Order
+     +nav_item("/api/orders/process") Process Web Orders
    +nav_item_dropdown("#")(label="Account")
+    if admin
+     +nav_item("/main/switchRole") Switch Role
     +nav_item("/main/logout") Logout
  .container
   div(id="notification")

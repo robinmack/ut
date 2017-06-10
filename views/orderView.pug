@@ -1,0 +1,83 @@
+extends menuBar
+append body
+    form(action="#")
+        div(class="container-fluid")
+            div(class="col-md-3")
+                fieldset
+                    label(for="lastname") Last Name
+                        input#lastname.form-control.input-medium(disabled value= !!order ? order.lastname : "")
+            div(class="col-md-3")
+                fieldset(class="span12")
+                    label(for="firstname") First Name
+                        input#firstname.form-control.input-medium(disabled value= !!order ? order.firstname : "")
+            div(class="col-md-3")
+                fieldset
+                    label(for="email") Email
+                        input#email.form-control.input-medium(disabled value= !!order ? order.email : "")
+            div(class="col-md-3")
+                fieldset
+                    label Order Date
+                        input#date.form-control.input-large(disabled value= !!order ? order.date.getMonth() +"/"+ order.date.getDate() +"/"+ order.date.getYear() : "")
+        div(class="container-fluid")
+            div(class="col-md-2")
+                fieldset
+                    label(for="cardType") Card Type
+                        select#cardType.form-control.input-medium(readonly = !biggerThanBuilder)
+                            option(value="American Express" selected= !!order ? order.card_type === "American Express" : "" ) American Express
+                            option(value="Visa" selected= !!order ? order.card_type === "Visa" : "" ) Visa
+                            option(value="MasterCard" selected= !!order ? order.card_type === "MasterCard" : "" ) MasterCard
+                            option(value="Discover" selected= !!order ? order.card_type === "Discover" : "" ) Discover
+            div(class="col-md-3")
+                fieldset(class="span12")
+                    label(for="cardName") Name on Card
+                        input#cardName.form-control.input-medium(value= !!order ? order.card_name : "" readonly=!biggerThanBuilder)
+            div(class="col-md-3")
+                fieldset
+                    if(biggerThanBuilder)
+                        label(for="cardNumber") Card Number
+                            input#cardNumber.form-control.input-medium(value= !!order ? order.card_number : "")
+                    else
+                        label Card Number
+                            input#redacted.form-control.input-medium(value="Redacted" readOnly=!biggerThanBuilder)
+            div(class="col-md-2")
+                fieldset
+                    label Expiration Date
+                        input#cardExpire.form-control.input-large(value= !!order ? order.card_expire : "" readonly=!biggerThanBuilder)
+            div(class="col-md-2")
+                fieldset
+                    label(for="cvv") CVV
+                        input#cvv.form-control.input-medium(value= !!order ? order.card_civ : "" readonly=!biggerThanBuilder)
+        div(class="container-fluid")
+            div(class="col-md-12")
+                input(type="submit" onclick="submitClick(event)" class="submit button" value=buttonText)
+    script.
+        function submitClick(event) {
+            event.preventDefault();
+            $.ajax({
+                url: "#{action}",
+                type: "#{method}",
+                contentType: "application/json",
+                data: JSON.stringify({
+                    id: $("#id").val(),
+                    city: $("#city").val(),
+                    state: $("#state").val(),
+                    zip: $("#zip").val(),
+                    email: $("#email").val(),
+                    phone: $("#phone").val(),
+                    service: $("#service").val(),
+                    gender: $("#gender").val()
+                }),
+                success: function (result) {
+                    $("#notification").empty()
+                        .attr("class", "")
+                        .append(result.message)
+                        .addClass("success");
+                },
+                error: function (jXQHR, errString) {
+                    $("#notification").empty()
+                        .attr("class", "")
+                        .append("Failed operation on user.  Error was:" + errString)
+                        .addClass("error");
+                }
+            });
+        }

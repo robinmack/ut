@@ -1,0 +1,13 @@
+extends menuBar
+append body
+    form(action="/main/switchRole" method="POST")
+        div(class="container-fluid")
+            div(class="col-md-3")
+                fieldset
+                    label(for="role") Last Name
+                        select#role.select.form-control.input-medium
+                            option(value="Accounting") Accounting
+                            option(value="Support") Support
+                            option(value="Builder") Builder
+            div(class="col-md-12")
+                input(type="submit" class="button" value="Switch")

@@ -65,10 +65,11 @@ append body
                         td #{customerOrder.lastname}
                         td #{customerOrder.firstname}
                         td 
-                            a(href="mailto:" + orders.email) #{customerOrder.email}
+                            a(href="mailto:" + customerOrder.email) #{customerOrder.email}
                         td #{customerOrder.city}
                         td #{customerOrder.state}
                         td #{customerOrder.service}
-                        td #{customerOrder.date}
+                        td #{customerOrder.date.getMonth() +"/"+ customerOrder.date.getDate() +"/"+ customerOrder.date.getYear()}
                         td #{customerOrder.total}
-                        td a(class="action button" href="/orders/edit/" + customerOrder.id) edit
+                        td
+                            a(class="action button" href="/orders/edit/" + customerOrder.id) edit
