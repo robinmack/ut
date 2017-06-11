@@ -1,4 +1,5 @@
-let dbUtil = require("../util/dbQueries");
+const dbUtil = require("../util/dbQueries"),
+    dataOrder = require("../data/order.js");
 module.exports = {
     find: function(req, res, next){
         if (req.session.role < 3 && req.session.role > -1){
@@ -7,12 +8,12 @@ module.exports = {
                 lastname: req.body.lastname,
                 email: req.body.email,
                 phone: req.body.phone
-            }
+            };
             dbUtil.findCustomer(customer, function (data, err){
                 if(err){
                     next (err);
                 } else {
-                    if (data.length == 0){
+                    if (data.length === 0){
                     data=[{firstname:"None Found",lastname:"N/A",email:"N/A",phone:"N/A",city:"N/A", state:"N/A"}];
                     }
 
@@ -31,7 +32,17 @@ module.exports = {
                 if(err){
                     next (err);
                 } else {
-                    res.render('customerView', {appTitle:"Edit Customer", role: req.session.role, method:"PUT", action:"/api/customers/" + customerId, buttonText: "Submit Changes", customer: data});
+                    dataOrder.findOrder({customerId: customerId}, function(orderData) {
+                        res.render('customerView', {
+                            appTitle:"Edit Customer",
+                            role: req.session.role,
+                            method:"PUT",
+                            action:"/api/customers/" + customerId,
+                            buttonText: "Submit Changes",
+                            customer: data,
+                            customerOrders: orderData}
+                        );
+                    });
                 }
             });
         } else {
@@ -50,9 +61,6 @@ module.exports = {
 //api stuff here
     createCustomer: function(req,res,next) {
         if (req.session.role < 3 && req.session.role > -1){
-            for(let property in req.body){
-                property = dbUtil.sanitizeField(property);
-            }
             let customer = {
                 lastname: req.body.lastname,
                 firstname: req.body.firstname,
@@ -65,10 +73,10 @@ module.exports = {
                 email: req.body.email,
                 service: req.body.service,
                 gender: req.body.gender
-            }
+            };
 
             dbUtil.createCustomer(customer, function(err){
-                if (!!!err) {
+                if (!err) {
                     res.status(200)
                     .json({
                         status: 'success',
@@ -85,9 +93,6 @@ module.exports = {
 
     updateCustomer: function(req,res,next) {
         if (req.session.role < 3 && req.session.role > -1){
-            for(let property in req.body){
-                property = dbUtil.sanitizeField(property);
-            }
             let customer = {
                 id: req.params.id,
                 lastname: req.body.lastname,
@@ -101,9 +106,9 @@ module.exports = {
                 email: req.body.email,
                 service: req.body.service,
                 gender: req.body.gender
-            }
+            };
             dbUtil.updateCustomer(customer, function(customer, err){
-                if (!!!err) {
+                if (!err) {
                     res.status(200)
                     .json({
                         status: 'success',
@@ -118,4 +123,4 @@ module.exports = {
         }
     },
 
-}
+};

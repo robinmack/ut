@@ -1,10 +1,8 @@
 let orderService = require("../services/orders"),
-    dbUtil = require("../util/dbQueries.js"),
-    dataOrder = require('../data/order'),
-    Promise = require('promise');
+    dataOrder = require('../data/order');
 module.exports = {
     getNewOrders: function(req, res, next) {
-        if (req.session.role == 0){
+        if (req.session.role === 0){
             orderService.processFile()
                 .then(function(data){
                     let motd = "Successfully processed: " + data.orders + " orders, " + data.numberRibbons + " ribbons, " +
@@ -28,11 +26,11 @@ module.exports = {
                 branch: req.body.branch,
                 date: req.body.date
             };
-            dbUtil.findOrder(customerOrder, function (data, err){
+            dataOrder.findOrder(customerOrder, function (data, err){
                 if(err){
                     next (err);
                 } else {
-                    if (data.rows.length == 0){
+                    if (data.rows.length === 0){
                         data=[{firstname:"None Found",lastname:"N/A",email:"N/A",date:"N/A",city:"N/A", state:"N/A", totalGrand:"N/A"}];
                     }
                     res.render('orderFind', {appTitle:"Find Order", role: req.session.role, customerOrders: data.rows});
@@ -44,7 +42,7 @@ module.exports = {
     },
 
     edit: function(req, res, next){
-        if (req.session.role < 4 && req.session.role > -1){
+        if (req.session.role < 4 && req.session.role >= 0){
             let orderId = parseInt(req.params.id);
             dataOrder.getSingleOrder(orderId)
             .then(function(data){
@@ -57,4 +55,4 @@ module.exports = {
             return next("Your account does not have privileges to perform this action");
         }
     },
-}
+};

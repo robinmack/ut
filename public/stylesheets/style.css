@@ -17,37 +17,47 @@ table {
 }
 
 .success {
-  width: 100%;
-  background-color: #009900;
-  padding-left: 5px;
-  color: #EEEEEE;
+    width: 100%;
+    text-align: center;
+    background-color: #009900;
+    padding-left: 5px;
+    color: #EEEEEE;
+    position: fixed;
+    top: 70px;
+    left: 0;
+    z-index: 100;
 }
 
 .error {
-  width: 100%;
-  background-color: #990000;
-  padding-left: 5px;
-  color: #EEEEEE;
+    width: 100%;
+    text-align: center;
+    background-color: #990000;
+    padding-left: 5px;
+    color: #EEEEEE;
+    position: fixed;
+    top: 70px;
+    left: 0;
+    z-index: 100;
 }
 
 .container {
-  margin: 10px;
+    margin: 10px;
 }
 
 .submit {
-  margin-top: 10px;
+    margin-top: 10px;
 }
 
 .action {
-  padding-left: 2px;
-  padding-right: 2px;
+    padding-left: 2px;
+    padding-right: 2px;
 }
 
 .navbar {
-  display: inline-block;
+    display: inline-block;
 }
 .logo {
-  padding-top: 5px;
+    padding-top: 5px;
 }
 .logo .appTitle
 {
@@ -55,15 +65,16 @@ table {
     width: 100%;
 }
 fieldset label {
-  min-width: 100%;
+    min-width: 100%;
+    margin-top: 10px;
 }
 
 .navbar-default {
-  background-image: -webkit-linear-gradient(top, #cccccc 0%, #ffffff 100%);
-  background-image: -o-linear-gradient(top, #cccccc 0%, #ffffff 100%);
-  background-image: linear-gradient(to bottom, #cccccc 0%, #ffffff 100%);
-  background-repeat: repeat-x;
-  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ff004400', endColorstr='#ff009900', GradientType=0);
+    background-image: -webkit-linear-gradient(top, #aaaaaa 0%, #ffffff 100%);
+    background-image: -o-linear-gradient(top, #aaaaaa 0%, #ffffff 100%);
+    background-image: linear-gradient(to bottom, #aaaaaa 0%, #ffffff 100%);
+    background-repeat: repeat-x;
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ff004400', endColorstr='#ff009900', GradientType=0);
 }
 
 .button {
@@ -76,36 +87,39 @@ fieldset label {
 
     background-repeat: repeat-x;
     filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ff004400', endColorstr='#ff009900', GradientType=0);
-    padding: 10px;
-    margin-left: 5px;
+    padding-top: 3px;
+    padding-bottom:3px;
+    margin-right: 0;
+    margin-left: 7px;
+    line-height: 90%;
     text-align: center;
     border-radius: 5px;
     color: white;
     font-weight: bold;
 }
 .app-background {
-  background-image: -webkit-linear-gradient(#000077 0%, #0000aa 100%);
-  background-image: -moz-linear-gradient(#000077 0%, #0000aa 100%);
-  background-image: -o-linear-gradient(#000077 0%, #0000aa 100%);
-  background-image: linear-gradient(#000077 0%, #0000aa 100%);
+    background-image: -webkit-linear-gradient(#000077 0%, #0000aa 100%);
+    background-image: -moz-linear-gradient(#000077 0%, #0000aa 100%);
+    background-image: -o-linear-gradient(#000077 0%, #0000aa 100%);
+    background-image: linear-gradient(#000077 0%, #0000aa 100%);
 
-  background-repeat: repeat-x;
-  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ff004400', endColorstr='#ff009900', GradientType=0);
-  position: absolute;
-  top: 0;
-  left: 0;
+    background-repeat: repeat-x;
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ff004400', endColorstr='#ff009900', GradientType=0);
+    position: absolute;
+    top: 0;
+    left: 0;
 }
 .motd {
-  position: absolute;
-  width: 300px;
-  height: 200px;
-  z-index: 15;
-  top: 50%;
-  left: 50%;
-  margin: -100px 0 0 -150px;
-  background: white;
-  border: 1px black;
+    position: absolute;
+    width: 300px;
+    height: 200px;
+    z-index: 15;
+    top: 50%;
+    left: 50%;
+    margin: -100px 0 0 -150px;
+    background: white;
+    border: 1px black;
 }
 .well{
-   background: #dddddd;
+   background: #eeeeee;
 }

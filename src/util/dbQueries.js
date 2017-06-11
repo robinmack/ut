@@ -1,5 +1,4 @@
 const bcrypt = require('bcrypt'),
-    dataOrder = require('../data/order'),
     Promise = require('promise'),
     promiseOptions = {
         // Initialization Options
@@ -30,8 +29,7 @@ module.exports = {
     findCustomer: findCustomer,
     getSingleCustomer: getSingleCustomer,
     createCustomer: createCustomer,
-    updateCustomer: updateCustomer,
-    findOrder: findOrder
+    updateCustomer: updateCustomer
 };
 
 function getAllUsers(callback) {
@@ -165,7 +163,7 @@ function setQueryField(fieldName, value){
        return fieldName + " LIKE " + fixWildcards(value);
 }
 function fixWildcards(val){
-    return "'" + val.replace("*", "%") + "'";
+    return "'" + val.replace(/\*/g, "%") + "'";
 }
 
 function getSingleCustomer(customerId, callback) {
@@ -201,6 +199,3 @@ function updateCustomer(customer, callback){
     });
 }
 
-function findOrder (order, callback){
-    dataOrder.findOrder(order, db, callback);
-}

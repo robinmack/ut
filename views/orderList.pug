@@ -1,0 +1,27 @@
+if (!!customerOrders && customerOrders.length > 0)
+    table.table.table-striped
+        thead
+            tr
+                th Last Name
+                th First Name
+                th Email
+                th City
+                th State
+                th Service
+                th Date
+                th Total
+                th
+        tbody
+            each customerOrder in customerOrders
+                tr
+                    td #{customerOrder.lastname}
+                    td #{customerOrder.firstname}
+                    td
+                        a(href="mailto:" + customerOrder.email) #{customerOrder.email}
+                    td #{customerOrder.city}
+                    td #{customerOrder.state}
+                    td #{customerOrder.service}
+                    td #{customerOrder.date.getMonth() +"/"+ customerOrder.date.getDate() +"/"+ customerOrder.date.getYear()}
+                    td #{customerOrder.total_grand}
+                    td
+                        a(class="action button" href="/orders/edit/" + customerOrder.id) edit

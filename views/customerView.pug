@@ -70,38 +70,42 @@ append body
         div(class="container-fluid") 
             div(class="col-md-12")
                 input(type="submit" onclick="submitClick(event)" class="submit button" value=buttonText)
-        script.
-            function submitClick(event){
-                event.preventDefault();
-                $.ajax({
-                    url: "#{action}", 
-                    type: "#{method}", 
-                    contentType: "application/json",
-                    data: JSON.stringify({
-                        lastname:$("#lastname").val(),
-                        firstname:$("#firstname").val(),
-                        addr1:$("#addr1").val(),
-                        addr2:$("#addr2").val(),
-                        id:$("#id").val(),
-                        city: $("#city").val(),
-                        state: $("#state").val(),
-                        zip: $("#zip").val(),
-                        email: $("#email").val(),
-                        phone: $("#phone").val(),
-                        service: $("#service").val(),
-                        gender: $("#gender").val()
-                    }),
-                    success: function(result){
-                       $("#notification").empty()
-                       .attr("class","")
-                       .append(result.message)
-                       .addClass("success");
-                    },
-                    error: function(jXQHR, errString) {
-                        $("#notification").empty()
-                        .attr("class","")
-                        .append("Failed operation on user.  Error was:" + errString)
-                        .addClass("error");
-                    }
-                });
-            }
+    div(class="container-fluid")
+        div(class="col-md-12 ")
+            h4 Orders:
+            include orderList
+    script.
+        function submitClick(event){
+            event.preventDefault();
+            $.ajax({
+                url: "#{action}",
+                type: "#{method}",
+                contentType: "application/json",
+                data: JSON.stringify({
+                    lastname:$("#lastname").val(),
+                    firstname:$("#firstname").val(),
+                    addr1:$("#addr1").val(),
+                    addr2:$("#addr2").val(),
+                    id:$("#id").val(),
+                    city: $("#city").val(),
+                    state: $("#state").val(),
+                    zip: $("#zip").val(),
+                    email: $("#email").val(),
+                    phone: $("#phone").val(),
+                    service: $("#service").val(),
+                    gender: $("#gender").val()
+                }),
+                success: function(result){
+                   $("#notification").empty()
+                   .attr("class","")
+                   .append(result.message)
+                   .addClass("success");
+                },
+                error: function(jXQHR, errString) {
+                    $("#notification").empty()
+                    .attr("class","")
+                    .append("Failed operation on user.  Error was:" + errString)
+                    .addClass("error");
+                }
+            });
+        }

@@ -1,7 +1,7 @@
 let db = require("../util/dbQueries");
 module.exports = {
     getAllUsers: function(req, res, next) {
-        if (req.session.role == 0){
+        if (req.session.role === 0){
             db.getAllUsers(function(data, err){
                 if (!!data) {
                     res.status(200)
@@ -20,8 +20,8 @@ module.exports = {
     },
     
     getSingleUser: function(req,res,next) {
-        if (req.session.role == 0){
-            var userId = parseInt(req.params.id);
+        if (req.session.role === 0){
+            const userId = parseInt(req.params.id);
             db.getSingleUser(userId, function(data, err){
                 if (!!data) {
                     res.status(200)
@@ -40,11 +40,8 @@ module.exports = {
     },
 
     createUser: function(req,res,next) {
-        if (req.session.role == 0){
-            for(var property in req.body){
-                property = db.sanitizeField(property);
-            }
-            var user = {
+        if (req.session.role === 0){
+            let user = {
                 username: req.body.username,
                 password: req.body.password,
                 role: req.body.role,
@@ -52,7 +49,7 @@ module.exports = {
             };
 
             db.createUser(user, function(err){
-                if (!!!err) {
+                if (!err) {
                     res.status(200)
                     .json({
                         status: 'success',
@@ -68,11 +65,8 @@ module.exports = {
     },
 
     updateUser: function(req,res,next) {
-        if (req.session.role == 0){
-            for(var property in req.body){
-                property = db.sanitizeField(property);
-            }
-            var user = {
+        if (req.session.role === 0){
+            const user = {
                 username: req.body.username,
                 password: req.body.password,
                 role: req.body.role,
@@ -80,7 +74,7 @@ module.exports = {
                 id: req.body.id
             };
             db.updateUser(user, function(user, err){
-                if (!!!err) {
+                if (!err) {
                     res.status(200)
                     .json({
                         status: 'success',
@@ -96,10 +90,10 @@ module.exports = {
     },
 
     removeUser: function(req,res,next) {
-        if (req.session.role == 0){
-            var id = req.params.id;
+        if (req.session.role === 0){
+            const id = req.params.id;
             db.removeUser(id, function(err){
-                if (!!!err) {
+                if (!err) {
                     res.status(200)
                     .json({
                         status: 'success',
@@ -127,15 +121,15 @@ module.exports = {
             }
         )
         .catch(function(err){
-            res.render('login', {appTitle:'Login', errorMsg: err});
+            res.render('index', {appTitle:'Login', errorMsg: err});
         });
     },
 
     viewUsers: function(req, res, next){
-        if (req.session.role == 0){
+        if (req.session.role === 0){
             db.getAllUsers(function(data, err){
                 if (!!data) {
-                    if(data.length == 0){
+                    if(data.length === 0){
                         data=[{username:"No users found", email:"n/a", role:"n/a"}];
                     }
 
@@ -150,11 +144,11 @@ module.exports = {
     },
 
     editUser: function(req, res, next){
-        var id = parseInt(req.params.id);
-        if (req.session.role == 0){
+        const id = parseInt(req.params.id);
+        if (req.session.role === 0){
             db.getSingleUser(id,function(data, err){
                 if (!!data) {
-                    if(data.length == 0){
+                    if(data.length === 0){
                         data={username:"", email:"", role:"", password:""};
                     } else {
                         data.password = "";
@@ -170,7 +164,7 @@ module.exports = {
     },
 
     newUser: function(req, res, next){
-        if (req.session.role == 0){
+        if (req.session.role === 0){
             res.render("userView",{appTitle:"New User", role: req.session.role, method:"POST", action:"/api/users/", buttonText:"Create User"});
         } else {
             return next("Only administrators can perform this action");

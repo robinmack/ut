@@ -5,8 +5,8 @@ append styles
 block body
  block header
  // UltraThin navbar
- - var admin = parseInt(role)==0
- - var biggerThanBuilder = parseInt(role)<3
+ - var admin = (parseInt(role)==0)
+ - var biggerThanBuilder = (parseInt(role)<3)
 
  +navbar-fixed("","navbar", "default")
   a(class="navbar-brand logo" href="/main")
@@ -36,10 +36,9 @@ block body
     +nav_item("/main/changePassword") Change Password
     +nav_item("/main/logout") Logout
  .container
-  if !! successMsg
+  if successMsg != undefined
    div#success-message(class="success")
-    successMsg
-  if !! errorMsg
-   div#error-message(class="error")
-    errorMsg
+    span #{successMsg}
+  if errorMsg != undefined
+   div#error-message(class="error") #{errorMsg}
   div#notification

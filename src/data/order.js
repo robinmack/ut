@@ -1,14 +1,11 @@
-let pgFormat = require("pg-format");
-let dbUtil = require("../util/dbQueries");
-let monitor = require('pg-monitor');
+const pgFormat = require("pg-format");
+/*let dbUtil = require("../util/dbQueries");*/
+const monitor = require('pg-monitor'),
+    pgConnOptions = {
+        promiseLib: Promise
+    };
 
-
-let options = {
-    // Initialization Options
-    promiseLib: Promise
-};
-
-let cn = {
+let pgCn = {
     host: '127.0.0.1',
     port: 5432,
     database: 'ut',
@@ -18,9 +15,9 @@ let cn = {
 };
 
 
-let pgp = require('pg-promise')(options);
-let db = pgp(cn);
-monitor.attach(options);
+let pgp = require('pg-promise')(pgConnOptions);
+let db = pgp(pgCn);
+monitor.attach(pgConnOptions);
 
 module.exports = {
     getSingleOrder: function(id){
@@ -89,7 +86,7 @@ module.exports = {
     },
 
     insert: function (order, upsert) {
-        console.log("in order.insert")
+        console.log("in order.insert");
         return new Promise(function (resolve, reject) {
             if (upsert) {
                 upsert = " ON CONFLICT ON CONSTRAINT unique_order DO NOTHING";
@@ -280,7 +277,7 @@ module.exports = {
             reverse: bodyProps.reverse,
             title: bodyProps.title,
             date: bodyProps.date
-        }
+        };
         return (order);
     },
 
@@ -303,56 +300,60 @@ module.exports = {
             cardExpire: orderFields[14],
             cardCiv: orderFields[15],
             shipping: orderFields[16],
-            numberRibbons: orderFields[17] == "" ? 0 : parseInt(orderFields[17]),
-            numberDevices: orderFields[18] == "" ? 0 : parseInt(orderFields[18]),
-            numberAttach: orderFields[19] == "" ? 0 : parseInt(orderFields[19]),
-            numberPin: orderFields[20] == "" ? 0 : parseInt(orderFields[20]),
-            numberMagnetic: orderFields[21] == "" ? 0 :  parseInt(orderFields[21]),
+            numberRibbons: orderFields[17] === "" ? 0 : parseInt(orderFields[17]),
+            numberDevices: orderFields[18] === "" ? 0 : parseInt(orderFields[18]),
+            numberAttach: orderFields[19] === "" ? 0 : parseInt(orderFields[19]),
+            numberPin: orderFields[20] === "" ? 0 : parseInt(orderFields[20]),
+            numberMagnetic: orderFields[21] === "" ? 0 :  parseInt(orderFields[21]),
             rowFill: orderFields[22],
-            totalRibbons: orderFields[23] == "" ? 0 :  parseFloat(orderFields[23]),
+            totalRibbons: orderFields[23] === "" ? 0 :  parseFloat(orderFields[23]),
             listRibbons: orderFields[24],
-            numberMiniMedalSets: orderFields[25] == "" ? 0 :  parseInt(orderFields[25]),
-            totalMiniMedals: orderFields[26] == "" ? 0 :  parseFloat(orderFields[26]),
-            numberMiniMedalDevice: orderFields[27] == "" ? 0 :  parseInt(orderFields[27]),
-            numberMiniMedalAttach: orderFields[28] == "" ? 0 :  parseInt(orderFields[28]),
-            totalMedals: orderFields[29] == "" ? 0 : parseInt(orderFields[29]),
+            numberMiniMedalSets: orderFields[25] === "" ? 0 :  parseInt(orderFields[25]),
+            totalMiniMedals: orderFields[26] === "" ? 0 :  parseFloat(orderFields[26]),
+            numberMiniMedalDevice: orderFields[27] === "" ? 0 :  parseInt(orderFields[27]),
+            numberMiniMedalAttach: orderFields[28] === "" ? 0 :  parseInt(orderFields[28]),
+            totalMedals: orderFields[29] === "" ? 0 : parseInt(orderFields[29]),
             listMiniMedals: orderFields[30],
             nameTagLine1: orderFields[31],
             nameTagLine2: orderFields[32],
-            numberPinTag: orderFields[33]=="" ? 0 :  parseInt(orderFields[33]),
-            numberMagneticTag: orderFields[34]=="" ? 0 :  parseInt(orderFields[34]),
+            numberPinTag: orderFields[33] === "" ? 0 :  parseInt(orderFields[33]),
+            numberMagneticTag: orderFields[34] === "" ? 0 :  parseInt(orderFields[34]),
             tagBranch: orderFields[35],
-            totalNameTag: orderFields[36] == "" ? 0 :  parseFloat(orderFields[36]),
+            totalNameTag: orderFields[36] === "" ? 0 :  parseFloat(orderFields[36]),
             comments: orderFields[37],
-            totalOrder: orderFields[38] == "" ? 0 :  parseFloat(orderFields[38]),
-            totalGrand: orderFields[39] == "" ? 0 :  parseFloat(orderFields[39]),
-            numberRibbons2: orderFields[40] == "" ? 0 :  parseInt(orderFields[40]),
-            numberDevices2: orderFields[41] == "" ? 0 :  parseInt(orderFields[41]),
-            numberAttach2: orderFields[42] == "" ? 0 :  parseInt(orderFields[42]),
-            numberPin2: orderFields[43] == "" ? 0 :  parseInt(orderFields[43]),
-            numberMagnetic2: orderFields[44] == "" ? 0 :  parseInt(orderFields[44]),
+            totalOrder: orderFields[38] === "" ? 0 :  parseFloat(orderFields[38]),
+            totalGrand: orderFields[39] === "" ? 0 :  parseFloat(orderFields[39]),
+            numberRibbons2: orderFields[40] === "" ? 0 :  parseInt(orderFields[40]),
+            numberDevices2: orderFields[41] === "" ? 0 :  parseInt(orderFields[41]),
+            numberAttach2: orderFields[42] === "" ? 0 :  parseInt(orderFields[42]),
+            numberPin2: orderFields[43] === "" ? 0 :  parseInt(orderFields[43]),
+            numberMagnetic2: orderFields[44] === "" ? 0 :  parseInt(orderFields[44]),
             rowFill2: orderFields[45],
             listRibbon2: orderFields[46],
-            numberLargeMedalSets: orderFields[47] == "" ? 0 :  parseInt(orderFields[47]),
-            pricePerLargeMedalSet: orderFields[48] == "" ? 0 :  parseFloat(orderFields[48]),
-            numberLargeMedalDevice: orderFields[49] == "" ? 0 :  parseInt(orderFields[49]),
-            numberLargeMedalAttach: orderFields[50] == "" ? 0 :  parseInt(orderFields[50]),
+            numberLargeMedalSets: orderFields[47] === "" ? 0 :  parseInt(orderFields[47]),
+            pricePerLargeMedalSet: orderFields[48] === "" ? 0 :  parseFloat(orderFields[48]),
+            numberLargeMedalDevice: orderFields[49] === "" ? 0 :  parseInt(orderFields[49]),
+            numberLargeMedalAttach: orderFields[50] === "" ? 0 :  parseInt(orderFields[50]),
             anodize: orderFields[51],
             listLargeMedals: orderFields[52],
-            anodizedTotal: orderFields[53] == "" ? 0 :  parseFloat(orderFields[53]),
-            totalMedalsLarge: orderFields[54] == "" ? 0 :  parseFloat(orderFields[54]),
+            anodizedTotal: orderFields[53] === "" ? 0 :  parseFloat(orderFields[53]),
+            totalMedalsLarge: orderFields[54] === "" ? 0 :  parseFloat(orderFields[54]),
             choice1Pin: orderFields[55],
             choice2Pin: orderFields[56],
             reverse: orderFields[57],
             title: orderFields[59],
             date: orderFields[60]
-        }
+        };
         return order;
     },
 
-    findOrder: function(order, db, callback){
+    findOrder: function(order, callback){
         let query = "SELECT id, firstname, lastname, email, service, city, state, date, total_grand FROM customer_order WHERE ";
         let useAnd = false;
+        if (!!order.customerId){
+            query += "customer_id=" + order.customerId + " ";
+            useAnd = true;
+        }
         if (!!order.firstname){
             query += useAnd ? "AND ": "";
             query += setQueryField("firstname", order.firstname);
@@ -383,17 +384,17 @@ module.exports = {
             query += "service = " + order.service;
             useAnd = true;
         }
-        if (!!order.date){
-            query += useAnd ? "AND ": "";
-            query += "date = '"+ order.date +"' ";
+        if (!!order.date) {
+            query += useAnd ? "AND " : "";
+            query += "date = '" + order.date + "' ";
 
         }
-        //query += " ORDER BY lastname ASC, firstname ASC, date ASC"
-            db.result(query)
-            .then(function(data){
+        //query += " ORDER BY lastname ASC, firstname ASC, date ASC";
+        db.manyOrNone(query)
+        .then((data)=>{
                 callback(data);
         })
-        .catch(function(error){
+        .catch((error)=>{
             console.log(error);
             callback(null, error);
         })

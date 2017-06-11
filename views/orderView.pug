@@ -1,23 +1,28 @@
 extends menuBar
 append body
     form(action="#")
-        div(class="container-fluid")
-            div(class="col-md-3")
-                fieldset
-                    label(for="lastname") Last Name
-                        input#lastname.form-control.input-medium(disabled value= !!order ? order.lastname : "")
-            div(class="col-md-3")
-                fieldset(class="span12")
-                    label(for="firstname") First Name
-                        input#firstname.form-control.input-medium(disabled value= !!order ? order.firstname : "")
-            div(class="col-md-3")
-                fieldset
-                    label(for="email") Email
-                        input#email.form-control.input-medium(disabled value= !!order ? order.email : "")
-            div(class="col-md-3")
-                fieldset
-                    label Order Date
-                        input#date.form-control.input-large(disabled value= !!order ? order.date.getMonth() +"/"+ order.date.getDate() +"/"+ order.date.getYear() : "")
+        div(class="well")
+            div(class="container-fluid")
+                div(class="col-md-3")
+                    fieldset
+                        label(for="lastname") Last Name
+                            input#lastname.form-control.input-medium(disabled value= !!order ? order.lastname : "")
+                div(class="col-md-3")
+                    fieldset(class="span12")
+                        label(for="firstname") First Name
+                            input#firstname.form-control.input-medium(disabled value= !!order ? order.firstname : "")
+                div(class="col-md-3")
+                    fieldset
+                        label(for="email") Email
+                            input#email.form-control.input-medium(disabled value= !!order ? order.email : "")
+                div(class="col-md-3")
+                    fieldset
+                        label Order Date
+                            input#date.form-control.input-large(disabled value= !!order ? order.date.getMonth() +"/"+ order.date.getDate() +"/"+ order.date.getYear() : "")
+            div(class="container-fluid")
+                div(class="col-md-3")
+                    a(class="action button" href="/customers/edit/" + order.customer_id) Edit Customer
+
         div(class="container-fluid")
             div(class="col-md-2")
                 fieldset
