@@ -105,7 +105,7 @@ module.exports = {
                     .then(data => {
                         console.log("inserting order for customer " + data.id);
                         order.customerId=data.id;
-                        return task.none('INSERT INTO "order" (' +
+                        return task.oneOrNone('INSERT INTO "order" (' +
                             "customer_id, " +
                             "card_type, " +
                             "card_name, " +
@@ -207,18 +207,19 @@ module.exports = {
                             "${reverse}," +
                             "${title}," +
                             "${date}" +
-                            ") " + upsert, order)
+                            ") " + upsert + " RETURNING id ", order, )
                     });
             })
-            .then(function () {
+            .then(function (returnObj) {
                 console.log("finalizing order");
+
                 let data={
-                    numberRibbons: order.numberRibbons,
-                    numberRibbons2: order.numberRibbons2,
-                    numberMiniMedalSets: order.numberMiniMedalSets,
-                    numberLargeMedalSets: order.numberLargeMedalSets,
-                    numberMagnetic: order.numberMagnetic,
-                    totalGrand: order.totalGrand
+                    numberRibbons: !! returnObj ? order.numberRibbons : 0,
+                    numberRibbons2: !! returnObj ? order.numberRibbons2 :0,
+                    numberMiniMedalSets: !! returnObj ? order.numberMiniMedalSets :0,
+                    numberLargeMedalSets: !! returnObj ? order.numberLargeMedalSets :0,
+                    numberMagnetic: !! returnObj ? order.numberMagnetic :0,
+                    totalGrand: !! returnObj ? order.totalGrand : 0,
                 };
 
                 resolve(data);

@@ -10,7 +10,7 @@ module.exports = {
                     let motd = "Successfully processed: " + data.orders + " orders, " + data.numberRibbons + " ribbons, " +
                         data.numberMiniMedalSets + " mini medal sets, " + data.numberLargeMedalSets + " large medal sets, " +
                         data.numberMagnetic + " magnetics, and $" + data.totalGrand.toFixed(2) + " in orders.";
-                    res.render('main', {appTitle:"Processed Orders", motd: motd, loggedIn: true});
+                    res.render('main', {appTitle:"Processed Orders", role: req.session.role, motd: motd});
                 })
                 .catch((err)=>next(err));
         } else {
@@ -27,7 +27,7 @@ module.exports = {
                 state: req.body.state,
                 branch: req.body.branch,
                 date: req.body.date
-            }
+            };
             dbUtil.findOrder(customerOrder, function (data, err){
                 if(err){
                     next (err);
@@ -35,12 +35,9 @@ module.exports = {
                     if (data.rows.length == 0){
                         data=[{firstname:"None Found",lastname:"N/A",email:"N/A",date:"N/A",city:"N/A", state:"N/A", totalGrand:"N/A"}];
                     }
-                    res.render('orderFind', {appTitle:"Find Order", loggedIn: true, role: req.session.role, customerOrders: data.rows});
+                    res.render('orderFind', {appTitle:"Find Order", role: req.session.role, customerOrders: data.rows});
                 }
             });
-            // dbUtil.editOrder(customerOrder, function (data, err){
-            //
-            // });
         } else {
             return next("Your account does not have privileges to perform this action");
         }
@@ -51,7 +48,7 @@ module.exports = {
             let orderId = parseInt(req.params.id);
             dataOrder.getSingleOrder(orderId)
             .then(function(data){
-                res.render('orderView', {appTitle:"Edit Order", loggedIn: true, role: req.session.role, method:"PUT", action:"/api/orders/" + orderId, buttonText: "Submit Changes", order: data});
+                res.render('orderView', {appTitle:"Edit Order", role: req.session.role, method:"PUT", action:"/api/orders/" + orderId, buttonText: "Submit Changes", order: data});
             })
             .catch(function(err){
                 next (err);

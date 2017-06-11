@@ -1,24 +1,24 @@
 const fs = require('fs'),
-
     dataOrder = require('../data/order'),
     Promise = require('promise'),
-    Ftp = require('jsftp'),
+    Ftp = require('promise-ftp'),
     config = require('../../orders/config.json'),
-    path = require('path')
+    path = require('path');
     
 
-let report = {
-    orders: 0,
-    numberRibbons: 0,
-    numberMiniMedalSets: 0,
-    numberLargeMedalSets:0,
-    numberMagnetic:0,
-    totalGrand:0,
-    dupes: 0,
-    };
+let report = {};
 
 module.exports = {
     processFile: function() {
+        report = {
+            orders: 0,
+            numberRibbons: 0,
+            numberMiniMedalSets: 0,
+            numberLargeMedalSets:0,
+            numberMagnetic:0,
+            totalGrand:0,
+            dupes: 0
+        };
         const that = this;
         return new Promise(function (resolve, reject) {
             that.downloadFile()
@@ -26,7 +26,7 @@ module.exports = {
                     return that.parseFile(fileContents);
                 })
                 .then(function(){
-                    console.log ("Orders Processed: " + that.orders + " totalling $" + that.totalGrand);
+                    console.log ("New Orders Processed: " + that.orders + " totalling $" + that.totalGrand);
                     resolve(report);
                 })
                 .catch(function(err){
@@ -38,24 +38,27 @@ module.exports = {
 
     downloadFile: function() {
         let fileContents="";
-        const ftp = new Ftp({host: config.ftpUrl, user: config.ftpUser, pass: config.ftpPass, debugMode: true});
         return new Promise(function(resolve, reject){
-            ftp.get(config.filePath, function (err,socket) {
-                if(err){
-                    reject(Error(err));
-                } else {
-                    socket.on("data", (data)=> fileContents += data.toString());
-                    socket.on("close", function(err){
-                        if (!!err) {
-                            ftp.destroy();
-                            reject(Error(err));
-                        } else {
-                            ftp.destroy();
-                            resolve(fileContents);
-                        }
+            let ftp = new Ftp();
+            ftp.connect({host: config.ftpUrl, user: config.ftpUser, password: config.ftpPass})
+                .then(() => {
+                return ftp.ascii();
+            })
+            .then(() => {
+                return ftp.get(config.ftpFilePath);
+            })
+            .then((stream) => {
+                return new Promise(function (resolve, reject) {
+                    stream.once('close', resolve);
+                    stream.once('error', reject);
+                    stream.on('data', (data)=>{
+                        fileContents += data.toString();
                     });
-                    socket.resume();
-                }
+                });
+            })
+            .then(()=>{resolve(fileContents);  ftp.end;})
+            .catch((err)=>{
+                reject(err);
             });
         });
     },

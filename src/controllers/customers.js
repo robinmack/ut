@@ -16,7 +16,7 @@ module.exports = {
                     data=[{firstname:"None Found",lastname:"N/A",email:"N/A",phone:"N/A",city:"N/A", state:"N/A"}];
                     }
 
-                     res.render('customerFind', {appTitle:"Find Customer", loggedIn: true, role: req.session.role, customers: data});
+                     res.render('customerFind', {appTitle:"Find Customer", role: req.session.role, customers: data});
                 }
             });
         } else {
@@ -31,7 +31,7 @@ module.exports = {
                 if(err){
                     next (err);
                 } else {
-                    res.render('customerView', {appTitle:"Edit Customer", loggedIn: true, role: req.session.role, method:"PUT", action:"/api/customers/" + customerId, buttonText: "Submit Changes", customer: data});
+                    res.render('customerView', {appTitle:"Edit Customer", role: req.session.role, method:"PUT", action:"/api/customers/" + customerId, buttonText: "Submit Changes", customer: data});
                 }
             });
         } else {
@@ -41,7 +41,7 @@ module.exports = {
 
     new: function(req, res, next){
         if (req.session.role < 3 && req.session.role > -1){
-            res.render('customerView', {appTitle:"New Customer", loggedIn: true, role: req.session.role, method:"POST", action:"/api/customers/", buttonText: "Create User"});
+            res.render('customerView', {appTitle:"New Customer", role: req.session.role, method:"POST", action:"/api/customers/", buttonText: "Create User"});
         } else {
             return next("Your account does not have privileges to perform this action");
         }

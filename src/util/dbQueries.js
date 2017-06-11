@@ -1,22 +1,20 @@
-let Promise = require('promise');
-let bcrypt = require('bcrypt');
-let dataOrder = require('../data/order');
-
-let options = {
-  // Initialization Options
-  promiseLib: Promise
-};
-
-let cn = {
-    host: '127.0.0.1',
-    port: 5432,
-    database: 'ut',
-    user: 'postgres',
-    password: '4nubis!',
-    poolSize: 30
-};
-let pgp = require('pg-promise')(options);
-let db = pgp(cn);
+const bcrypt = require('bcrypt'),
+    dataOrder = require('../data/order'),
+    Promise = require('promise'),
+    promiseOptions = {
+        // Initialization Options
+        promiseLib: Promise
+    },
+    pgConn = {
+        host: '127.0.0.1',
+        port: 5432,
+        database: 'ut',
+        user: 'postgres',
+        password: '4nubis!',
+        poolSize: 30
+    },
+    pgp = require('pg-promise')(promiseOptions),
+    db = pgp(pgConn);
 
 // add query functions
 
@@ -56,25 +54,19 @@ function getSingleUser(userId, callback) {
     });
 }
 
-function authenticateUser(req, res, next) {
-    var username = req.body.username;
-    var password = req.body.password;
-    var session = req.session;
-
-    db.one("SELECT * FROM users WHERE USERNAME = $1", username)
-    .then(function(data){
-        
-        if (bcrypt.compareSync(password,data.password)) {
-            session.username = data.username;
-            session.email = data.email;
-            session.role = data.role;
-            res.session = session;
-            res.redirect("/main");
-        } else {
-            res.render("index",{appTitle: "Log In", loggedIn: false});
-        }
-    }) .catch(function (err) {
-        return next(err);
+function authenticateUser(username, password) {
+    return new Promise(function(resolve, reject ) {
+        db.one("SELECT * FROM users WHERE USERNAME = $1", username)
+        .then(function (data) {
+            if (bcrypt.compareSync(password, data.password)) {
+                resolve(data);
+            } else {
+                reject("Username/Password not found.  Please try again or contact an administrator");
+            }
+        })
+        .catch((err)=> {
+            reject(err);
+        });
     });
 }
 
@@ -95,7 +87,7 @@ function updateUser(user, callback){
     user.id = parseInt(user.id);
     user.role = parseInt(user.role);
 
-    if (user.password.length == 0){
+    if (user.password.length === 0){
         db.none('UPDATE users SET username=$1, email=$2, role=$3 WHERE id=$4',
             [user.username, user.email, user.role, user.id])
         .then(function() {
@@ -158,9 +150,8 @@ function findCustomer(customerQuery, callback){
     if (!!customerQuery.phone){
         query += useAnd ? "AND ": "";
         query += setQueryField("phone", customerQuery.phone);
-        useAnd = true;
     }
-    query += "ORDER BY lastname ASC, firstname ASC"
+    query += "ORDER BY lastname ASC, firstname ASC";
     db.any(query, callback)
     .then(function(data){
         callback(data);

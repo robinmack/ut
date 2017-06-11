@@ -114,11 +114,21 @@ module.exports = {
         }
     },
 
-    authenticateUser: function(req, res, next){
-        for(var property in req.body){
-            property = db.sanitizeField(property);
-        }
-        db.authenticateUser(req, res, next);    
+    authenticateUser: function(req, res){
+        db.authenticateUser(req.body.username, req.body.password).then(
+            function(data) {
+                if(!! data) {
+                    req.session.role = data.role;
+                    req.session.username = data.username;
+                    req.session.userId = data.userId;
+                    req.session.email = data.email;
+                    res.redirect("/main");
+                }
+            }
+        )
+        .catch(function(err){
+            res.render('login', {appTitle:'Login', errorMsg: err});
+        });
     },
 
     viewUsers: function(req, res, next){
@@ -126,10 +136,10 @@ module.exports = {
             db.getAllUsers(function(data, err){
                 if (!!data) {
                     if(data.length == 0){
-                        data=[{username:"no users found", email:"n/a", role:"n/a"}];
+                        data=[{username:"No users found", email:"n/a", role:"n/a"}];
                     }
 
-                    res.render("users",{appTitle:"List Users", role: req.session.role, users:data, loggedIn: true});
+                    res.render("users",{appTitle:"List Users", role: req.session.role, users:data});
                 } else {
                     next(err);
                 }
@@ -149,7 +159,7 @@ module.exports = {
                     } else {
                         data.password = "";
                     }
-                    res.render("userView",{appTitle:"Edit User", loggedIn: true, role: req.session.role, method:"PUT", action:"/api/users/" + id, appTitle:"Edit User", user:data, buttonText:"Submit Changes"});
+                    res.render("userView",{appTitle:"Edit User", role: req.session.role, method:"PUT", action:"/api/users/" + id, appTitle:"Edit User", user:data, buttonText:"Submit Changes"});
                 } else {
                     next(err);
                 }
@@ -161,7 +171,7 @@ module.exports = {
 
     newUser: function(req, res, next){
         if (req.session.role == 0){
-            res.render("userView",{appTitle:"New User", loggedIn: true, role: req.session.role, method:"POST", action:"/api/users/", buttonText:"Create User"});
+            res.render("userView",{appTitle:"New User", role: req.session.role, method:"POST", action:"/api/users/", buttonText:"Create User"});
         } else {
             return next("Only administrators can perform this action");
         }
