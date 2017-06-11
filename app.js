@@ -7,7 +7,7 @@ const express = require('express'),
     session = require('express-session'),
     index = require('./routes/index'),
     app = express();
-
+db = require('./src/util/dbUtil').db;
 app.use(logger('dev'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
@@ -22,7 +22,7 @@ app.set('view engine', 'pug');
 app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')));
 app.use(session({
     secret: 'SqueamishOssifrage!',
-    resave: false,
+    resave: true,
     saveUninitialized: true,
     cookie: { secure: false }
 }));

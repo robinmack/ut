@@ -2,7 +2,7 @@ let orderService = require("../services/orders"),
     dataOrder = require('../data/order');
 module.exports = {
     getNewOrders: function(req, res, next) {
-        if (req.session.role === 0){
+        if (parseInt(req.session.role) === 0){
             orderService.processFile()
                 .then(function(data){
                     let motd = "Successfully processed: " + data.orders + " orders, " + data.numberRibbons + " ribbons, " +
@@ -16,7 +16,7 @@ module.exports = {
         }
     },
     find: function(req, res, next){
-        if (req.session.role < 3 && req.session.role > -1){
+        if (parseInt(req.session.role) < 3 && parseInt(req.session.role) > -1){
             let customerOrder = {
                 firstname: req.body.firstname,
                 lastname: req.body.lastname,
@@ -42,7 +42,7 @@ module.exports = {
     },
 
     edit: function(req, res, next){
-        if (req.session.role < 4 && req.session.role >= 0){
+        if (parseInt(req.session.role) < 4 && parseInt(req.session.role) >= 0){
             let orderId = parseInt(req.params.id);
             dataOrder.getSingleOrder(orderId)
             .then(function(data){

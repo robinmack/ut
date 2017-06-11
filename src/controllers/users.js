@@ -1,8 +1,8 @@
-let db = require("../util/dbQueries");
+let dataUser = require("../data/user");
 module.exports = {
     getAllUsers: function(req, res, next) {
-        if (req.session.role === 0){
-            db.getAllUsers(function(data, err){
+        if (parseInt(req.session.role) === 0){
+            dataUser.getAllUsers(function(data, err){
                 if (!!data) {
                     res.status(200)
                     .json({
@@ -20,9 +20,9 @@ module.exports = {
     },
     
     getSingleUser: function(req,res,next) {
-        if (req.session.role === 0){
+        if (parseInt(req.session.role) === 0){
             const userId = parseInt(req.params.id);
-            db.getSingleUser(userId, function(data, err){
+            dataUser.getSingleUser(userId, function(data, err){
                 if (!!data) {
                     res.status(200)
                     .json({
@@ -40,7 +40,7 @@ module.exports = {
     },
 
     createUser: function(req,res,next) {
-        if (req.session.role === 0){
+        if (parseInt(req.session.role) === 0){
             let user = {
                 username: req.body.username,
                 password: req.body.password,
@@ -48,7 +48,7 @@ module.exports = {
                 email: req.body.email
             };
 
-            db.createUser(user, function(err){
+            dataUser.createUser(user, function(err){
                 if (!err) {
                     res.status(200)
                     .json({
@@ -65,7 +65,7 @@ module.exports = {
     },
 
     updateUser: function(req,res,next) {
-        if (req.session.role === 0){
+        if (parseInt(req.session.role) === 0){
             const user = {
                 username: req.body.username,
                 password: req.body.password,
@@ -73,7 +73,7 @@ module.exports = {
                 email: req.body.email,
                 id: req.body.id
             };
-            db.updateUser(user, function(user, err){
+            dataUser.updateUser(user, function(user, err){
                 if (!err) {
                     res.status(200)
                     .json({
@@ -90,9 +90,9 @@ module.exports = {
     },
 
     removeUser: function(req,res,next) {
-        if (req.session.role === 0){
+        if (parseInt(req.session.role) === 0){
             const id = req.params.id;
-            db.removeUser(id, function(err){
+            dataUser.removeUser(id, function(err){
                 if (!err) {
                     res.status(200)
                     .json({
@@ -109,7 +109,7 @@ module.exports = {
     },
 
     authenticateUser: function(req, res){
-        db.authenticateUser(req.body.username, req.body.password).then(
+        dataUser.authenticateUser(req.body.username, req.body.password).then(
             function(data) {
                 if(!! data) {
                     req.session.role = data.role;
@@ -126,8 +126,8 @@ module.exports = {
     },
 
     viewUsers: function(req, res, next){
-        if (req.session.role === 0){
-            db.getAllUsers(function(data, err){
+        if (parseInt(req.session.role) === 0){
+            dataUser.getAllUsers(function(data, err){
                 if (!!data) {
                     if(data.length === 0){
                         data=[{username:"No users found", email:"n/a", role:"n/a"}];
@@ -145,8 +145,8 @@ module.exports = {
 
     editUser: function(req, res, next){
         const id = parseInt(req.params.id);
-        if (req.session.role === 0){
-            db.getSingleUser(id,function(data, err){
+        if (parseInt(req.session.role) === 0){
+            dataUser.getSingleUser(id,function(data, err){
                 if (!!data) {
                     if(data.length === 0){
                         data={username:"", email:"", role:"", password:""};
@@ -164,7 +164,7 @@ module.exports = {
     },
 
     newUser: function(req, res, next){
-        if (req.session.role === 0){
+        if (parseInt(req.session.role) === 0){
             res.render("userView",{appTitle:"New User", role: req.session.role, method:"POST", action:"/api/users/", buttonText:"Create User"});
         } else {
             return next("Only administrators can perform this action");

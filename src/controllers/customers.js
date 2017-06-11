@@ -1,15 +1,15 @@
-const dbUtil = require("../util/dbQueries"),
+const dataCustomer = require("../data/customer.js"),
     dataOrder = require("../data/order.js");
 module.exports = {
     find: function(req, res, next){
-        if (req.session.role < 3 && req.session.role > -1){
+        if (parseInt(req.session.role) < 3 && parseInt(req.session.role) > -1){
             let customer = {
                 firstname: req.body.firstname,
                 lastname: req.body.lastname,
                 email: req.body.email,
                 phone: req.body.phone
             };
-            dbUtil.findCustomer(customer, function (data, err){
+            dataCustomer.findCustomer(customer, function (data, err){
                 if(err){
                     next (err);
                 } else {
@@ -26,9 +26,9 @@ module.exports = {
     },
 
     edit: function(req, res, next){
-        if (req.session.role < 3 && req.session.role > -1){
+        if (parseInt(req.session.role) < 3 && parseInt(req.session.role) > -1){
             let customerId = parseInt(req.params.id);
-            dbUtil.getSingleCustomer(customerId, function (data, err){
+            dataCustomer.getSingleCustomer(customerId, function (data, err){
                 if(err){
                     next (err);
                 } else {
@@ -51,7 +51,7 @@ module.exports = {
     },
 
     new: function(req, res, next){
-        if (req.session.role < 3 && req.session.role > -1){
+        if (parseInt(req.session.role) < 3 && parseInt(req.session.role) > -1){
             res.render('customerView', {appTitle:"New Customer", role: req.session.role, method:"POST", action:"/api/customers/", buttonText: "Create User"});
         } else {
             return next("Your account does not have privileges to perform this action");
@@ -60,7 +60,7 @@ module.exports = {
 
 //api stuff here
     createCustomer: function(req,res,next) {
-        if (req.session.role < 3 && req.session.role > -1){
+        if (parseInt(req.session.role) < 3 && parseInt(req.session.role) > -1){
             let customer = {
                 lastname: req.body.lastname,
                 firstname: req.body.firstname,
@@ -75,7 +75,7 @@ module.exports = {
                 gender: req.body.gender
             };
 
-            dbUtil.createCustomer(customer, function(err){
+            dataCustomer.createCustomer(customer, function(err){
                 if (!err) {
                     res.status(200)
                     .json({
@@ -92,7 +92,7 @@ module.exports = {
     },
 
     updateCustomer: function(req,res,next) {
-        if (req.session.role < 3 && req.session.role > -1){
+        if (parseInt(req.session.role) < 3 && parseInt(req.session.role) > -1){
             let customer = {
                 id: req.params.id,
                 lastname: req.body.lastname,
@@ -107,7 +107,7 @@ module.exports = {
                 service: req.body.service,
                 gender: req.body.gender
             };
-            dbUtil.updateCustomer(customer, function(customer, err){
+            dataCustomer.updateCustomer(customer, function(customer, err){
                 if (!err) {
                     res.status(200)
                     .json({

@@ -7,7 +7,7 @@
 * Add pricing screen
 * Add assign order to order entry
 * Add ability to group orders
-
+* fix switch role to display appropriate role info
 
 #---Demo Ready---
 * Add support for mail merge from customers (ms word format)

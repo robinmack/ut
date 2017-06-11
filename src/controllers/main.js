@@ -1,5 +1,5 @@
 let fs = require('fs'),
-    dbUtil = require('../util/dbQueries');
+    dataUser = require('../data/user.js');
 module.exports = {
     motd: function(req, res){
         let motd=fs.readFileSync('public/motd.txt').toString()
@@ -15,10 +15,10 @@ module.exports = {
             })
         }
         let userName = req.session.username;
-        dbUtil.authenticateUser(userName, oldPassword)
+        dataUser.authenticateUser(userName, oldPassword)
             .then(function (user) {
                     user.password = req.body.newPassword;
-                    dbUtil.updateUser(user, function(data, err) {
+                    dataUser.updateUser(user, function(data, err) {
                         if (!!!err) {
                             res.render("changePassword", {
                                 appTitle: "Change Password",

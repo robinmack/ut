@@ -1,24 +1,4 @@
-const pgFormat = require("pg-format");
-/*let dbUtil = require("../util/dbQueries");*/
-const monitor = require('pg-monitor'),
-    pgConnOptions = {
-        promiseLib: Promise
-    };
-
-let pgCn = {
-    host: '127.0.0.1',
-    port: 5432,
-    database: 'ut',
-    user: 'postgres',
-    password: '4nubis!',
-    poolSize: 30
-};
-
-
-let pgp = require('pg-promise')(pgConnOptions);
-let db = pgp(pgCn);
-monitor.attach(pgConnOptions);
-
+const db = require("../util/dbUtil");   
 module.exports = {
     getSingleOrder: function(id){
         id = parseInt(id);

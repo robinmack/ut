@@ -25,7 +25,7 @@ router.get('/main/changePassword', function (req, res) {
 });
 router.post('/main/changePassword', mainController.updatePassword);
 router.get('/main/switchRole', function(req, res){
-    res.render('switchRole',{ appTitle: 'Login', role: req.session.role });
+    res.render('switchRole',{ appTitle: 'Switch Role', successMsg: "Successfully changed roles", role: req.session.role });
 });
 router.post('/main/switchRole', function(req, res){
     req.session.role=req.body.role;
