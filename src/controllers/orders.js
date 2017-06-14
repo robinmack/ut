@@ -1,5 +1,7 @@
-let orderService = require("../services/orders"),
-    dataOrder = require('../data/order');
+const orderService = require("../services/orders"),
+    dataOrder = require('../data/order'),
+    ribbonData = require('../data/ribbonData'),
+    {RibbonPaletteInfo} = require('../data/ribbonPaletteInfo');
 module.exports = {
     getNewOrders: function(req, res, next) {
         if (parseInt(req.session.role) === 0){
@@ -15,6 +17,7 @@ module.exports = {
             return next("Your account does not have privileges to perform this action");
         }
     },
+
     find: function(req, res, next){
         if (parseInt(req.session.role) < 3 && parseInt(req.session.role) > -1){
             let customerOrder = {
@@ -30,10 +33,10 @@ module.exports = {
                 if(err){
                     next (err);
                 } else {
-                    if (data.rows.length === 0){
+                    if (data && data.length === 0){
                         data=[{firstname:"None Found",lastname:"N/A",email:"N/A",date:"N/A",city:"N/A", state:"N/A", totalGrand:"N/A"}];
                     }
-                    res.render('orderFind', {appTitle:"Find Order", role: req.session.role, customerOrders: data.rows});
+                    res.render('orderFind', {appTitle:"Find Order", role: req.session.role, customerOrders: data});
                 }
             });
         } else {
@@ -43,14 +46,26 @@ module.exports = {
 
     edit: function(req, res, next){
         if (parseInt(req.session.role) < 4 && parseInt(req.session.role) >= 0){
-            let orderId = parseInt(req.params.id);
+            let orderId = parseInt(req.params.id),
+                orderData = {};
             dataOrder.getSingleOrder(orderId)
+
             .then(function(data){
-                res.render('orderView', {appTitle:"Edit Order", role: req.session.role, method:"PUT", action:"/api/orders/" + orderId, buttonText: "Submit Changes", order: data});
-            })
-            .catch(function(err){
-                next (err);
-            });
+                orderData = data;
+                ribbonData.init()
+                    .then(function () {
+                        let ribbonData1 = ribbonData.translateFromDB(data["list_ribbons"]);
+                        let ribbonPaletteInfo = new RibbonPaletteInfo(ribbonData.getAllRibbons());
+                        let ribbonData2 = ribbonData.translateFromDB(data["list_ribbon_2"]);
+                        res.render('orderView', {appTitle:"Edit Order", role: req.session.role, method:"PUT", action:"/api/orders/" + orderId, buttonText: "Submit Changes", order: orderData, listRibbons1: ribbonData1, listRibbons2: ribbonData2, ribbonPalettes: ribbonPaletteInfo.tabs});
+                    })
+                    .catch(function(err){
+                        console.log(err);
+                    });
+                })
+                .catch(function(err){
+                    next (err);
+                });
         } else {
             return next("Your account does not have privileges to perform this action");
         }

@@ -52,10 +52,104 @@ append body
                 fieldset
                     label(for="cvv") CVV
                         input#cvv.form-control.input-medium(value= !!order ? order.card_civ : "" readonly=!biggerThanBuilder)
+
         div(class="container-fluid")
             div(class="col-md-12")
-                input(type="submit" onclick="submitClick(event)" class="submit button" value=buttonText)
+
+                h4 Rack 1:
+                    if order && order.service
+                        #{order.service}
+            div(class="col-md-12")
+                div(class="col-md-3")
+                    fieldset
+                        label(for="reverse") Reverse
+                            input#reverse.form-control.input-medium(type='checkbox' name='reverse' readonly=!biggerThanBuilder checked = rchecked=(order.reverse==="Normal" ? undefined : "checked"))
+                div(class="col-md-3")
+                    fieldset
+                        label(for="rowFill") Row Fill
+                                input#rowFill.form-control.input-medium(value= !!order?order.row_fill: "" readonly=!biggerThanBuilder)
+                div(class="col-md-3")
+                    fieldset
+                        label(for="numberRibbons") Quantity
+                            input#numberRibbons.form-control.input-medium(value= !!order ? order.number_ribbons : "" readonly=!biggerThanBuilder)
+                div(class="col-md-3")
+                    fieldset
+                        label(for="rowFill") Total Ribbon Price
+                            input#totalRibbons.form-control.input-medium(value= !!order ? order.total_ribbons : "" readonly=!biggerThanBuilder)
+                if listRibbons1
+                    table.table(class="table-bordered table-hover")
+                        tbody
+                            each ribbonRow in listRibbons1
+                                tr
+                                    td(class="col-md-1")
+                                        input#ribbon1QtyRow.form-control.input-medium(class="single-digit" value= ribbonRow.columns.length.toString() readonly=!biggerThanBuilder)
+                                        |/
+                                        input#ribbon1MaxRow.form-control.input-medium(class="single-digit" value= ribbonRow.columns.length.toString() readonly=!biggerThanBuilder)
+                                    each ribbon in ribbonRow.columns
+                                        td(class="col-md-2")
+                                            if ribbon.imgSrc && ribbon.name
+                                                center
+                                                    img(src=ribbon.imgSrc title=ribbon.name)
+                                            if ribbon.code
+                                                center
+                                                    p=ribbon.code
+                                            center
+                                                font(size=-2)
+                                                    a(class="button" href="#" onclick="addClick(event)") replace
+                                                    a(class="button" href="#" data-toggle="modal" data-target="#ribbonPalette") insert
+                                                    a(class="button" href="#" onclick="removeClick(event)") remove
+        div(class="container-fluid")
+            div(class="col-md-12")
+                h4 Rack 2:
+                    if order && order.service
+                        order.service
+            div(class="col-md-12")
+                div(class="col-md-3")
+                    fieldset
+                        label(for="rowFill2") Row Fill
+                            input#rowFill2.form-control.input-medium(value= !!order?order.row_fill_2: "" readonly=!biggerThanBuilder)
+                div(class="col-md-3")
+                    fieldset
+                        label(for="numberRibbons") Quantity
+                            input#numberRibbons2.form-control.input-medium(value= !!order ? order.number_ribbons_2 : "" readonly=!biggerThanBuilder)
+                div(class="col-md-3")
+                    fieldset
+                        label(for="rowFill") Total Ribbon Price
+                            input#totalRibbons2.form-control.input-medium(value= !!order ? order.total_ribbons : "" readonly=!biggerThanBuilder)
+                if listRibbons2
+                    table.table(class="table-bordered table-hover")
+                        tbody
+                            each ribbonRow in listRibbons2
+                                tr
+                                    each ribbon in ribbonRow.columns
+                                        td(class="col-md-1")
+                                            |3/3
+                                        td(class="col-md-2")
+                                            if ribbon.imgSrc && ribbon.name
+                                                center
+                                                    img(src=ribbon.imgSrc title=ribbon.name)
+                                            if ribbon.code
+                                                center
+                                                    p=ribbon.code
+                                            center
+                                                font(size=-2)
+                                                    a(class="button" href="#" onclick="addClick(event)") replace
+                                                    a(class="button" href="#" onclick="addClick(event)") insert
+                                                    a(class="button" href="#" onclick="removeClick(event)") remove
+
+    div(class="container-fluid")
+        div(class="col-md-12")
+            input(type="submit" onclick="submitClick(event)" class="submit button" value=buttonText)
+
+    include ribbonPalette
+
     script.
+        window.document.onload = (function (){
+            //setup rack component(s)
+        })
+        function ribbonPaletteTabClick(event) {
+
+        }
         function submitClick(event) {
             event.preventDefault();
             $.ajax({

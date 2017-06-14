@@ -56,14 +56,17 @@ table {
 .navbar {
     display: inline-block;
 }
+
 .logo {
     padding-top: 5px;
 }
+
 .logo .appTitle
 {
     text-align: center;
     width: 100%;
 }
+
 fieldset label {
     min-width: 100%;
     margin-top: 10px;
@@ -109,6 +112,7 @@ fieldset label {
     top: 0;
     left: 0;
 }
+
 .motd {
     position: absolute;
     width: 300px;
@@ -120,6 +124,34 @@ fieldset label {
     background: white;
     border: 1px black;
 }
-.well{
+
+.well {
    background: #eeeeee;
+}
+
+.single-digit {
+    width: 35%;
+    display: inline-block;
+}
+
+.ribbon-palette {
+    width:80%;
+}
+
+.ribbon{
+    display: inline-block;
+}
+
+.ribbon-selected {
+    background-color: #DDDDDD;
+}
+
+.palette-ribbon     {
+    display: inline-block;
+    width: 90px;
+}
+
+.palette-ribbon img {
+    max-height: 24px;
+    max-width: 90px;
 }

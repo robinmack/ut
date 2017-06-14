@@ -4,9 +4,10 @@
  * Module dependencies.
  */
 
-var app = require('../app');
-var debug = require('debug')('ut2:server');
-var http = require('http');
+let app = require('../app');
+let debug = require('debug')('ut2:server');
+let http = require('http');
+const awardConverter = require('../src/data/awardConverter');
 
 /**
  * Get port from environment and store in Express.

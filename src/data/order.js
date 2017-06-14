@@ -1,9 +1,9 @@
-const db = require("../util/dbUtil");   
+const db = require("../util/dbUtil");
 module.exports = {
     getSingleOrder: function(id){
         id = parseInt(id);
         return new Promise(function (resolve, reject) {
-            db.one('SELECT a.*, b.firstname, b.lastname, b.email FROM "order" a, customer b WHERE a.id=$1 AND a.customer_id = b.id', [id])
+            db.one('SELECT a.*, b.firstname, b.lastname, b.email, b.service FROM "order" a, customer b WHERE a.id=$1 AND a.customer_id = b.id', [id])
             .then(data=>resolve(data))
             .catch (function(err){
                 console.log(err);
@@ -367,12 +367,16 @@ module.exports = {
         if (!!order.date) {
             query += useAnd ? "AND " : "";
             query += "date = '" + order.date + "' ";
+            useAnd = true;
+        }
 
+        if(!useAnd){
+            query += " 1 = 1 ";
         }
         //query += " ORDER BY lastname ASC, firstname ASC, date ASC";
-        db.manyOrNone(query)
+        db.result(query)
         .then((data)=>{
-                callback(data);
+                callback(data.rows);
         })
         .catch((error)=>{
             console.log(error);
