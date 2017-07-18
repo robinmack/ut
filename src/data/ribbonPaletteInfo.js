@@ -385,9 +385,27 @@ exports.RibbonPaletteInfo = class RibbonPaletteInfo {
         ]
     }
 
+    getPrecedenceLists () {
+        let pList={};
+        pList['army-left'] = precedence_army_left;
+        pList['army-right'] = precedence_army_right;
+        pList['navy'] = precedence_navy;
+        pList['af'] = precedence_af;
+        pList['marine'] = precedence_marine;
+        pList['cg'] = precedence_cg;
+        pList['cgaux'] = precedence_cgaux;
+        pList['cap'] = precedence_cap;
+        pList['phs'] = precedence_phs;
+        pList['noaa'] = precedence_noaa;
+        pList['merchant-marine'] = precedence_merchant_marine;
+        pList['war-service'] = precedence_war_service;
+        pList['un-nato'] = precedence_un_nato;
+        pList['civ-nasa'] = precedence_civ_nasa;
+        return pList;
+    }
 
     mapRibbonListToRibbonObj(ribbonCodeList) {
-        var ribbonObjList = [];
+        let ribbonObjList = [];
         ribbonCodeList.forEach(function(ribbon) {
             ribbonObjList.push(_.findWhere(ribbonList, {code:ribbon}));
         });

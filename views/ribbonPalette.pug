@@ -7,26 +7,30 @@ if ribbonPalettes
                     button(type="button" class="close" data-dismiss="modal" aria-label="Close")
                         span(aria-hidden="true") &times;
                 div(class="modal-body")
+                    input#award-source(type="hidden")
                     ul(class="nav nav-tabs")
                         each paletteEntry in ribbonPalettes
                             li(class="not_active")
                                 a(href="#" + paletteEntry.className data-toggle="tab") #{paletteEntry.name}
                     div(class="tab-content")
                         each paletteEntry in ribbonPalettes
-                            div(id=paletteEntry.className class="tab-pane fade")
+                            div(id=paletteEntry.className class="tab-pane fade" data=paletteEntry)
                                 each ribbonObj in paletteEntry.palette
-                                    div(class="palette-ribbon" name=ribbonObj.code)
+                                    div(class="palette-ribbon" name=ribbonObj.code data-ribbon=JSON.stringify(ribbonObj))
                                         center
-                                            img(src=ribbonObj.imgSrc title=ribbonObj.name )
+                                            img(src="/images/ribimages/" + ribbonObj.code.split(" ")[0] +".jpg" title=ribbonObj.name alt="N/A")
                                             p=ribbonObj.code
                 div(class="modal-footer")
-                    button(type="button" class="btn btn-primary") Choose
+                    button(type="button" class="btn btn-primary" onclick="addAward(event)") Choose
                     button(type="button" class="btn btn-secondary" data-dismiss="modal") Close
     script.
+        var selectedRibbon = {};
         $(document).ready(function() {
+
             $('.palette-ribbon').on('click', function (e) {
                 $('.palette-ribbon').removeClass('ribbon-selected');
                 e.preventDefault();
                 $(this).toggleClass('ribbon-selected');
+                selectedRibbon = $(this).data("ribbon");
             });
         });

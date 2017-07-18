@@ -12,8 +12,10 @@ a {
 }
 
 table {
-  padding-left:30px;
-  padding-right:30px;
+    border-collapse:separate;
+    border-spacing: 0 1em;
+    padding-left:30px;
+    padding-right:30px;
 }
 
 .success {
@@ -73,9 +75,9 @@ fieldset label {
 }
 
 .navbar-default {
-    background-image: -webkit-linear-gradient(top, #aaaaaa 0%, #ffffff 100%);
-    background-image: -o-linear-gradient(top, #aaaaaa 0%, #ffffff 100%);
-    background-image: linear-gradient(to bottom, #aaaaaa 0%, #ffffff 100%);
+    background-image: -webkit-linear-gradient(top, #ddddff 0%, #ffffff 100%);
+    background-image: -o-linear-gradient(top, #ddddff 0%, #ffffff 100%);
+    background-image: linear-gradient(to bottom, #ddddff 0%, #ffffff 100%);
     background-repeat: repeat-x;
     filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ff004400', endColorstr='#ff009900', GradientType=0);
 }
@@ -90,8 +92,7 @@ fieldset label {
 
     background-repeat: repeat-x;
     filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ff004400', endColorstr='#ff009900', GradientType=0);
-    padding-top: 3px;
-    padding-bottom:3px;
+    padding: 5px;
     margin-right: 0;
     margin-left: 7px;
     line-height: 90%;
@@ -143,6 +144,7 @@ fieldset label {
 }
 
 .ribbon-selected {
+    border: black;
     background-color: #DDDDDD;
 }
 
@@ -154,4 +156,33 @@ fieldset label {
 .palette-ribbon img {
     max-height: 24px;
     max-width: 90px;
+}
+
+.device-attachment     {
+    display: inline-block;
+    width: 90px;
+}
+.device-attachment-selected {
+    border: black;
+    background-color: #DDDDDD;
+}
+.ribbon-img img {
+    max-height: 24px;
+    max-width: 90px;
+}
+
+.rack-row-spacer {
+    height:15px;
+}
+
+.ribbon-img .overlay {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    text-align: center;
+}
+.ribbon-img {
+    position: relative;
 }

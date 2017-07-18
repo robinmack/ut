@@ -130,7 +130,6 @@ ALTER TABLE public."order"
 
 -- Index: order-customer
 
--- DROP INDEX public."order-customer";
 -- View: public.customer_order
 
 -- DROP VIEW public.customer_order;
@@ -145,7 +144,8 @@ CREATE OR REPLACE VIEW public.customer_order AS
         b.id,
         b.total_grand,
         b.date,
-        a.city
+        a.city,
+        b.customer_id
     FROM customer a,
         "order" b
     WHERE a.id = b.customer_id
@@ -153,13 +153,6 @@ CREATE OR REPLACE VIEW public.customer_order AS
 
 ALTER TABLE public.customer_order
     OWNER TO postgres;
-
-
-CREATE INDEX "order-customer"
-    ON public."order" USING btree
-    (customer_id)
-TABLESPACE pg_default;
-
 -- Table: public.users
 
 -- DROP TABLE public.users;
@@ -184,6 +177,103 @@ ALTER TABLE public.users
 INSERT INTO public.users (username, password, role, email)
 values ("admin", "$2a$10$t0EcKIw7PmSQg2Wu1HX0FeuUlcyenwBhwN1VbZdDqYcHn6FuwUDAK", 0, "writer.robin.mack@gmail.com");
 
+CREATE TABLE public.devices_attachments
+(
+    id          SERIAL UNIQUE,
+    image_name  CHARACTER VARYING NOT NULL,
+    description CHARACTER VARYING NOT NULL,
+    "type"      CHARACTER VARYING NOT NULL,
+    breakafter  BOOLEAN           NOT NULL DEFAULT FALSE,
+    superimpose BOOLEAN           NOT NULL DEFAULT FALSE
+)
+WITH (
+OIDS = FALSE
+)
+TABLESPACE pg_default;
+
+ALTER TABLE public.devices_attachments
+    OWNER to postgres;
+
+INSERT INTO devices_attachments (image_name, description, "type", breakafter, superimpose)
+    VALUES
+('SPACER','1-Space', 'attachment', false, false),
+('HALFSPACE','1/2-Space', 'attachment', false, false),
+('FOURTHSPACE','1/4-Space', 'attachment', false, false),
+('BOL','Bronze Oak Leaf', 'device', false, false),
+('SOL','Silver Oak Leaf', 'device', false, false),
+('SBS','Small Bronze Star', 'device', false, false),
+('SSS','Small Silver Star', 'device', false, false),
+('SGS','Small Gold Star', 'device', false, false),
+('LBS','Large Bronze Star', 'device', false, false),
+('LSS','Large Silver Star', 'device', false, false),
+('LGS','Large Gold Star', 'device', false, false),
+('GF','Gold Frame', 'attachment', false, true),
+('BA','Bronze A', 'attachment', false, false),
+('SE','Large Silver E', 'attachment', false, false),
+('NE','Navy E', 'attachment', false, false),
+('NEW','Navy E Wreath', 'attachment', false, false),
+('BM','Bronze M', 'attachment', false, false),
+('GN','Gold N', 'attachment', false, false),
+('SO','Silver O', 'attachment', false, false),
+('BS','Bronze S', 'attachment', false, false),
+('SS','Silver S', 'attachment', false, false),
+('BV','Bronze V', 'attachment', false, false),
+('SV','Silver V', 'attachment', false, false),
+('GV','Gold V', 'attachment', true, false),
+('SW','Silver W', 'attachment', false, false),
+('HA','Hurricane Attachment', 'attachment', false, false),
+('PT','Palm Tree', 'attachment', false, false),
+('BHG','Bronze Hourglass', 'attachment', false, false),
+('SHG','Silver Hourglass', 'attachment', false, false),
+('GHG','Gold Hourglass', 'attachment', false, false),
+('ME','Marine Emblem', 'attachment', false, false),
+('BAD','Berlin Airlift','attachment', false, false),
+('ARROW','Arrowhead', 'attachment', false, false),
+('BWO','Bronze Winter Over', 'attachment', false, false),
+('SWO','Silver Winter Over', 'attachment', false, false),
+('GWO','Gold Winter Over', 'attachment', false, false),
+('YY','Ying-Yang Korea', 'attachment', false, false),
+('BP','Bronze Palm', 'attachment', true, false),
+('BDIA','Bronze Diamond', 'attachment', false, false),
+('SDIA','Silver Diamond', 'attachment', false, false),
+('GDIA','Gold Diamond', 'attachment', false, false),
+('BPROP','Bronze Propellor', 'attachment', false, false),
+('SPROP','Silver Propellor', 'attachment', false, false),
+('GPROP','Gold Propellor', 'attachment', false, false),
+('BCAP','CAP Bronze Triangle', 'attachment', false, false),
+('SCAP','CAP Silver Triangle', 'attachment', false, false),
+('BNOA','NOAA Bronze Triangle', 'attachment', false, false),
+('SNOA','NOAA Silver Triangle', 'attachment', false, false),
+('BBEE','Bronze Beehive', 'attachment', false, false),
+('SBEE','Silver Beehive', 'attachment', false, false),
+('GBEE','Gold Beehive', 'attachment', true, false),
+('2BK','2 Bronze Knots', 'attachment', false, false),
+('3BK','3 Bronze Knots', 'attachment', false, false),
+('4BK','4 Bronze Knots', 'attachment', false, false),
+('5BK','5 Bronze Knots', 'attachment', false, false),
+('1SK','1 Silver Knot', 'attachment', false, false),
+('2SK','2 Silver Knots', 'attachment', true, false),
+('B0','Bronze 0', 'attachment', false, false),
+('B1','Bronze 1', 'attachment', false, false),
+('B2','Bronze 2', 'attachment', false, false),
+('B3','Bronze 3', 'attachment', false, false),
+('B4','Bronze 4', 'attachment', false, false),
+('B5','Bronze 5', 'attachment', false, false),
+('B6','Bronze 6', 'attachment', false, false),
+('B7','Bronze 7', 'attachment', false, false),
+('B8','Bronze 8', 'attachment', false, false),
+('B9','Bronze 9', 'attachment', false, false),
+('G0','Gold 0', 'attachment', false, false),
+('G1','Gold 1', 'attachment', false, false),
+('G2','Gold 2', 'attachment', false, false),
+('G3','Gold 3', 'attachment', false, false),
+('G4','Gold 4', 'attachment', false, false),
+('G5','Gold 5', 'attachment', false, false),
+('G6','Gold 6', 'attachment', false, false),
+('G7','Gold 7', 'attachment', false, false),
+('G8','Gold 8', 'attachment', false, false),
+('G9','Gold 9', 'attachment', true, false);
+
 CREATE TABLE public.awards
 (
     id SERIAL UNIQUE,
@@ -200,100 +290,6 @@ TABLESPACE pg_default;
 
 ALTER TABLE public.awards
     OWNER to postgres;
-
-CREATE TABLE public.devices
-(
-    id          SERIAL UNIQUE,
-    image_name  CHARACTER VARYING NOT NULL,
-    description CHARACTER VARYING NOT NULL,
-    breakafter  BOOLEAN           NOT NULL DEFAULT FALSE,
-    superimpose BOOLEAN           NOT NULL DEFAULT FALSE
-)
-WITH (
-OIDS = FALSE
-)
-TABLESPACE pg_default;
-
-INSERT INTO devices (image_name, description, breakafter, superimpose)
-    VALUES
-('Spacer','1-Space', false, false),
-('Halfspace','1/2-Space', false, false),
-('Fourthspace','1/4-Space', false, false),
-('BOL','Bronze Oak Leaf', false, false),
-('SOL','Silver Oak Leaf', false, false),
-('SBS','Small Bronze Star', false, false),
-('SSS','Small Silver Star', false, false),
-('SGS','Small Gold Star', false, false),
-('LBS','Large Bronze Star', false, false),
-('LSS','Large Silver Star', false, false),
-('LGS','Large Gold Star', false, false),
-('GF','Gold Frame', false, true),
-('Spacer','1-Space', false, false),
-('Halfspace','1/2-Space', false, false),
-('Fourthspace','1/4-Space', true, false),
-('BA','Bronze A', false, false),
-('SE','Large Silver E', false, false),
-('NE','Navy E', false, false),
-('NEW','Navy E Wreath', false, false),
-('BM','Bronze M', false, false),
-('SO','Silver O', false, false),
-('BS','Bronze S', false, false),
-('SS','Silver S', false, false),
-('BV','Bronze V', false, false),
-('SV','Silver V', false, false),
-('GV','Gold V', true, false),
-('HA','Hurricane Attachment', false, false),
-('PT','Palm Tree', false, false),
-('BHG','Bronze Hourglass', false, false),
-('SHG','Silver Hourglass', false, false),
-('GHG','Gold Hourglass', false, false),
-('ME','Marine Emblem', false, false),
-('BAD','Berlin Airlift',false, false),
-('ARROW','Arrowhead', false, false),
-('BWO','Bronze Winter Over', false, false),
-('SWO','Silver Winter Over', false, false),
-('GWO','Gold Winter Over', false, false),
-('YY','Ying-Yang Korea', false, false),
-('BP','Bronze Palm', true, false),
-('BDIA','Bronze Diamond', false, false),
-('SDIA','Silver Diamond', false, false),
-('GDIA','Gold Diamond', false, false),
-('BPROP','Bronze Propellor', false, false),
-('SPROP','Silver Propellor', false, false),
-('GPROP','Gold Propellor', false, false),
-('BCAP','CAP Bronze Triangle', false, false),
-('SCAP','CAP Silver Triangle', false, false),
-('BNOA','NOAA Bronze Triangle', false, false),
-('SNOA','NOAA Silver Triangle', false, false),
-('BBEE','Bronze Beehive', false, false),
-('SBEE','Silver Beehive', false, false),
-('GBEE','Gold Beehive', true, false),
-('2BK','2 Bronze Knots', false, false),
-('3BK','3 Bronze Knots', false, false),
-('4BK','4 Bronze Knots', false, false),
-('5BK','5 Bronze Knots', false, false),
-('1SK','1 Silver Knot', false, false),
-('2SK','2 Silver Knots', true, false),
-('B0','Bronze 0', false, false),
-('B1','Bronze 1', false, false),
-('B2','Bronze 2', false, false),
-('B3','Bronze 3', false, false),
-('B4','Bronze 4', false, false),
-('B5','Bronze 5', false, false),
-('B6','Bronze 6', false, false),
-('B7','Bronze 7', false, false),
-('B8','Bronze 8', false, false),
-('B9','Bronze 9', false, false),
-('G0','Gold 0', false, false),
-('G1','Gold 1', false, false),
-('G2','Gold 2', false, false),
-('G3','Gold 3', false, false),
-('G4','Gold 4', false, false),
-('G5','Gold 5', false, false),
-('G6','Gold 6', false, false),
-('G7','Gold 7', false, false),
-('G8','Gold 8', false, false),
-('G9','Gold 9', true, false);
 
 INSERT INTO public.awards (ribbon_graphic_name, mini_medal_price, large_medal_price, "name", "desc") VALUES
 ('A', null, 0.00, 'Medal of Honor', 'The United States of America''s highest military honor, awarded for acts of valor above and beyond the call of duty. There are three different versions of the medal, one for the Army, one for the Navy, and one for the Air Force. Members of the Marine Corps and Coast Guard are eligible to receive the Navy version. US law does not allow this ribbon or medal to be stocked or sold.'),
@@ -494,7 +490,6 @@ INSERT INTO public.awards (ribbon_graphic_name, mini_medal_price, large_medal_pr
 ('127', null, null, 'Coast Guard Rifleman','A qualification badge awarded to personnel of the Coast Guard and Reserves who have qualified with the military service rifle or carbine.'),
 ('128E', 9.00, 14.00, 'Coast Guard Expert Pistol','A qualification badge awarded to personnel of the Coast Guard and Reserves who have qualified as EXPERT with the military service pistol.'),
 ('128', null, null, 'Coast Guard Pistol','A qualification badge awarded to personnel of the Coast Guard and Reserves who have qualified with the military service pistol.'),
-
 ('CIV1',0.00, 0.00, 'Presidential Medal of Freedom', 'Awarded for highly meritorious contributions to -the national interests of the U.S., -world peace, -or cultural or other significant public or private endeavors. Established by President Truman in 1945 and reestablished by President Kennedy in 1963.'),
 ('CIV10',0.00, 0.00, 'National Security Medal', 'Awarded by the President of the US to any individual for distinguished achievement or outstanding contribution on or after 26 July 1947, in the field of intelligence relating to national security.'),
 ('CIV30',0.00, 0.00, 'Department of State Meritorious Honor', 'Awarded to groups or individuals in recognition of a special act or service to the Department of State'),
@@ -510,12 +505,10 @@ INSERT INTO public.awards (ribbon_graphic_name, mini_medal_price, large_medal_pr
 ('CIV100',0.00, 0.00, 'Selective Service Distinguished Service Award', 'This gold medal is awarded for extraordinary performance or contribution to the Selective Service System Administration.'),
 ('CIV105',0.00, 0.00, 'Selective Service Exceptional Service Award', 'This silver medal is awarded for exceptional service, and or improvements in system methods, or great acts of courage.'),
 ('CIV110',0.00, 0.00, 'Selective Service Meritorious Service Award', 'This bronze medal is awarded for exceptionally meritorious service and for significant achievements or inspiration to others which contributes to the goals of the Selective Service System.'),
-
 ('DOT1',0.00, 0.00, 'DOT Distinguished Service Medal', 'Awarded by the Secretary of Transportation to a member of the Coast Guard who has provided exceptionally meritorious service in a duty of great respondsibility.'),
 ('DOT3',0.00, 0.00, 'DOT Secretary''s Outstanding Achievement Medal', 'Awarded for outstanding leadership or other achievements as deemed appropriate.'),
 ('DOT5',0.00, 0.00, 'DOT Secretary''s Award for Meritorious Achievement', 'Awarded for completing assigned duties in an outstanding manner, developing new ideas or other contributions.'),
 ('DOT7',0.00, 0.00, 'DOT Superior Achievement Medal', 'Awarded for performance of assigned tasks in exemplary fashion, for unusual skillsor for improving work methods or for inventions which result in saving of manpower/time etc. Also in support of the department''s equal opportunities program.'),
-
 ('PH1', 9.00, 16.00, 'PHS Distinguished Service Medal', 'The highest Public Health Services Commissioned Corps award. Awarded for outstanding contributions to the mission of the Public Health Service, also awarded for one-time heroic act resulting in great savings of life, health or property.'),
 ('PH2', 9.00, 16.00, 'PHS Meritorious Service Medal', 'Awarded in recognition of meritorious service of a single, particularly important acheivement, a career notable for accomplishments in technical or professional fields or unusually high-quality and initiative in leadership.'),
 ('PH3', 9.00, 16.00, 'Surgeon General''s Exemplary Service Medal', 'No procedure exists, decision entirely up to the Surgeon General''s discretion.'),
@@ -547,7 +540,6 @@ INSERT INTO public.awards (ribbon_graphic_name, mini_medal_price, large_medal_pr
 ('PH51',0.00, 0.00, 'Association of Military Surgeons', 'Established Jan. 30, 1903 for members of the Association of Military Surgeons of the United States.'),
 ('PH52',0.00, 0.00, 'Reserve Officer''s Association', 'In recognition of membership in the Reserve Officers Association'),
 ('PH53',0.00, 0.00, 'Society of American Engineers', ''),
-
 ('NO1',0.00, 0.00, 'Department of Commerce Gold Medal', ''),
 ('NO2',0.00, 0.00, 'Department of Commerce Silver Medal', ''),
 ('NO3',0.00, 0.00, 'Department of Commerce Bronze Medal', ''),
@@ -567,7 +559,6 @@ INSERT INTO public.awards (ribbon_graphic_name, mini_medal_price, large_medal_pr
 ('NO15', null, null, 'NOAA Corps International Service', ''),
 ('NO16', null, null, 'NOAA Corps Rifle Ribbon (obsolete)', ''),
 ('NO17', null, null, 'NOAA Corps Pistol Ribbon (obsolete)', ''),
-
 ('MM1',0.00, 0.00, 'Merchant Marine Distinguished Service Medal', 'Established by Joint Resolution of Congress on Apr. 11, 1943. The highest award for Merchant Marine members. Awarded to seamen who distinguished themselves by outstanding conduct or service beyond the line of duty.'),
 ('MM2',0.00, 0.00, 'Merchant Marine Meritorious Service Medal', 'Authorized on Aug. 29, 1944 to recognize any member of the Merchant Marines regaurdless of grade or rate who distinguishes himself by outstanding meritorious service or achievement.'),
 ('MM3',0.00, 0.00, 'Merchant Marine Mariners Medal', 'Established by an Act of Congress on May 10, 1943 to recognize seamen who are killed or wounded as a direct result of conflict against an opposing armed force.'),
@@ -582,7 +573,6 @@ INSERT INTO public.awards (ribbon_graphic_name, mini_medal_price, large_medal_pr
 ('MM11',0.00, 0.00, 'Merchant Marine Korean Service Bar', 'Awarded for service between June 30, 1950 to Sept. 30, 1953 in waters adjacent to Korea.'),
 ('MM12',0.00, 0.00, 'Merchant Marine Vietnam Service Bar', 'Awaded to personnel for service on U.S. ships serving in waters in and adjacent to Vietnam.'),
 ('MM13',0.00, 0.00, 'Merchant Marine Expeditionary Med', 'Awarded for participation in military operations as designated by the Maritime Administrator.'),
-
 ('AX1', 9.00, null, 'CGAUX Distinguished Service Award', ''),
 ('AX1A', 9.00, null, 'CGAUX Legion of Merit', ''),
 ('AX2', 9.00, null, 'CGAUX Plaque of Merit', ''),
@@ -607,7 +597,6 @@ INSERT INTO public.awards (ribbon_graphic_name, mini_medal_price, large_medal_pr
 ('AX16', 9.00, null, 'CGAUX Visitation Award', ''),
 ('AX17', 9.00, null, 'CGAUX Public Education Award', ''),
 ('Obsolete', null, null, 'Obsolete Ribbons past here', ''),
-
 ('AX6', null, null, 'CGAUX Group Action Award (obsolete)', ''),
 ('AX9', null, null, 'CGAUX Air Observer (obsolete)', ''),
 ('AX12', null, null, 'CGAUX Service Award (obsolete)', ''),
@@ -617,7 +606,6 @@ INSERT INTO public.awards (ribbon_graphic_name, mini_medal_price, large_medal_pr
 ('AX22', null, null, 'CGAUX Flotilla Member Training (obsolete)', ''),
 ('AX23', null, null, 'CGAUX Flotilla Growth (obsolete)', ''),
 ('AX24', null, null, 'CGAUX Flotilla Public Affairs (obsolete)', ''),
-
 ('C1',0.00, null, 'CAP Silver Medal of Valor', ''),
 ('C2',0.00, null, 'CAP Bronze Medal of Valor', ''),
 ('C3',0.00, null, 'CAP Distinguished Service Medal', ''),
@@ -665,5 +653,48 @@ INSERT INTO public.awards (ribbon_graphic_name, mini_medal_price, large_medal_pr
 ('C41',0.00, null, 'CAP Encampment', ''),
 ('C42',0.00, null, 'CAP Senior Recruiter', ''),
 ('C43', null, null, 'CAP Cadet Recruiter', ''),
+('State',0.00, null, 'State Guard Ribbon', 'Put name in the comments section.');
 
-('State',0.00, null, 'State Guard Ribbon', 'Put name in the comments section.')
+CREATE TABLE public.base_prices
+(
+    id SERIAL UNIQUE,
+    name character varying NOT NULL UNIQUE,
+    price NUMERIC(8,2)
+)
+WITH (
+OIDS = FALSE
+)
+TABLESPACE pg_default;
+
+ALTER TABLE public.base_prices
+    OWNER to postgres;
+INSERT INTO base_prices (name, price)
+VALUES
+    ('ribbon', 1.75),
+    ('device', 0.6),
+    ('miniature_device', 0.6),
+    ('attachment', 0.75),
+    ('miniature_attachment', 0.75),
+    ('magnetic_ribbons', 4),
+    ('annodized_medal', 2),
+    ('pin_tag', 4),
+    ('magnetic_tag', 6);
+
+-- View: public.devices_attachments_with_prices
+
+-- DROP VIEW public.devices_attachments_with_prices;
+
+CREATE OR REPLACE VIEW public.devices_attachments_with_prices AS
+    SELECT a.id,
+        a.image_name,
+        a.description,
+        a.type,
+        a.breakafter,
+        a.superimpose,
+        b.price
+    FROM devices_attachments a,
+        base_prices b
+    WHERE a.type::text = b.name::text;
+
+ALTER TABLE public.devices_attachments_with_prices
+    OWNER TO postgres;

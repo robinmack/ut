@@ -1,0 +1,30 @@
+if devicesAttachments
+    div(class="modal" id="devicesAttachmentsPalette" aria-labelledby="devicesAttachmentsPaletteLabel" aria-hidden="true")
+        div(class="modal-dialog devices-attachments-palette" role="document")
+            div(class="modal-content")
+                div(class="modal-header")
+                    h5(class="modal-title") Ribbon Palette
+                    button(type="button" class="close" data-dismiss="modal" aria-label="Close")
+                        span(aria-hidden="true") &times;
+                div(class="modal-body")
+                    input#device-attachment-source(type="hidden")
+                    input#device-attachment-award(type="hidden")
+                    each deviceAttachmentObj in devicesAttachments
+                        div(class="device-attachment" name=deviceAttachmentObj.code data-award-device-code=deviceAttachmentObj.code)
+                            center
+                                img(src="/images/ribimages/devices/gif/" + deviceAttachmentObj.code +".gif" title=deviceAttachmentObj.name alt="N/A")
+                                p=deviceAttachmentObj.code
+                div(class="modal-footer")
+                    button(type="button" class="btn btn-primary" onclick="addDeviceAttachment(event)") Choose
+                    button(type="button" class="btn btn-secondary" data-dismiss="modal") Close
+    script.
+        var selectedDeviceAttachmentCode = {};
+        $(document).ready(function() {
+
+            $('.device-attachment').on('click', function (e) {
+                $('.device-attachment').removeClass('device-attachment-selected');
+                e.preventDefault();
+                $(this).toggleClass('device-attachment-selected');
+                selectedDeviceAttachmentCode = $(this).data("award-device-code");
+            });
+        });

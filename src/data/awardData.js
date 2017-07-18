@@ -1,11 +1,15 @@
 const awardConverter = require('./awardConverter');
+const _ = require('underscore');
 let allRibbons = [];
+let allDevicesAttachments = [];
+
 module.exports = {
     init: function (){
         return new Promise(function(resolve, reject){
             awardConverter.initialize()
                 .then(function() {
-                    allRibbons = awardConverter.getAllRibbons()
+                    allRibbons = awardConverter.ribbons;
+                    allDevicesAttachments = awardConverter.devicesAttachments;
                     resolve();
                 })
                 .catch(function(err){
@@ -19,23 +23,35 @@ module.exports = {
         return allRibbons;
     },
 
+    getAllDevicesAttachments: function () {
+        return allDevicesAttachments;
+    },
+
     translateFromDB: function (ribbonData) {
         //parse out individual ribbons
         let ribbonDataArray = ribbonData.split("<br>");
         let ribbonVals = parseDbRibbonVals(ribbonDataArray);
-        let maxRows = (ribbonDataArray.length / 3) + 1;
-        maxRows++;
-        //build fixed grid of individual ribbons
+        let maxCols = 0;
+        let maxRows = 0;
+        Object.keys(ribbonVals).forEach(function(key){
+            var [rows, cols] = (key.split('-'));
+            if (parseInt(cols) > maxCols){
+                maxCols = cols;
+            }
+            if (parseInt(rows) > maxRows){
+                maxRows = rows;
+            }
+        });
+
         let rows = [];
-        for (let y = 1; y < maxRows; y++) {
+        for (let y = 1; y <= maxRows; y++) {
             let rowBuilding = {columns: []};
-            for (let x = 1; x < 5; x++) {
+            for (let x = 1; x <= maxCols; x++) {
                 let cell = ribbonVals[y + "-" + x];
                 if (!!cell) {
                     let [description, attachments] = cell.text.toString().split(", ");
                     let award = allRibbons[description];
                     rowBuilding.columns.push({name:award.name,
-                                            imgSrc:award.imgSrc,
                                             code:award.code + (attachments? " " + attachments:"")});
                 } else {
                     rowBuilding.columns.push({name: "N/A"});

@@ -17,6 +17,7 @@ if (!!customerOrders && customerOrders.length > 0)
                     td #{customerOrder.lastname}
                     td #{customerOrder.firstname}
                     td
+                        - console.log(customerOrder.date)
                         a(href="mailto:" + customerOrder.email) #{customerOrder.email}
                     td #{customerOrder.city}
                     td #{customerOrder.state}

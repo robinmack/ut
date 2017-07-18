@@ -1,25 +1,111 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="7863d19a-8b91-4366-9aa2-e5e174114940" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/javascripts/rack.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/javascripts/underscore-min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/data/awardConverter.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/data/ribbonData.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/data/ribbonPaletteInfo.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/views/ribbonPalette.pug" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/images/topper-allservices2.gif" afterPath="" />
+    <list default="true" id="7863d19a-8b91-4366-9aa2-e5e174114940" name="Default" comment="Corrected ribbon images (uppercase), added remove/add award, add device">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/javascripts/underscore-min.map" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/views/devicesAttachmentsPalette.pug" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/public/images/ribimages/DEVICES/GIF/1BOL.GIF" afterPath="$PROJECT_DIR$/public/images/ribimages/devices/gif/1BOL.gif" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/public/images/ribimages/DEVICES/GIF/1LBS.GIF" afterPath="$PROJECT_DIR$/public/images/ribimages/devices/gif/1LBS.gif" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/public/images/ribimages/DEVICES/GIF/1LGS.GIF" afterPath="$PROJECT_DIR$/public/images/ribimages/devices/gif/1LGS.gif" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/public/images/ribimages/DEVICES/GIF/1SBS.GIF" afterPath="$PROJECT_DIR$/public/images/ribimages/devices/gif/1SBS.gif" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/public/images/ribimages/DEVICES/GIF/1SK.GIF" afterPath="$PROJECT_DIR$/public/images/ribimages/devices/gif/1SK.gif" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/public/images/ribimages/DEVICES/GIF/2BK.GIF" afterPath="$PROJECT_DIR$/public/images/ribimages/devices/gif/2BK.gif" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/public/images/ribimages/DEVICES/GIF/2SK.GIF" afterPath="$PROJECT_DIR$/public/images/ribimages/devices/gif/2SK.gif" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/public/images/ribimages/DEVICES/GIF/3BK.GIF" afterPath="$PROJECT_DIR$/public/images/ribimages/devices/gif/3BK.gif" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/public/images/ribimages/DEVICES/GIF/4BK.GIF" afterPath="$PROJECT_DIR$/public/images/ribimages/devices/gif/4BK.gif" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/public/images/ribimages/DEVICES/GIF/5BK.GIF" afterPath="$PROJECT_DIR$/public/images/ribimages/devices/gif/5BK.gif" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/public/images/ribimages/DEVICES/GIF/5LGS.GIF" afterPath="$PROJECT_DIR$/public/images/ribimages/devices/gif/5LGS.gif" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/public/images/ribimages/DEVICES/GIF/6BK.GIF" afterPath="$PROJECT_DIR$/public/images/ribimages/devices/gif/6BK.gif" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/public/images/ribimages/DEVICES/GIF/7BK.GIF" afterPath="$PROJECT_DIR$/public/images/ribimages/devices/gif/7BK.gif" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/public/images/ribimages/DEVICES/GIF/ARROW.GIF" afterPath="$PROJECT_DIR$/public/images/ribimages/devices/gif/ARROW.gif" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/public/images/ribimages/DEVICES/GIF/B0.GIF" afterPath="$PROJECT_DIR$/public/images/ribimages/devices/gif/B0.gif" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/public/images/ribimages/DEVICES/GIF/B1.GIF" afterPath="$PROJECT_DIR$/public/images/ribimages/devices/gif/B1.gif" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/public/images/ribimages/DEVICES/GIF/B2.gif" afterPath="$PROJECT_DIR$/public/images/ribimages/devices/gif/B2.gif" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/public/images/ribimages/DEVICES/GIF/B3.gif" afterPath="$PROJECT_DIR$/public/images/ribimages/devices/gif/B3.gif" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/public/images/ribimages/DEVICES/GIF/B4.GIF" afterPath="$PROJECT_DIR$/public/images/ribimages/devices/gif/B4.gif" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/public/images/ribimages/DEVICES/GIF/B5.GIF" afterPath="$PROJECT_DIR$/public/images/ribimages/devices/gif/B5.gif" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/public/images/ribimages/DEVICES/GIF/B6.GIF" afterPath="$PROJECT_DIR$/public/images/ribimages/devices/gif/B6.gif" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/public/images/ribimages/DEVICES/GIF/B7.GIF" afterPath="$PROJECT_DIR$/public/images/ribimages/devices/gif/B7.gif" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/public/images/ribimages/DEVICES/GIF/B8.GIF" afterPath="$PROJECT_DIR$/public/images/ribimages/devices/gif/B8.gif" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/public/images/ribimages/DEVICES/GIF/B9.GIF" afterPath="$PROJECT_DIR$/public/images/ribimages/devices/gif/B9.gif" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/public/images/ribimages/DEVICES/GIF/BA.GIF" afterPath="$PROJECT_DIR$/public/images/ribimages/devices/gif/BA.gif" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/public/images/ribimages/DEVICES/GIF/BAD.gif" afterPath="$PROJECT_DIR$/public/images/ribimages/devices/gif/BAD.gif" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/public/images/ribimages/DEVICES/GIF/BBee.gif" afterPath="$PROJECT_DIR$/public/images/ribimages/devices/gif/BBEE.gif" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/public/images/ribimages/DEVICES/GIF/BCAP.gif" afterPath="$PROJECT_DIR$/public/images/ribimages/devices/gif/BCAP.gif" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/public/images/ribimages/DEVICES/GIF/BDIA.gif" afterPath="$PROJECT_DIR$/public/images/ribimages/devices/gif/BDIA.gif" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/public/images/ribimages/DEVICES/GIF/BE.GIF" afterPath="$PROJECT_DIR$/public/images/ribimages/devices/gif/BE.gif" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/public/images/ribimages/DEVICES/GIF/BHG.GIF" afterPath="$PROJECT_DIR$/public/images/ribimages/devices/gif/BHG.gif" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/public/images/ribimages/DEVICES/GIF/BM.GIF" afterPath="$PROJECT_DIR$/public/images/ribimages/devices/gif/BM.gif" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/public/images/ribimages/DEVICES/GIF/BNOA.gif" afterPath="$PROJECT_DIR$/public/images/ribimages/devices/gif/BNOA.gif" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/public/images/ribimages/DEVICES/GIF/BOL.GIF" afterPath="$PROJECT_DIR$/public/images/ribimages/devices/gif/BOL.gif" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/public/images/ribimages/DEVICES/GIF/BP.GIF" afterPath="$PROJECT_DIR$/public/images/ribimages/devices/gif/BP.gif" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/public/images/ribimages/DEVICES/GIF/BPROP.gif" afterPath="$PROJECT_DIR$/public/images/ribimages/devices/gif/BPROP.gif" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/public/images/ribimages/DEVICES/GIF/BS.GIF" afterPath="$PROJECT_DIR$/public/images/ribimages/devices/gif/BS.gif" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/public/images/ribimages/DEVICES/GIF/BV.GIF" afterPath="$PROJECT_DIR$/public/images/ribimages/devices/gif/BV.gif" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/public/images/ribimages/DEVICES/GIF/BWO.GIF" afterPath="$PROJECT_DIR$/public/images/ribimages/devices/gif/BWO.gif" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/public/images/ribimages/DEVICES/GIF/EA.gif" afterPath="$PROJECT_DIR$/public/images/ribimages/devices/gif/EA.gif" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/public/images/ribimages/DEVICES/GIF/G0.gif" afterPath="$PROJECT_DIR$/public/images/ribimages/devices/gif/G0.gif" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/public/images/ribimages/DEVICES/GIF/G1.gif" afterPath="$PROJECT_DIR$/public/images/ribimages/devices/gif/G1.gif" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/public/images/ribimages/DEVICES/GIF/G2.gif" afterPath="$PROJECT_DIR$/public/images/ribimages/devices/gif/G2.gif" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/public/images/ribimages/DEVICES/GIF/G3.gif" afterPath="$PROJECT_DIR$/public/images/ribimages/devices/gif/G3.gif" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/public/images/ribimages/DEVICES/GIF/G4.gif" afterPath="$PROJECT_DIR$/public/images/ribimages/devices/gif/G4.gif" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/public/images/ribimages/DEVICES/GIF/G5.gif" afterPath="$PROJECT_DIR$/public/images/ribimages/devices/gif/G5.gif" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/public/images/ribimages/DEVICES/GIF/G6.gif" afterPath="$PROJECT_DIR$/public/images/ribimages/devices/gif/G6.gif" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/public/images/ribimages/DEVICES/GIF/G7.gif" afterPath="$PROJECT_DIR$/public/images/ribimages/devices/gif/G7.gif" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/public/images/ribimages/DEVICES/GIF/G8.gif" afterPath="$PROJECT_DIR$/public/images/ribimages/devices/gif/G8.gif" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/public/images/ribimages/DEVICES/GIF/G9.gif" afterPath="$PROJECT_DIR$/public/images/ribimages/devices/gif/G9.gif" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/public/images/ribimages/DEVICES/GIF/GBee.gif" afterPath="$PROJECT_DIR$/public/images/ribimages/devices/gif/GBEE.gif" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/public/images/ribimages/DEVICES/GIF/GDIA.gif" afterPath="$PROJECT_DIR$/public/images/ribimages/devices/gif/GDIA.gif" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/public/images/ribimages/DEVICES/GIF/GF.GIF" afterPath="$PROJECT_DIR$/public/images/ribimages/devices/gif/GF.gif" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/public/images/ribimages/DEVICES/GIF/GHG.GIF" afterPath="$PROJECT_DIR$/public/images/ribimages/devices/gif/GHG.gif" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/public/images/ribimages/DEVICES/GIF/GN.gif" afterPath="$PROJECT_DIR$/public/images/ribimages/devices/gif/GN.gif" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/public/images/ribimages/DEVICES/GIF/GPROP.gif" afterPath="$PROJECT_DIR$/public/images/ribimages/devices/gif/GPROP.gif" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/public/images/ribimages/DEVICES/GIF/GV.GIF" afterPath="$PROJECT_DIR$/public/images/ribimages/devices/gif/GV.gif" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/public/images/ribimages/DEVICES/GIF/GWO.GIF" afterPath="$PROJECT_DIR$/public/images/ribimages/devices/gif/GWO.gif" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/public/images/ribimages/DEVICES/GIF/HA.gif" afterPath="$PROJECT_DIR$/public/images/ribimages/devices/gif/HA.gif" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/public/images/ribimages/DEVICES/GIF/LBL.GIF" afterPath="$PROJECT_DIR$/public/images/ribimages/devices/gif/LBL.gif" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/public/images/ribimages/DEVICES/GIF/LBS.gif" afterPath="$PROJECT_DIR$/public/images/ribimages/devices/gif/LBS.gif" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/public/images/ribimages/DEVICES/GIF/LGS.gif" afterPath="$PROJECT_DIR$/public/images/ribimages/devices/gif/LGS.gif" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/public/images/ribimages/DEVICES/GIF/LSE.GIF" afterPath="$PROJECT_DIR$/public/images/ribimages/devices/gif/LSE.gif" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/public/images/ribimages/DEVICES/GIF/LSL.GIF" afterPath="$PROJECT_DIR$/public/images/ribimages/devices/gif/LSL.gif" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/public/images/ribimages/DEVICES/GIF/LSS.GIF" afterPath="$PROJECT_DIR$/public/images/ribimages/devices/gif/LSS.gif" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/public/images/ribimages/DEVICES/GIF/ME.GIF" afterPath="$PROJECT_DIR$/public/images/ribimages/devices/gif/ME.gif" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/public/images/ribimages/DEVICES/GIF/NE.GIF" afterPath="$PROJECT_DIR$/public/images/ribimages/devices/gif/NE.gif" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/public/images/ribimages/DEVICES/GIF/NEW.GIF" afterPath="$PROJECT_DIR$/public/images/ribimages/devices/gif/NEW.gif" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/public/images/ribimages/DEVICES/GIF/PT.GIF" afterPath="$PROJECT_DIR$/public/images/ribimages/devices/gif/PT.gif" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/public/images/ribimages/DEVICES/GIF/SBS.gif" afterPath="$PROJECT_DIR$/public/images/ribimages/devices/gif/SBS.gif" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/public/images/ribimages/DEVICES/GIF/SBee.gif" afterPath="$PROJECT_DIR$/public/images/ribimages/devices/gif/SBEE.gif" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/public/images/ribimages/DEVICES/GIF/SCAP.gif" afterPath="$PROJECT_DIR$/public/images/ribimages/devices/gif/SCAP.gif" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/public/images/ribimages/DEVICES/GIF/SDIA.gif" afterPath="$PROJECT_DIR$/public/images/ribimages/devices/gif/SDIA.gif" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/public/images/ribimages/DEVICES/GIF/SE.gif" afterPath="$PROJECT_DIR$/public/images/ribimages/devices/gif/SE.gif" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/public/images/ribimages/DEVICES/GIF/SGS.GIF" afterPath="$PROJECT_DIR$/public/images/ribimages/devices/gif/SGS.gif" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/public/images/ribimages/DEVICES/GIF/SHG.GIF" afterPath="$PROJECT_DIR$/public/images/ribimages/devices/gif/SHG.gif" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/public/images/ribimages/DEVICES/GIF/SNOA.gif" afterPath="$PROJECT_DIR$/public/images/ribimages/devices/gif/SNOA.gif" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/public/images/ribimages/DEVICES/GIF/SO.GIF" afterPath="$PROJECT_DIR$/public/images/ribimages/devices/gif/SO.gif" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/public/images/ribimages/DEVICES/GIF/SOL.GIF" afterPath="$PROJECT_DIR$/public/images/ribimages/devices/gif/SOL.gif" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/public/images/ribimages/DEVICES/GIF/SPROP.gif" afterPath="$PROJECT_DIR$/public/images/ribimages/devices/gif/SPROP.gif" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/public/images/ribimages/DEVICES/GIF/SS.GIF" afterPath="$PROJECT_DIR$/public/images/ribimages/devices/gif/SS.gif" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/public/images/ribimages/DEVICES/GIF/SSS.GIF" afterPath="$PROJECT_DIR$/public/images/ribimages/devices/gif/SSS.gif" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/public/images/ribimages/DEVICES/GIF/SV.GIF" afterPath="$PROJECT_DIR$/public/images/ribimages/devices/gif/SV.gif" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/public/images/ribimages/DEVICES/GIF/SW.gif" afterPath="$PROJECT_DIR$/public/images/ribimages/devices/gif/SW.gif" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/public/images/ribimages/DEVICES/GIF/SWO.GIF" afterPath="$PROJECT_DIR$/public/images/ribimages/devices/gif/SWO.gif" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/public/images/ribimages/DEVICES/GIF/YY.gif" afterPath="$PROJECT_DIR$/public/images/ribimages/devices/gif/YY.gif" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/public/images/ribimages/DEVICES/GIF/fourthspace.gif" afterPath="$PROJECT_DIR$/public/images/ribimages/devices/gif/FOURTHSPACE.gif" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/public/images/ribimages/DEVICES/GIF/halfspace.gif" afterPath="$PROJECT_DIR$/public/images/ribimages/devices/gif/HALFSPACE.gif" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/public/images/ribimages/DEVICES/GIF/spacer.gif" afterPath="$PROJECT_DIR$/public/images/ribimages/devices/gif/SPACER.gif" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/data/ribbonData.js" afterPath="$PROJECT_DIR$/src/data/awardData.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/TODO.md" afterPath="$PROJECT_DIR$/TODO.md" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/www" afterPath="$PROJECT_DIR$/bin/www" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/package-lock.json" afterPath="$PROJECT_DIR$/package-lock.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/package.json" afterPath="$PROJECT_DIR$/package.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/javascripts/rack.js" afterPath="$PROJECT_DIR$/public/javascripts/rack.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/stylesheets/style.css" afterPath="$PROJECT_DIR$/public/stylesheets/style.css" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/controllers/orders.js" afterPath="$PROJECT_DIR$/src/controllers/orders.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/data/awardConverter.js" afterPath="$PROJECT_DIR$/src/data/awardConverter.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/data/order.js" afterPath="$PROJECT_DIR$/src/data/order.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/data/ribbonPaletteInfo.js" afterPath="$PROJECT_DIR$/src/data/ribbonPaletteInfo.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/schema/database.sql" afterPath="$PROJECT_DIR$/src/schema/database.sql" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/menuBar.pug" afterPath="$PROJECT_DIR$/views/menuBar.pug" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/orderList.pug" afterPath="$PROJECT_DIR$/views/orderList.pug" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/orderView.pug" afterPath="$PROJECT_DIR$/views/orderView.pug" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/ribbonPalette.pug" afterPath="$PROJECT_DIR$/views/ribbonPalette.pug" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -42,54 +128,41 @@
     <splitter split-orientation="horizontal" split-proportion="0.5">
       <split-first>
         <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-          <file leaf-file-name="orderView.pug" pinned="false" current-in-tab="false">
+          <file leaf-file-name="orderView.pug" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/views/orderView.pug">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="128">
-                  <caret line="142" column="0" lean-forward="false" selection-start-line="142" selection-start-column="0" selection-end-line="142" selection-end-column="0" />
+                <state relative-caret-position="256">
+                  <caret line="261" column="34" lean-forward="true" selection-start-line="261" selection-start-column="34" selection-end-line="261" selection-end-column="34" />
                   <folding />
                 </state>
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="ribbonPalette.pug" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/views/ribbonPalette.pug">
+          <file leaf-file-name="ribbonPaletteInfo.js" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/src/data/ribbonPaletteInfo.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="171">
-                  <caret line="17" column="63" lean-forward="false" selection-start-line="17" selection-start-column="63" selection-end-line="17" selection-end-column="63" />
+                <state relative-caret-position="105">
+                  <caret line="7" column="6" lean-forward="false" selection-start-line="7" selection-start-column="6" selection-end-line="7" selection-end-column="6" />
                   <folding />
                 </state>
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="test.html" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/node_modules/clone/test.html">
+          <file leaf-file-name="devices.js" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/../ut-site/devices.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="90">
-                  <caret line="6" column="22" lean-forward="false" selection-start-line="6" selection-start-column="22" selection-end-line="6" selection-end-column="22" />
-                  <folding>
-                    <marker date="1427323548000" expanded="true" signature="4211:4221" ph="..." />
-                    <marker date="1427323548000" expanded="true" signature="4368:4377" ph="..." />
-                  </folding>
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="rack.js" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/public/javascripts/rack.js">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="53">
-                  <caret line="54" column="32" lean-forward="false" selection-start-line="54" selection-start-column="13" selection-end-line="54" selection-end-column="32" />
+                <state relative-caret-position="1950">
+                  <caret line="137" column="0" lean-forward="false" selection-start-line="49" selection-start-column="3" selection-end-line="137" selection-end-column="0" />
                   <folding />
                 </state>
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="menuBar.pug" pinned="false" current-in-tab="true">
-            <entry file="file://$PROJECT_DIR$/views/menuBar.pug">
+          <file leaf-file-name="orders.js" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/src/services/orders.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="165">
-                  <caret line="23" column="54" lean-forward="false" selection-start-line="23" selection-start-column="54" selection-end-line="23" selection-end-column="54" />
+                <state relative-caret-position="1365">
+                  <caret line="91" column="34" lean-forward="false" selection-start-line="91" selection-start-column="34" selection-end-line="91" selection-end-column="34" />
                   <folding />
                 </state>
               </provider>
@@ -98,8 +171,28 @@
           <file leaf-file-name="style.css" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/public/stylesheets/style.css">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="-1306">
-                  <caret line="58" column="0" lean-forward="false" selection-start-line="58" selection-start-column="0" selection-end-line="58" selection-end-column="0" />
+                <state relative-caret-position="15">
+                  <caret line="1" column="20" lean-forward="true" selection-start-line="1" selection-start-column="20" selection-end-line="1" selection-end-column="20" />
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="awardData.js" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/src/data/awardData.js">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="169">
+                  <caret line="66" column="25" lean-forward="true" selection-start-line="66" selection-start-column="25" selection-end-line="66" selection-end-column="25" />
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="app.js" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/app.js">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="660">
+                  <caret line="44" column="11" lean-forward="false" selection-start-line="44" selection-start-column="11" selection-end-line="44" selection-end-column="11" />
                   <folding />
                 </state>
               </provider>
@@ -112,38 +205,36 @@
           <file leaf-file-name="rack.js" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/public/javascripts/rack.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="115">
-                  <caret line="55" column="6" lean-forward="false" selection-start-line="55" selection-start-column="6" selection-end-line="55" selection-end-column="6" />
+                <state relative-caret-position="94">
+                  <caret line="98" column="51" lean-forward="false" selection-start-line="98" selection-start-column="51" selection-end-line="98" selection-end-column="51" />
+                  <folding>
+                    <marker date="1500349079000" expanded="true" signature="4067:4076" ph="..." />
+                    <marker date="1500349079000" expanded="true" signature="4067:4081" ph="..." />
+                    <marker date="1500349079000" expanded="true" signature="4216:4235" ph="..." />
+                    <marker date="1500349079000" expanded="true" signature="4733:4752" ph="..." />
+                    <marker date="1500349079000" expanded="true" signature="7322:7341" ph="..." />
+                    <marker date="1500349079000" expanded="true" signature="7534:7553" ph="..." />
+                    <marker date="1500349079000" expanded="true" signature="7710:7725" ph="..." />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="ribbonPalette.pug" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/views/ribbonPalette.pug">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="243">
+                  <caret line="24" column="65" lean-forward="false" selection-start-line="24" selection-start-column="65" selection-end-line="24" selection-end-column="65" />
                   <folding />
                 </state>
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="ribbonPaletteInfo.js" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/src/data/ribbonPaletteInfo.js">
+          <file leaf-file-name="devicesAttachmentsPalette.pug" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/views/devicesAttachmentsPalette.pug">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="-2966">
-                  <caret line="185" column="17" lean-forward="false" selection-start-line="185" selection-start-column="17" selection-end-line="185" selection-end-column="17" />
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="orders.js" pinned="false" current-in-tab="true">
-            <entry file="file://$PROJECT_DIR$/src/controllers/orders.js">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="130">
-                  <caret line="56" column="54" lean-forward="false" selection-start-line="56" selection-start-column="54" selection-end-line="56" selection-end-column="54" />
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="ribbonData.js" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/src/data/ribbonData.js">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="75">
-                  <caret line="7" column="51" lean-forward="false" selection-start-line="7" selection-start-column="51" selection-end-line="7" selection-end-column="51" />
+                <state relative-caret-position="134">
+                  <caret line="20" column="40" lean-forward="false" selection-start-line="20" selection-start-column="40" selection-end-line="20" selection-end-column="40" />
                   <folding />
                 </state>
               </provider>
@@ -152,32 +243,49 @@
           <file leaf-file-name="awardConverter.js" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/src/data/awardConverter.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="321">
-                  <caret line="42" column="4" lean-forward="false" selection-start-line="42" selection-start-column="4" selection-end-line="42" selection-end-column="4" />
+                <state relative-caret-position="187">
+                  <caret line="33" column="47" lean-forward="true" selection-start-line="33" selection-start-column="47" selection-end-line="33" selection-end-column="47" />
                   <folding />
                 </state>
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="database.sql" pinned="false" current-in-tab="false">
+          <file leaf-file-name="orders.js" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/src/controllers/orders.js">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="207">
+                  <caret line="58" column="61" lean-forward="false" selection-start-line="58" selection-start-column="61" selection-end-line="58" selection-end-column="61" />
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="order.js" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/src/data/order.js">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="15">
+                  <caret line="294" column="73" lean-forward="false" selection-start-line="294" selection-start-column="73" selection-end-line="294" selection-end-column="73" />
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="database.sql" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/src/schema/database.sql">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="127">
-                  <caret line="501" column="160" lean-forward="false" selection-start-line="501" selection-start-column="160" selection-end-line="501" selection-end-column="160" />
+                <state relative-caret-position="138">
+                  <caret line="132" column="0" lean-forward="false" selection-start-line="132" selection-start-column="0" selection-end-line="132" selection-end-column="0" />
                   <folding />
                 </state>
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="TODO.md" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/TODO.md">
-              <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-                <state split_layout="SPLIT">
-                  <first_editor relative-caret-position="248">
-                    <caret line="18" column="43" lean-forward="false" selection-start-line="18" selection-start-column="43" selection-end-line="18" selection-end-column="43" />
-                    <folding />
-                  </first_editor>
-                  <second_editor />
+          <file leaf-file-name="config.json" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/orders/config.json">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="60">
+                  <caret line="4" column="20" lean-forward="false" selection-start-line="4" selection-start-column="20" selection-end-line="4" selection-end-column="20" />
+                  <folding />
                 </state>
               </provider>
             </entry>
@@ -195,35 +303,35 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>findOrde</find>
-      <find>find</find>
-      <find>button</find>
-      <find>app</find>
-      <find>req.s</find>
-      <find>req.sESSION.ROLE</find>
-      <find>findOrder</find>
-      <find>a</find>
-      <find>add</find>
-      <find>addR</find>
-      <find>addRib</find>
-      <find>addRibbon(</find>
-      <find>addRibbon</find>
-      <find>&quot;)</find>
-      <find>&quot;);</find>
-      <find>'</find>
-      <find>&quot;</find>
-      <find>'A'</find>
-      <find>//.*</find>
-      <find>Meritorious Service Medal</find>
-      <find>AF Professional Military Ed. Graduate Ribbon</find>
-      <find>branch</find>
-      <find>reverse</find>
-      <find>req.session.role</find>
-      <find>list_ribbon</find>
-      <find>get</find>
-      <find>CGP</find>
-      <find>document.</find>
-      <find>1.00</find>
+      <find>prices</find>
+      <find>onclick</find>
+      <find>switch</find>
+      <find>data</find>
+      <find>JSON.string</find>
+      <find>view</find>
+      <find>rack2</find>
+      <find>u</find>
+      <find>undersc</find>
+      <find>undersco</find>
+      <find>underscor</find>
+      <find>underscore</find>
+      <find>underscore-</find>
+      <find>underscore-m</find>
+      <find>underscore-mi</find>
+      <find>underscore-min</find>
+      <find>underscore-min.</find>
+      <find>underscore-min.m</find>
+      <find>underscore-min.map</find>
+      <find>`</find>
+      <find>d</find>
+      <find>devices</find>
+      <find>devices_</find>
+      <find>devices_a</find>
+      <find>devices_at</find>
+      <find>devices_att</find>
+      <find>devices_atta</find>
+      <find>Fourth</find>
+      <find>ribbonP</find>
       <find>ribbon</find>
     </findStrings>
     <replaceStrings>
@@ -236,7 +344,12 @@
       <replace>*DOUBLESINGLEQUOTE*</replace>
       <replace>''E''</replace>
       <replace>false, false),</replace>
+      <replace>'</replace>
+      <replace>devicesAttachmentsP</replace>
     </replaceStrings>
+    <dirStrings>
+      <dir>$PROJECT_DIR$/public/javascripts</dir>
+    </dirStrings>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -259,8 +372,6 @@
         <option value="$PROJECT_DIR$/node_modules/pug-bootstrap/_bootstrap.pug" />
         <option value="$PROJECT_DIR$/views/changePassword.pug" />
         <option value="$PROJECT_DIR$/views/orderFind.pug" />
-        <option value="$PROJECT_DIR$/views/orderList.pug" />
-        <option value="$PROJECT_DIR$/views/customerView.pug" />
         <option value="$PROJECT_DIR$/src/util/dbUtil.js" />
         <option value="$PROJECT_DIR$/src/data/customers.js" />
         <option value="$PROJECT_DIR$/src/util/dbQueries.js" />
@@ -274,20 +385,27 @@
         <option value="$PROJECT_DIR$/src/services/ribbonConverter.js" />
         <option value="$PROJECT_DIR$/src/data/ribbonConverter.js" />
         <option value="$PROJECT_DIR$/bin/www" />
-        <option value="$PROJECT_DIR$/src/data/order.js" />
         <option value="$PROJECT_DIR$/src/data/ribbonPalette.js" />
-        <option value="$PROJECT_DIR$/public/javascripts/rack.js" />
         <option value="$PROJECT_DIR$/src/data/ribbonInfo.js" />
-        <option value="$PROJECT_DIR$/src/data/awardConverter.js" />
-        <option value="$PROJECT_DIR$/src/controllers/orders.js" />
-        <option value="$PROJECT_DIR$/src/data/ribbonData.js" />
-        <option value="$PROJECT_DIR$/src/data/ribbonPaletteInfo.js" />
-        <option value="$PROJECT_DIR$/src/schema/database.sql" />
         <option value="$PROJECT_DIR$/TODO.md" />
-        <option value="$PROJECT_DIR$/views/orderView.pug" />
-        <option value="$PROJECT_DIR$/views/ribbonPalette.pug" />
-        <option value="$PROJECT_DIR$/public/stylesheets/style.css" />
+        <option value="$PROJECT_DIR$/views/orderList.pug" />
+        <option value="$PROJECT_DIR$/src/data/order.js" />
+        <option value="$PROJECT_DIR$/src/data/ribbonPaletteInfo.js" />
         <option value="$PROJECT_DIR$/views/menuBar.pug" />
+        <option value="$PROJECT_DIR$/views/customerView.pug" />
+        <option value="$PROJECT_DIR$/views/ribbonPalette.pug" />
+        <option value="$PROJECT_DIR$/src/data/ribbonData.js" />
+        <option value="$PROJECT_DIR$/src/data/devicesAttachments.js" />
+        <option value="$PROJECT_DIR$/src/controllers/orders.js" />
+        <option value="$PROJECT_DIR$/src/data/awardData.js" />
+        <option value="$APPLICATION_CONFIG_DIR$/idea.properties" />
+        <option value="$PROJECT_DIR$/src/data/awardConverter.js" />
+        <option value="$PROJECT_DIR$/views/devicesAwardsPalette.pug" />
+        <option value="$PROJECT_DIR$/public/stylesheets/style.css" />
+        <option value="$PROJECT_DIR$/views/devicesAttachmentsPalette.pug" />
+        <option value="$PROJECT_DIR$/views/orderView.pug" />
+        <option value="$PROJECT_DIR$/public/javascripts/rack.js" />
+        <option value="$PROJECT_DIR$/src/schema/database.sql" />
       </list>
     </option>
   </component>
@@ -311,9 +429,9 @@
   </component>
   <component name="PhpWorkspaceProjectConfiguration" backward_compatibility_performed="true" />
   <component name="ProjectFrameBounds">
-    <option name="y" value="79" />
+    <option name="y" value="5" />
     <option name="width" value="1346" />
-    <option name="height" value="637" />
+    <option name="height" value="747" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
@@ -331,7 +449,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -369,6 +486,24 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ut" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ut" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="services" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -436,6 +571,20 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
+              <option name="myItemId" value="routes" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ut" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ut" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
               <option name="myItemId" value="public" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
@@ -475,23 +624,9 @@
               <option name="myItemId" value="javascripts" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
-          </PATH>
-          <PATH>
             <PATH_ELEMENT>
-              <option name="myItemId" value="ut" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="ut" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="public" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="images" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+              <option name="myItemId" value="underscore-min.js" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.NestingTreeNode" />
             </PATH_ELEMENT>
           </PATH>
           <PATH>
@@ -508,18 +643,43 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="images" />
+              <option name="myItemId" value="javascripts" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ut" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ut" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="ribimages" />
+              <option name="myItemId" value="orders" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ut" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ut" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value=".idea" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scope" />
+      <pane id="Scratches" />
       <pane id="PackagesPane" />
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -549,6 +709,7 @@
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/public/javascripts" />
       <recent name="$PROJECT_DIR$/src/data" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
@@ -872,23 +1033,25 @@
     <option name="totallyTimeSpent" value="72369000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="79" width="1346" height="637" extended-state="0" />
+    <frame x="0" y="5" width="1346" height="747" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32824427" sideWeight="0.4969325" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32824427" sideWeight="0.5030675" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32844037" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32824427" sideWeight="0.4969325" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32844037" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.303681" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32055214" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32844037" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.39633027" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.39541984" sideWeight="0.49079755" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Nl-Palette" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -899,12 +1062,10 @@
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Data View" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32844037" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="SonarLint" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32844037" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
     </layout>
     <layout-to-restore>
@@ -934,7 +1095,7 @@
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32844037" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32844037" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.29907975" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.30674848" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="SonarLint" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32844037" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
@@ -950,24 +1111,25 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Added ability for customer view to display/edit orders, and for order display to allow view/edit of customers." />
     <MESSAGE value="refactored to share db connection, split all db functions into separate&#10;data objects" />
-    <option name="LAST_COMMIT_MESSAGE" value="refactored to share db connection, split all db functions into separate&#10;data objects" />
+    <MESSAGE value="Corrected ribbon images (uppercase), added remove/add award, add device" />
+    <option name="LAST_COMMIT_MESSAGE" value="Corrected ribbon images (uppercase), added remove/add award, add device" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/src/data/awardConverter.js</url>
-          <line>19</line>
+          <line>22</line>
           <option name="timeStamp" value="196" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="javascript">
-          <url>file://$PROJECT_DIR$/src/data/ribbonData.js</url>
-          <line>11</line>
+          <url>file://$PROJECT_DIR$/src/data/awardData.js</url>
+          <line>15</line>
           <properties />
-          <option name="timeStamp" value="222" />
+          <option name="timeStamp" value="257" />
         </line-breakpoint>
       </breakpoints>
-      <option name="time" value="234" />
+      <option name="time" value="259" />
     </breakpoint-manager>
     <watches-manager />
   </component>
@@ -976,174 +1138,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/README.md">
-      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="SPLIT">
-          <first_editor relative-caret-position="0">
-            <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          </first_editor>
-          <second_editor />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/data/user.js" />
-    <entry file="file://$PROJECT_DIR$/views/error.pug">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="4" column="13" lean-forward="true" selection-start-line="4" selection-start-column="13" selection-end-line="4" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/views/header.pug" />
-    <entry file="file://$PROJECT_DIR$/views/index.pug">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/views/customerFind.pug">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="287">
-          <caret line="22" column="68" lean-forward="false" selection-start-line="21" selection-start-column="12" selection-end-line="22" selection-end-column="68" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/stylesheets/bootstrap.min.css" />
-    <entry file="file://$PROJECT_DIR$/views/orderFind.pug">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="268">
-          <caret line="48" column="4" lean-forward="false" selection-start-line="48" selection-start-column="4" selection-end-line="48" selection-end-column="21" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/views/customerView.pug">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="209">
-          <caret line="75" column="12" lean-forward="false" selection-start-line="75" selection-start-column="12" selection-end-line="75" selection-end-column="12" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/node_modules/pug-bootstrap/css/navbar.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/node_modules/pug-bootstrap/css/navbar-static-top.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/node_modules/pug-bootstrap/css/navbar-fixed-top.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/node_modules/pug-bootstrap/components/navs.pug">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/node_modules/pug-bootstrap/_bootstrap.pug">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="129">
-          <caret line="21" column="22" lean-forward="false" selection-start-line="21" selection-start-column="22" selection-end-line="21" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/views/changePassword.pug">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="113">
-          <caret line="23" column="16" lean-forward="false" selection-start-line="23" selection-start-column="16" selection-end-line="23" selection-end-column="16" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/util/dbUtil.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="225">
-          <caret line="15" column="20" lean-forward="false" selection-start-line="15" selection-start-column="20" selection-end-line="15" selection-end-column="20" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/util/dbQueries.js" />
-    <entry file="file://$PROJECT_DIR$/src/controllers/users.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="98">
-          <caret line="166" column="37" lean-forward="false" selection-start-line="166" selection-start-column="21" selection-end-line="166" selection-end-column="37" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/controllers/customers.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="4" column="37" lean-forward="false" selection-start-line="4" selection-start-column="21" selection-end-line="4" selection-end-column="37" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ut.iml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/controllers/main.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="45">
-          <caret line="3" column="4" lean-forward="false" selection-start-line="3" selection-start-column="4" selection-end-line="3" selection-end-column="4" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/routes/index.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="266">
-          <caret line="31" column="26" lean-forward="false" selection-start-line="31" selection-start-column="26" selection-end-line="31" selection-end-column="26" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="143">
-          <caret line="30" column="20" lean-forward="false" selection-start-line="30" selection-start-column="20" selection-end-line="30" selection-end-column="20" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/views/orderList.pug">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="210">
-          <caret line="14" column="48" lean-forward="true" selection-start-line="13" selection-start-column="8" selection-end-line="14" selection-end-column="48" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/orders/config.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="4" column="20" lean-forward="false" selection-start-line="4" selection-start-column="20" selection-end-line="4" selection-end-column="20" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/orders/webdata.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/public/images/ribimages/98.jpg">
       <provider selected="true" editor-type-id="images">
         <state />
@@ -1173,7 +1167,7 @@
         <state />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/public/images/ribimages/natoisaf.jpg">
+    <entry file="file://$PROJECT_DIR$/public/images/ribimages/NATOISAF.jpg">
       <provider selected="true" editor-type-id="images">
         <state />
       </provider>
@@ -1188,32 +1182,10 @@
         <state />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/data/customer.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="28" lean-forward="false" selection-start-line="0" selection-start-column="28" selection-end-line="0" selection-end-column="28" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/services/orders.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="113">
-          <caret line="11" column="29" lean-forward="true" selection-start-line="11" selection-start-column="29" selection-end-line="11" selection-end-column="29" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/util/ordertool.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/data/order.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-2582">
-          <caret line="5" column="76" lean-forward="false" selection-start-line="5" selection-start-column="76" selection-end-line="5" selection-end-column="76" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1222,9 +1194,38 @@
         <state />
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/views/orderList.pug">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="135">
+          <caret line="19" column="57" lean-forward="false" selection-start-line="19" selection-start-column="57" selection-end-line="19" selection-end-column="57" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/userView.pug">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/services/orders.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1365">
+          <caret line="91" column="34" lean-forward="false" selection-start-line="91" selection-start-column="34" selection-end-line="91" selection-end-column="34" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/controllers/customers.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="173">
+          <caret line="16" column="60" lean-forward="false" selection-start-line="16" selection-start-column="60" selection-end-line="16" selection-end-column="60" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/node_modules/clone/test.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
+        <state relative-caret-position="15">
           <caret line="6" column="22" lean-forward="false" selection-start-line="6" selection-start-column="22" selection-end-line="6" selection-end-column="22" />
           <folding>
             <marker date="1427323548000" expanded="true" signature="4211:4221" ph="..." />
@@ -1233,42 +1234,107 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/public/javascripts/rack.js">
+    <entry file="file://$PROJECT_DIR$/orders/webdata.txt">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="53">
-          <caret line="54" column="32" lean-forward="false" selection-start-line="54" selection-start-column="13" selection-end-line="54" selection-end-column="32" />
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/node_modules/express/lib/router/route.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="445">
+          <caret line="136" column="12" lean-forward="false" selection-start-line="136" selection-start-column="12" selection-end-line="136" selection-end-column="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/images/ribimages/devices/gif/LBL.gif">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/images/ribimages/devices/gif/HALFSPACE.gif">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/images/ribimages/devices/gif/2SK.gif">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/images/ribimages/devices/gif/2BK.gif">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/images/ribimages/devices/gif/5BK.gif">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/images/ribimages/devices/gif/3BK.gif">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/images/ribimages/devices/gif/4BK.gif">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/images/ribimages/devices/gif/ARROW.gif">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/images/ribimages/devices/gif/6BK.gif">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/images/ribimages/devices/gif/5LGS.gif">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/images/ribimages/devices/gif/BCAP.gif">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/images/ribimages/devices/gif/BNOA.gif">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/routes/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="154">
+          <caret line="42" column="20" lean-forward="true" selection-start-line="42" selection-start-column="20" selection-end-line="42" selection-end-column="20" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/data/ribbonPaletteInfo.js">
+    <entry file="file://$PROJECT_DIR$/views/customerView.pug">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-2966">
-          <caret line="185" column="17" lean-forward="false" selection-start-line="185" selection-start-column="17" selection-end-line="185" selection-end-column="17" />
+        <state relative-caret-position="192">
+          <caret line="75" column="29" lean-forward="false" selection-start-line="75" selection-start-column="29" selection-end-line="75" selection-end-column="29" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../ut-site/devices.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1950">
+          <caret line="137" column="0" lean-forward="false" selection-start-line="49" selection-start-column="3" selection-end-line="137" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/data/ribbonData.js">
+    <entry file="file://$PROJECT_DIR$/views/menuBar.pug">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="75">
-          <caret line="7" column="51" lean-forward="false" selection-start-line="7" selection-start-column="51" selection-end-line="7" selection-end-column="51" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/data/awardConverter.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="321">
-          <caret line="42" column="4" lean-forward="false" selection-start-line="42" selection-start-column="4" selection-end-line="42" selection-end-column="4" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/schema/database.sql">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="127">
-          <caret line="501" column="160" lean-forward="false" selection-start-line="501" selection-start-column="160" selection-end-line="501" selection-end-column="160" />
+        <state relative-caret-position="390">
+          <caret line="26" column="43" lean-forward="false" selection-start-line="26" selection-start-column="43" selection-end-line="26" selection-end-column="43" />
           <folding />
         </state>
       </provider>
@@ -1276,7 +1342,7 @@
     <entry file="file://$PROJECT_DIR$/TODO.md">
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="SPLIT">
-          <first_editor relative-caret-position="248">
+          <first_editor relative-caret-position="270">
             <caret line="18" column="43" lean-forward="false" selection-start-line="18" selection-start-column="43" selection-end-line="18" selection-end-column="43" />
             <folding />
           </first_editor>
@@ -1284,42 +1350,139 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/views/orderView.pug">
+    <entry file="file://$PROJECT_DIR$/src/data/ribbonPaletteInfo.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="128">
-          <caret line="142" column="0" lean-forward="false" selection-start-line="142" selection-start-column="0" selection-end-line="142" selection-end-column="0" />
+        <state relative-caret-position="105">
+          <caret line="7" column="6" lean-forward="false" selection-start-line="7" selection-start-column="6" selection-end-line="7" selection-end-column="6" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/data/devicesAttachments.js" />
+    <entry file="file://$PROJECT_DIR$/app.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="660">
+          <caret line="44" column="11" lean-forward="false" selection-start-line="44" selection-start-column="11" selection-end-line="44" selection-end-column="11" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/javascripts/underscore-min.map">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$APPLICATION_CONFIG_DIR$/idea.properties">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="45">
+          <caret line="3" column="0" lean-forward="false" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/data/customer.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-900">
+          <caret line="0" column="28" lean-forward="false" selection-start-line="0" selection-start-column="28" selection-end-line="0" selection-end-column="28" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/orders/config.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="4" column="20" lean-forward="false" selection-start-line="4" selection-start-column="20" selection-end-line="4" selection-end-column="20" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/data/order.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="15">
+          <caret line="294" column="73" lean-forward="false" selection-start-line="294" selection-start-column="73" selection-end-line="294" selection-end-column="73" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/data/awardConverter.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="187">
+          <caret line="33" column="47" lean-forward="true" selection-start-line="33" selection-start-column="47" selection-end-line="33" selection-end-column="47" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/data/awardData.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="169">
+          <caret line="66" column="25" lean-forward="true" selection-start-line="66" selection-start-column="25" selection-end-line="66" selection-end-column="25" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/controllers/orders.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="130">
-          <caret line="56" column="54" lean-forward="false" selection-start-line="56" selection-start-column="54" selection-end-line="56" selection-end-column="54" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/views/ribbonPalette.pug">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="171">
-          <caret line="17" column="63" lean-forward="false" selection-start-line="17" selection-start-column="63" selection-end-line="17" selection-end-column="63" />
+        <state relative-caret-position="207">
+          <caret line="58" column="61" lean-forward="false" selection-start-line="58" selection-start-column="61" selection-end-line="58" selection-end-column="61" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/public/stylesheets/style.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1306">
-          <caret line="58" column="0" lean-forward="false" selection-start-line="58" selection-start-column="0" selection-end-line="58" selection-end-column="0" />
+        <state relative-caret-position="15">
+          <caret line="1" column="20" lean-forward="true" selection-start-line="1" selection-start-column="20" selection-end-line="1" selection-end-column="20" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/views/menuBar.pug">
+    <entry file="file://$PROJECT_DIR$/views/ribbonPalette.pug">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="165">
-          <caret line="23" column="54" lean-forward="false" selection-start-line="23" selection-start-column="54" selection-end-line="23" selection-end-column="54" />
+        <state relative-caret-position="243">
+          <caret line="24" column="65" lean-forward="false" selection-start-line="24" selection-start-column="65" selection-end-line="24" selection-end-column="65" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/devicesAttachmentsPalette.pug">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="134">
+          <caret line="20" column="40" lean-forward="false" selection-start-line="20" selection-start-column="40" selection-end-line="20" selection-end-column="40" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/orderView.pug">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="256">
+          <caret line="261" column="34" lean-forward="true" selection-start-line="261" selection-start-column="34" selection-end-line="261" selection-end-column="34" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/javascripts/rack.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="94">
+          <caret line="98" column="51" lean-forward="false" selection-start-line="98" selection-start-column="51" selection-end-line="98" selection-end-column="51" />
+          <folding>
+            <marker date="1500349079000" expanded="true" signature="4067:4076" ph="..." />
+            <marker date="1500349079000" expanded="true" signature="4067:4081" ph="..." />
+            <marker date="1500349079000" expanded="true" signature="4216:4235" ph="..." />
+            <marker date="1500349079000" expanded="true" signature="4733:4752" ph="..." />
+            <marker date="1500349079000" expanded="true" signature="7322:7341" ph="..." />
+            <marker date="1500349079000" expanded="true" signature="7534:7553" ph="..." />
+            <marker date="1500349079000" expanded="true" signature="7710:7725" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/schema/database.sql">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="138">
+          <caret line="132" column="0" lean-forward="false" selection-start-line="132" selection-start-column="0" selection-end-line="132" selection-end-column="0" />
           <folding />
         </state>
       </provider>

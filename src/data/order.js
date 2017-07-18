@@ -322,7 +322,7 @@ module.exports = {
             choice2Pin: orderFields[56],
             reverse: orderFields[57],
             title: orderFields[59],
-            date: orderFields[60]
+            date: fixDate(orderFields[60])
         };
         return order;
     },
@@ -389,4 +389,8 @@ function setQueryField(fieldName, value){
 }
 function fixWildcards(val){
     return "'" + val.replace(/\*/g, '%') + "'";
+}
+function fixDate(dateString){
+    dateArray=dateString.split('/');
+    return dateArray[1] + '/' + dateArray[0] + '/' + dateArray[2];
 }

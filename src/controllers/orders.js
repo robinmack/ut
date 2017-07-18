@@ -1,6 +1,6 @@
 const orderService = require("../services/orders"),
     dataOrder = require('../data/order'),
-    ribbonData = require('../data/ribbonData'),
+    dataAwards = require('../data/awardData'),
     {RibbonPaletteInfo} = require('../data/ribbonPaletteInfo');
 module.exports = {
     getNewOrders: function(req, res, next) {
@@ -46,26 +46,45 @@ module.exports = {
 
     edit: function(req, res, next){
         if (parseInt(req.session.role) < 4 && parseInt(req.session.role) >= 0){
-            let orderId = parseInt(req.params.id),
-                orderData = {};
-            dataOrder.getSingleOrder(orderId)
+            if (!isNaN(req.params.id)) {
+                let orderId = parseInt(req.params.id),
+                    orderData = {};
+                dataOrder.getSingleOrder(orderId)
 
-            .then(function(data){
-                orderData = data;
-                ribbonData.init()
-                    .then(function () {
-                        let ribbonData1 = ribbonData.translateFromDB(data["list_ribbons"]);
-                        let ribbonPaletteInfo = new RibbonPaletteInfo(ribbonData.getAllRibbons());
-                        let ribbonData2 = ribbonData.translateFromDB(data["list_ribbon_2"]);
-                        res.render('orderView', {appTitle:"Edit Order", role: req.session.role, method:"PUT", action:"/api/orders/" + orderId, buttonText: "Submit Changes", order: orderData, listRibbons1: ribbonData1, listRibbons2: ribbonData2, ribbonPalettes: ribbonPaletteInfo.tabs});
+                    .then(function (data) {
+                        orderData = data;
+                        dataAwards.init()
+                            .then(function () {
+                                let devicesAttachments = dataAwards.getAllDevicesAttachments();
+                                let ribbonData1 = dataAwards.translateFromDB(data["list_ribbons"]);
+                                let ribbonPaletteInfo = new RibbonPaletteInfo(dataAwards.getAllRibbons());
+                                let ribbonData2 = dataAwards.translateFromDB(data["list_ribbon_2"]);
+                                let precedenceLists = ribbonPaletteInfo.getPrecedenceLists();
+                                res.render('orderView', {
+                                    appTitle: "Edit Order",
+                                    role: req.session.role,
+                                    method: "PUT",
+                                    action: "/api/orders/" + orderId,
+                                    buttonText: "Submit Changes",
+                                    order: orderData,
+                                    listRibbons1: ribbonData1,
+                                    listRibbons2: ribbonData2,
+                                    ribbonPalettes: ribbonPaletteInfo.tabs,
+                                    precedenceLists: precedenceLists,
+                                    devicesAttachments: devicesAttachments
+                                });
+                            })
+                            .catch(function (err) {
+                                next(err);
+                                console.log(err);
+                            });
                     })
-                    .catch(function(err){
-                        console.log(err);
+                    .catch(function (err) {
+                        next(err);
                     });
-                })
-                .catch(function(err){
-                    next (err);
-                });
+            } else {
+                next();
+            }
         } else {
             return next("Your account does not have privileges to perform this action");
         }
