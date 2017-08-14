@@ -61,7 +61,8 @@ append body
                             input#cvv.form-control.input-medium(value= !!order ? order.card_civ : "" readonly=!biggerThanBuilder)
 
             div(class="col-md-12")
-                h3 Rack 1:
+                //#####################################
+                h3 Ribbon Rack 1:
                     if order && order.service
                         p #{order.service}
                 div(class="col-md-3")
@@ -74,15 +75,6 @@ append body
                                 input#rowFill.form-control.input-medium(value= !!order?order.row_fill: "" readonly=!biggerThanBuilder)
                 div(class="col-md-3")
                     fieldset
-                        label(for="numberRibbons") Quantity
-                            input#numberRibbons.form-control.input-medium(value= !!order ? order.number_ribbons : "" readonly=true)
-                div(class="col-md-3")
-                    fieldset
-                        label(for="rowFill") Total Ribbon Price
-                            input#totalRibbons.form-control.input-medium(value= !!order ? order.total_ribbons : "" readonly=true)
-
-                div(class="col-md-3")
-                    fieldset
                         label(for="rack1Op") Order of Precedence
                             select#rack1Op.form-control.select-medium
                                 option(value='please_select') -- Please Select --
@@ -90,18 +82,47 @@ append body
                                 option(value='army_right') Army (Right)
                                 option(value='navy') Navy
                                 option(value='af') Air Force
-                                option(value="marine") Marine Corps
+                                option(value="marines") Marine Corps
                                 option(value='cg') Coast Guard
                                 option(value='cap') Civil Air Patrol
                                 option(value='cgaux') Coast Guard Auxiliary
                                 option(value='phs') Public Health Service
                                 option(value='noaa') NOAA
                                 option(value='merchant_marine') Merchant Marine
+                                option(value='war_service') War Service
             div(class="col-md-12")
                 div(id = "ribbonRack1" class="container-fluid")
-
             div(class="col-md-12")
-                h3 Rack 2:
+                h3 Ribbon Rack 1 Totals:
+                div(class="col-md-3")
+                    fieldset
+                        label(for="numRibbons") Quantity
+                            input#numRibbons.form-control.input-medium(value= !!order ? order.number_ribbons : "" readonly=true)
+                div(class="col-md-3")
+                    fieldset
+                        label(for="numDevices") Number of Devices
+                            input#numDevices.form-control.input-medium(value= !!order ? order.number_devices : "" readonly=true)
+                div(class="col-md-3")
+                    fieldset
+                        label(for="numAttach") Number of Attachments
+                            input#numAttach.form-control.input-medium(value= !!order ? order.number_attachments : "" readonly=true)
+            div(class="col-md-12")
+                div(class="col-md-3")
+                    fieldset
+                        label(for="numPin") Number of Pins
+                            input#numPin.form-control.input-medium(value= !!order ? order.number_pins : "" readonly=!biggerThanBuilder)
+                div(class="col-md-3")
+                    fieldset
+                        label(for="numMagnetic") Number of Magnetic
+                            input#numMagnetic.form-control.input-medium(value= !!order ? order.number_magnetic : "" readonly=!biggerThanBuilder)
+            div(class="col-md-12")
+                div(class="col-md-3")
+                    fieldset
+                        label(for="totalRibbons1") Rack 1 Total
+                            input#totalRibbons1.form-control.input-medium(readonly=true)
+            div(class="col-md-12")
+                //#####################################
+                h3 Ribbon Rack 2:
                     if order && order.service
                         p #{order.service}
             div(class="col-md-12")
@@ -109,14 +130,6 @@ append body
                     fieldset
                         label(for="rowFill2") Row Fill
                             input#rowFill2.form-control.input-medium(value= !!order?order.row_fill_2: "" readonly=!biggerThanBuilder)
-                div(class="col-md-3")
-                    fieldset
-                        label(for="numberRibbons") Quantity
-                            input#numberRibbons2.form-control.input-medium(value= !!order ? order.number_ribbons_2 : "" readonly=true)
-                div(class="col-md-3")
-                    fieldset
-                        label(for="rowFill") Total Ribbon Price
-                            input#totalRibbons2.form-control.input-medium(value= !!order ? order.total_ribbons : "" readonly=true)
             div(class="col-md-12")
                 div(class="col-md-3")
                     fieldset
@@ -127,84 +140,132 @@ append body
                                 option(value='army_right') Army (Right)
                                 option(value='navy') Navy
                                 option(value='af') Air Force
-                                option(value="marine") Marine Corps
+                                option(value="marines") Marine Corps
                                 option(value='cg') Coast Guard
                                 option(value='cap') Civil Air Patrol
                                 option(value='cgaux') Coast Guard Auxiliary
                                 option(value='phs') Public Health Service
                                 option(value='noaa') NOAA
-                                option(value='merchant_marine') Merchant Marine\
+                                option(value='merchant_marine') Merchant Marine
+                                option(value='war_service') War Service
 
             div(class="col-md-12")
                 div(id="ribbonRack2")
             div(class="col-md-12")
+                h3 Ribbon Rack 2 Totals:
                 div(class="col-md-3")
                     fieldset
-                        label(for="rowFill2") Number of Devices
-                            input#numDevices.form-control.input-medium(value= !!order?order.number_devices: "" readonly=!biggerThanBuilder)
+                        label(for="numRibbons2") Quantity
+                            input#numRibbons2.form-control.input-medium(value= !!order ? order.number_ribbons_2 : "" readonly=true)
                 div(class="col-md-3")
                     fieldset
-                        label(for="numberRibbons") Number of Attachments
-                            input#numAttach.form-control.input-medium(value= !!order ? order.number_attach : "" readonly=!biggerThanBuilder)
+                        label(for="numDevices") Number of Devices
+                            input#numDevices2.form-control.input-medium(value= !!order?order.number_devices_2: "" readonly=true)
                 div(class="col-md-3")
                     fieldset
-                        label(for="rowFill") Number of Pins
-                            input#numPin.form-control.input-medium(value= !!order ? order.number_pin : "" readonly=!biggerThanBuilder)
+                        label(for="numAttach") Number of Attachments
+                            input#numAttach2.form-control.input-medium(value= !!order ? order.number_attach_2 : "" readonly=true)
             div(class="col-md-12")
                 div(class="col-md-3")
                     fieldset
-                        label(for="rowFill2") Number of Magnetic
-                            input#numMagnetic.form-control.input-medium(value= !!order ? order.number_magnetic : "" readonly=!biggerThanBuilder)
+                        label(for="numPin") Number of Pins
+                            input#numPin2.form-control.input-medium(value= !!order ? order.number_pin_2 : "" readonly=!biggerThanBuilder)
+                div(class="col-md-3")
+                    fieldset
+                        label(for="numMagnetic") Number of Magnetic
+                            input#numMagnetic2.form-control.input-medium(value= !!order ? order.number_magnetic_2 : "" readonly=!biggerThanBuilder)
             div(class="col-md-12")
+                div(class="col-md-3")
+                    fieldset
+                        label(for="rowFill") Total Rack 2
+                            input#totalRibbons2.form-control.input-medium(value="" readonly=true)
+            div(class="col-md-12")
+                h3 Total Combined Ribbons:
+            div(class="col-md-12")
+                div(class="col-md-3")
+                    fieldset
+                        label(for="totalAllRibbonsQuantity") Total Magnetic
+                            input#totalAllRibbonsQuantity.form-control.input-medium(value="" readonly=true)
+                div(class="col-md-3")
+                    fieldset
+                        label(for="totalAllRibbonsDevices") Total Devices
+                            input#totalAllRibbonsDevices.form-control.input-medium(value="" readonly=true)
+                div(class="col-md-3")
+                    fieldset
+                        label(for="totalAllRibbonsAttach") Total Attachments
+                            input#totalAllRibbonsAttach.form-control.input-medium(value="" readonly=true)
+            div(class="col-md-12")
+                div(class="col-md-3")
+                    fieldset
+                        label(for="totalAllRibbonsMagnetic") Total Magnetic
+                            input#totalAllRibbonsMagnetic.form-control.input-medium(value="" readonly=true)
+                div(class="col-md-3")
+                    fieldset
+                        label(for="totalAllRibbonsPin") Total Pin
+                            input#totalAllRibbonsPin.form-control.input-medium(value="" readonly=true)
+                div(class="col-md-3")
+                    fieldset
+                        label(for="totalAllRibbons") Total Price
+                            input#totalAllRibbons.form-control.input-medium(value="" readonly=true)
+            div(class="col-md-12")
+                //#####################################
                 h3 Mini Medal Sets:
             div(class="col-md-12")
+                div(id="miniMedalRack")
+            div(class="col-md-12")
+                h3 Mini Medal Totals:
                 div(class="col-md-3")
                     fieldset
                         label(for="numMiniMedals") Quantity
-                            input#numMiniMedals.form-control.input-medium(value= !!order ? order.number_mini_medal_sets : "" readonly=!biggerThanBuilder)
+                            input#numMiniMedals.form-control.input-medium(value= !!order ? order.number_mini_medal_sets : "" readonly=true)
                 div(class="col-md-3")
                     fieldset
                         label(for="numMiniMedalDevice") Mini Medal Devices
-                            input#numMiniMedalDevice.form-control.input-medium(value= !!order ? order.number_mini_medal_device : "" readonly=!biggerThanBuilder)
+                            input#numMiniMedalDevice.form-control.input-medium(value= !!order ? order.number_mini_medal_device : "" readonly=true)
                 div(class="col-md-3")
                     fieldset
                         label(for="numMiniMedalAttach") Mini Medal Attachments
-                            input#numMiniMedalAttach.form-control.input-medium(value= !!order ? order.number_mini_medal_attach : "" readonly=!biggerThanBuilder)
+                            input#numMiniMedalAttach.form-control.input-medium(value= !!order ? order.number_mini_medal_attach : "" readonly=true)
             div(class="col-md-12")
                 div(class="col-md-3")
                     fieldset
                         label(for="totalMiniMedals") Total
-                            input#totalMiniMedals.form-control.input-medium(value= !!order ? order.total_medals : "" readonly=true)
+                            input#totalMiniMedals.form-control.input-medium(value= !!order ? order.total_mini_medals : "" readonly=true)
                 div(class="col-md-12")
                     div(id="#mini-medal-rack")
             div(class="col-md-12")
+                //#####################################
                 h3 Large Medal Sets:
             div(class="col-md-12")
+                div(id="largeMedalRack")
+            div(class="col-md-12")
+                h3 Large Medal Totals:
                 div(class="col-md-3")
                     fieldset
                         label(for="numLargeMedalSets") Quantity
-                            input#numLargeMedalSets.form-control.input-medium(value= !!order ? order.number_large_medal_sets : "" readonly=!biggerThanBuilder)
+                            input#numLargeMedalSets.form-control.input-medium(value= !!order ? order.number_large_medal_sets : "" readonly=true)
                 div(class="col-md-3")
                     fieldset
                         label(for="numLargeMedalDevice") Large Medal Devices
-                            input#numLargeMedalDevice.form-control.input-medium(value= !!order ? order.number_large_medal_device : "" readonly=!biggerThanBuilder)
+                            input#numLargeMedalDevice.form-control.input-medium(value= !!order ? order.number_large_medal_device : "" readonly=true)
                 div(class="col-md-3")
                     fieldset
                         label(for="numLargeMedalAttach") Large Medal Attachments
-                            input#numLargeMedalAttach.form-control.input-medium(value= !!order ? order.number_large_medal_attach : "" readonly=!biggerThanBuilder)
+                            input#numLargeMedalAttach.form-control.input-medium(value= !!order ? order.number_large_medal_attach : "" readonly=true)
             div(class="col-md-12")
                 div(class="col-md-3")
                     fieldset
-                        label(for="numLargeMedalSets") Anodize
-                            input#anodize.form-control.input-medium(value= !!order ? order.anodize : "" readonly=!biggerThanBuilder)
+                        label(for="reverse") Anodize
+                            input#anodize.form-control.input-medium(type='checkbox' name='anodize' readonly=!biggerThanBuilder checked = rchecked = (order.anodize === "annodize" ? "checked" : undefined))
                 div(class="col-md-3")
                     fieldset
-                        label(for="numMiniMedalDevice") Anodized Total
-                            input#anodized_total.form-control.input-medium(value= !!order ? order.anodized_total : "" readonly=true)
+                        label(for="anodizedTotal") Anodized Total
+                            input#anodizedTotal.form-control.input-medium(value= !!order ? order.anodized_total : "" readonly=true)
+            div(class="col-md-12")
                 div(class="col-md-3")
                     fieldset
-                        label(for="numMiniMedalAttach") Total
-                            input#largeMedalsTotal.form-control.input-medium(value= !!order ? order.large_medals_total : "" readonly = true)
+                        label(for="largeMedalsTotal") Total
+                            input#largeMedalsTotal.form-control.input-medium(value= !!order ? order.total_medals : "" readonly = true)
             div(class="col-md-12")
                 div(class="col-md-12")
                     div(id="#large-medal-rack")
@@ -215,33 +276,33 @@ append body
                     fieldset
                         label(for="tagBranch") Name Tag Branch
                             select#tagBranch.select.form-control.input-medium
-                                option(value="" selected=!!!customer) -- Choose --
-                                option(value="Army" selected=!!customer ? customer.service == "Army" : false) Army
-                                option(value="Navy" selected=!!customer ? customer.service == "Navy" : false) Navy
-                                option(value="Air Force" selected=!!customer ? customer.service == "Air Force" : false) Air Force
-                                option(value="Marine Corps" selected=!!customer ? customer.service == "Marine Corps" : false) Marine Corps
-                                option(value="Coast Guard" selected=!!customer ? customer.service == "Coast Guard" : false) Coast Guard
-                                option(value="Civil Air Patrol" selected=!!customer ? customer.service == "Civil Air Patrol" : false) Civil Air Patrol
-                                option(value="Coast Guard Auxiliary" selected=!!customer ? customer.service == "Coast Guard Auxiliary" : false) Coast Guard Auxiliary
-                                option(value="Public Health Service" selected=!!customer ? customer.service == "Public Health Service" : false) Public Health Service
-                                option(value="NOAA" selected=customer ? !!customer.service == "NOAA" : false) NOAA
-                                option(value="Merchant Marine" selected=!!customer ? customer.service == "Merchant Marine" : false) Merchant Marine
+                                option(value="" selected=!customer) -- Choose --
+                                option(value="Army" selected=!!customer ? customer.service === "Army" : false) Army
+                                option(value="Navy" selected=!!customer ? customer.service === "Navy" : false) Navy
+                                option(value="Air Force" selected=!!customer ? customer.service === "Air Force" : false) Air Force
+                                option(value="Marine Corps" selected=!!customer ? customer.service === "Marine Corps" : false) Marine Corps
+                                option(value="Coast Guard" selected=!!customer ? customer.service === "Coast Guard" : false) Coast Guard
+                                option(value="Civil Air Patrol" selected=!!customer ? customer.service === "Civil Air Patrol" : false) Civil Air Patrol
+                                option(value="Coast Guard Auxiliary" selected=!!customer ? customer.service === "Coast Guard Auxiliary" : false) Coast Guard Auxiliary
+                                option(value="Public Health Service" selected=!!customer ? customer.service === "Public Health Service" : false) Public Health Service
+                                option(value="NOAA" selected=!!customer ? customer.service === "NOAA" : false) NOAA
+                                option(value="Merchant Marine" selected=!!customer ? customer.service === "Merchant Marine" : false) Merchant Marine
                 div(class="col-md-3")
                     fieldset
-                        label(for="rowFill2") Name Tag Line 1
+                        label(for="nameTagLine1") Name Tag Line 1
                             input#nameTagLine1.form-control.input-medium(value= !!order ? order.name_tag_line_1 : "" readonly=!biggerThanBuilder)
                 div(class="col-md-3")
                     fieldset
-                        label(for="numberRibbons") Name Tag Line 2
+                        label(for="NameTagLine2") Name Tag Line 2
                             input#NameTagLine2.form-control.input-medium(value= !!order ? order.name_tag_line_2 : "" readonly=!biggerThanBuilder)
             div(class="col-md-12")
                 div(class="col-md-3")
                     fieldset
-                        label(for="rowFill2") Qty Pin Tag
+                        label(for="numPinTag") Qty Pin Tag
                             input#numPinTag.form-control.input-medium(value= !!order ? order.number_pin_tag : "" readonly=!biggerThanBuilder)
                 div(class="col-md-3")
                     fieldset
-                        label(for="numberRibbons") Qty Magnetic Tag
+                        label(for="numMagneticTag") Qty Magnetic Tag
                             input#numMagneticTag.form-control.input-medium(value= !!order ? order.number_magnetic_tag : "" readonly=!biggerThanBuilder)
                 div(class="col-md-3")
                     fieldset
@@ -260,13 +321,35 @@ append body
                         label(for="rowFill2") Internal Notes Comments
                             textarea#notes.form-control.input-medium(rows="3" value= !!order ? order.comments : "" readonly=!biggerThanBuilder)
             div(class="col-md-12")
+                h3 Order Totals:
+                div(class="col-md-3")
+                    fieldset
+                        label(for="totalOrder") Total Order
+                            input#totalOrder.form-control.input-medium(value= !!order ? order.total_order : "" readonly=true)
+                div(class="col-md-3")
+                    fieldset
+                        label(for="numAttach") Shipping
+                            input#shipping.form-control.input-medium(value= !!order ? order.shipping : "" readonly=!biggerThanBuilder)
+            div(class="col-md-12")
+                div(class="col-md-3")
+                    fieldset
+                        label(for="totalOrder") Total Order
+                            input#totalGrand.form-control.input-medium(value= !!order ? order.total_grand : "" readonly=true)
+            div(class="col-md-12")
                 input(type="submit" onclick="submitClick(event)" class="submit button" value=buttonText)
     include ribbonPalette
     include devicesAttachmentsPalette
     script.
-        var rack1=[], rack2=[], precedence1, precedence2,
+        var rack1=[],
+            rack2=[],
+            miniMedalRack=[],
+            largeMedalRack=[],
+            precedence1,
+            precedence2,
             rack1Selector="#ribbonRack1",
-            rack2Selector="#ribbonRack2";
+            rack2Selector="#ribbonRack2",
+            miniMedalRackSelector="#miniMedalRack",
+            largeMedalRackSelector="#largeMedalRack";
         window.onload = (function (){
             //setup rack component(s)
             setupRackComponents();
@@ -287,32 +370,102 @@ append body
             switch ($('#award-source').val()){
                 case "#ribbonRack1":
                     rack1.push({columns: [selectedRibbon]});
-                    this.ribbonListComponent1.setPrecedence(precedence1).renderRack(rack1, rack1Selector);
+                    renderRack1();
                     break;
                 case "#ribbonRack2":
                     rack2.push({columns: [selectedRibbon]});
-                    this.ribbonListComponent1.setPrecedence(precedence2).renderRack(rack2, rack2Selector);
+                    renderRack2();
                     break;
+                case("#miniMedalRack"):
+                    miniMedalRack.push({columns: [selectedRibbon]});
+                    renderMiniMedalRack();
+                    break;
+                case("#largeMedalRack"):
+                    largeMedalRack.push({columns: [selectedRibbon]});
+                    renderLargeMedalRack();
             }
+            $("#ribbonPalette").modal('toggle');
         }
-        function addDeviceAttachment() {
-            switch ($('#device-attachment-source').val()) {
+        function removeDeviceAttachment (e){
+            e.preventDefault();
+            switch ($(e.target).data('awardsource')) {
                 case "#ribbonRack1":
-                    addDeviceAttachmentToAward(rack1, JSON.parse($("#device-attachment-award").val()), selectedDeviceAttachmentCode);
-                    this.ribbonListComponent1.setPrecedence(precedence1).renderRack(rack1, rack1Selector);
+                    rack1 = removeDeviceAttachmentFromAward(rack1, $(e.target).data("award"));
+                    renderRack1();
                     break;
                 case "#ribbonRack2":
-                    addDeviceAttachmentToAward(rack2, JSON.parse($("#device-attachment-award").val()), selectedDeviceAttachmentCode);
-                    this.ribbonListComponent1.setPrecedence(precedence2).renderRack(rack2, rack2Selector);
+                    rack2 = removeDeviceAttachmentFromAward(rack2, $(e.target).data("award"));
+                    renderRack2();
+                    break;
+                case "#miniMedalRack":
+                    miniMedalRack = removeDeviceAttachmentFromAward(miniMedalRack, $(e.target).data("award"));
+                    renderMiniMedalRack();
+                    break;
+                case "#largeMedalRack":
+                    largeMedalRack = removeDeviceAttachmentFromAward(largeMedalRack, $(e.target).data("award"));
+                    renderLargeMedalRack();
+                    break;
+                
+            }
+        }
+        function removeDeviceAttachmentFromAward(rack, selectedAward) {
+            var awardCode = "";
+            var coordinates = [];
+            rack.forEach(function (row, rowIndex) {
+                row.columns.forEach(function (column, columnIndex) {
+                    if (column.name !== "N/A" && column.code.split(" ")[0] === selectedAward.code.split(" ")[0]) {
+                        coordinates = [rowIndex, columnIndex];
+                        awardCode = column.code;
+                    }
+                });
+            });
+            if (awardCode.indexOf("+") > -1) {
+                var awardTokens = awardCode.split(" + ");
+                awardTokens.splice(awardTokens.length - 1,1);
+                awardTokens[0] = awardTokens[0].split(" ")[1];
+                awardCode = awardCode.split(' ')[0];
+                awardTokens.forEach(function (awardToken, index){
+                    var prefix = " ";
+                    if (index > 0){
+                        prefix = " + "
+                    }
+                    awardCode += prefix + awardToken;
+                });
+            } else if (awardCode.indexOf(" ") > -1){
+                awardCode = awardCode.split(" ")[0];
+            }
+            rack[coordinates[0]].columns[coordinates[1]].code = awardCode;
+            return rack;
+        }
+
+        function addDeviceAttachment() {
+            var deviceAttachmentAward = JSON.parse($("#device-attachment-award").val())
+            switch ($('#device-attachment-source').val()) {
+                case "#ribbonRack1":
+                    addDeviceAttachmentToAward(rack1, deviceAttachmentAward, selectedDeviceAttachmentCode);
+                    renderRack1();
+                    break;
+                case "#ribbonRack2":
+                    addDeviceAttachmentToAward(rack2, deviceAttachmentAward, selectedDeviceAttachmentCode);
+                    renderRack2();
+                    break;
+                case "#miniMedalRack":
+                    miniMedalRack = addDeviceAttachmentToAward(miniMedalRack, deviceAttachmentAward, selectedDeviceAttachmentCode);
+                    renderMiniMedalRack();
+                    break;
+                case "#largeMedalRack":
+                    largeMedalRack = addDeviceAttachmentToAward(largeMedalRack, deviceAttachmentAward, selectedDeviceAttachmentCode);
+                    renderLargeMedalRack();
                     break;
             }
+            $("#devicesAttachmentsPalette").modal('toggle');
         }
 
         function addDeviceAttachmentToAward(rack, selectedAward, selectedDeviceAttachment) {
             var coordinates = [];
             rack.forEach(function (row, rowIndex){
                 row.columns.forEach(function(column, columnIndex){
-                    if (column.code === selectedAward.code) {
+                    if (column.name !== "N/A" && column.code.split(" ")[0] === selectedAward.code.split(" ")[0]) {
                         coordinates = [rowIndex, columnIndex];
                     }
                 });
@@ -322,71 +475,212 @@ append body
                 awardConcatenator = " ";
             }
             rack[coordinates[0]].columns[coordinates[1]].code += awardConcatenator + selectedDeviceAttachment;
+            return rack;
         }
 
+        function insertSpacer(e) {
+            var rackSelector = $(e.target).data("awardsource");
+            var ribbonToReplaceWithSpace = $(e.target).data("award");
+
+            switch(rackSelector) {
+                case "#ribbonRack1":
+                    rack1 = insertSpacerInRack(rack1,ribbonToReplaceWithSpace);
+                    renderRack1();
+                    break;
+                case "#ribbonRack2":
+                    rack2 = insertSpacerInRack(rack2, ribbonToReplaceWithSpace);
+                    renderRack2();
+                    break;
+                case "#miniMedalRack":
+                    miniMedalRack = insertSpacerInRack(miniMedalRack, ribbonToReplaceWithSpace);
+                    renderMiniMedalRack();
+                    break;
+                case "#largeMedalRack":
+                    largeMedalRack = insertSpacerInRack(largeMedalRack, ribbonToReplaceWithSpace);
+                    renderLargeMedalRack();
+                    break;
+            }
+        }
+
+        function insertSpacerInRack(rack, ribbonToReplaceWithSpace) {
+            var augmentedRack = [];
+            rack.forEach(function (row) {
+                var columns = [];
+                row.columns.forEach(function (column) {
+                    if (column.code === ribbonToReplaceWithSpace.code) {
+                        columns.push({name: "N/A"});
+                    }
+                    columns.push(column);
+                });
+                augmentedRack.push({columns: columns});
+            });
+            return augmentedRack;
+        }
+        
         function removeAward(event) {
             event.preventDefault();
             var awardToRemove = $(event.target).parent().data("ribbon");
             var awardSelector = $(event.target).parent().data("award-source");
             switch (awardSelector) {
                 case "#ribbonRack1":
-                    var removedRack = [];
-                    rack1.forEach(function(row) {
-                        var newColumns = row.columns.filter(function (col){return col.name !== awardToRemove.name;});
-                        removedRack.push({columns: newColumns});
-                    });
-                    rack1 = removedRack;
-                    this.ribbonListComponent1.setPrecedence(precedence1).renderRack(rack1, rack1Selector);
+                    rack1 = removeAwardFromRack(rack1, awardToRemove);
+                    renderRack1();
                     break;
                 case "#ribbonRack2":
-                    var removedRack = [];
-                    rack2.forEach(function (row) {
-                        var newColumns = row.columns.filter(function (col) {
-                            return col.name !== awardToRemove.name;
-                        });
-                        removedRack.push({columns: newColumns});
-                    });
-                    rack2 = removedRack;
-                    this.ribbonListComponent2.setPrecedence(precedence2).renderRack(rack2, rack2Selector);
+                    rack2 = removeAwardFromRack(rack2, awardToRemove);
+                    renderRack2();
+                    break;
+                case "#miniMedalRack":
+                    miniMedalRack = removeAwardFromRack(miniMedalRack, awardToRemove);
+                    renderMiniMedalRack();
+                    break;
+                case "#largeMedalRack":
+                    largeMedalRack = removeAwardFromRack(largeMedalRack, awardToRemove);
+                    renderLargeMedalRack();
                     break;
             }
         }
+        function removeAwardFromRack(rack, awardToRemove){
+            var removedRack = [];
+            rack.forEach(function (row) {
+                var newColumns = row.columns.filter(function (col) {
+                    return col.name !== awardToRemove.name;
+                });
+                removedRack.push({columns: newColumns});
+            });
+            return removedRack;
+        }
+        function renderAll() {
+            rack1 = this.ribbonListComponent1.setPrecedence(precedence1).renderRack(rack1, rack1Selector, false);
+            rack2 = this.ribbonListComponent2.setPrecedence(precedence2).renderRack(rack2, rack2Selector, false);
+            miniMedalRack = this.miniMedalListComponent.setPrecedence(precedence1).renderRack(miniMedalRack, miniMedalRackSelector, true);
+            largeMedalRack = this.largeMedalListComponent.setPrecedence(precedence1).renderRack(largeMedalRack, largeMedalRackSelector, true);
+            updateTotals();
+        }
+        function renderRack1(){
+            rack1 = this.ribbonListComponent1.setPrecedence(precedence1).renderRack(rack1, rack1Selector, false);
+            updateTotals();
+        }
+
+        function renderRack2() {
+            rack2 = this.ribbonListComponent2.setPrecedence(precedence2).renderRack(rack2, rack2Selector, false);
+            updateTotals();
+        }
+
+        function renderMiniMedalRack() {
+            miniMedalRack = this.miniMedalListComponent.setPrecedence(precedence1).renderRack(miniMedalRack, miniMedalRackSelector, true);
+            updateTotals;
+        }
+
+        function renderLargeMedalRack() {
+            largeMedalRack = this.largeMedalListComponent.setPrecedence(precedence1).renderRack(largeMedalRack, largeMedalRackSelector, true);
+            updateTotals;
+        }
+
+        function updateRack1Totals () {
+            var totals = ribbonListComponent1.getTotalsForRack(rack1Selector, "ribbon");
+            $("#numRibbons").val(totals.awardCount);
+            $("#numDevices").val(totals.awardDeviceCount);
+            $("#numAttach").val(totals.awardAttachmentCount);
+            $("#totalRibbons1").val(totals.awardTotal.toFixed(2));
+        }
+
+        function updateRack2Totals() {
+            var totals = ribbonListComponent1.getTotalsForRack(rack2Selector, "ribbon");
+            $("#numRibbons2").val(totals.awardCount);
+            $("#numDevices2").val(totals.awardDeviceCount);
+            $("#numAttach2").val(totals.awardAttachmentCount);
+            $("#totalRibbons2").val(totals.awardTotal.toFixed(2));
+        }
+        function updateTotals() {
+            updateRack1Totals();
+            updateRack2Totals();
+            updateTotalMiniMedals();
+            updateTotalLargeMedals();
+
+            var ribbons1 = parseFloat($("#totalRibbons1").val() || 0);
+            var ribbons2 = parseFloat($("#totalRibbons2").val() || 0);
+            var numRibbons1 = parseInt($("#numRibbons").val() || 0);
+            var numRibbons2 = parseInt($("#numRibbons2").val() || 0);
+            var attachments1 = parseInt($("#numAttach").val() || 0);
+            var attachments2 = parseInt($("#numAttach2").val() || 0);
+            var devices1 = parseInt($("#numDevices").val() || 0);
+            var devices2 = parseInt($("#numDevices2").val() || 0);
+            var numPins1 = parseInt($("#numPin").val() || 0);
+            var numPins2 = parseInt($("#numPin2").val() || 0);
+            var numMagnetic1 = parseInt($("#numMagnetic").val() || 0);
+            var numMagnetic2 = parseInt($("#numMagnetic2").val() || 0);
+
+            $("#totalAllRibbonsQuantity").val((numRibbons1 + numRibbons2).toString());
+            $("#totalAllRibbonsDevices").val((devices1 + devices2).toString());
+            $("#totalAllRibbonsAttach").val((attachments1 + attachments2).toString());
+            $("#totalAllRibbonsMagnetic").val((numMagnetic1 + numMagnetic2).toString());
+            $("#totalAllRibbonsPin").val((numPins1 + numPins2).toString());
+            $("#totalAllRibbonMagnetic").val((numRibbons1 + numRibbons2).toString());
+
+
+            $("#totalAllRibbons").val((ribbons1 + ribbons2).toFixed(2).toString());
+        }
+
+        function updateTotalMiniMedals() {
+            var totals = this.miniMedalListComponent.getTotalsForRack(miniMedalRackSelector, "miniMedal");
+            $("#numMiniMedals").val(totals.awardCount);
+            $("#numMiniMedalDevice").val(totals.awardDeviceCount);
+            $("#numMiniMedalAttach").val(totals.awardAttachmentCount);
+            $("#totalMiniMedals").val(totals.awardTotal.toFixed(2));
+        }
+
+        function updateTotalLargeMedals() {
+            var totals = this.largeMedalListComponent.getTotalsForRack(largeMedalRackSelector, "miniMedal");
+            $("#numLargeMedalSets").val(totals.awardCount);
+            $("#numLargeMedalDevice").val(totals.awardDeviceCount);
+            $("#numLargeMedalAttach").val(totals.awardAttachmentCount);
+            $("#totalLargeMedals").val(totals.awardTotal.toFixed(2));
+        }
+
         function setupRackComponents(){
             var precedenceLists = !{JSON.stringify(precedenceLists)};
-            rack1 = !{listRibbons1 ? JSON.stringify(listRibbons1):[]};
             var biggerThanBuilder = !{biggerThanBuilder};
+            rack1 = !{listRibbons1 ? JSON.stringify(listRibbons1):[]};
             rack2 = !{listRibbons2 ? JSON.stringify(listRibbons2):[]};
-            this.ribbonListComponent1 = Rack(precedenceLists, biggerThanBuilder);
-            this.ribbonListComponent2 = Rack(precedenceLists, biggerThanBuilder);
+            miniMedalRack = !{listMiniMedals ? JSON.stringify(listMiniMedals):[]};
+            largeMedalRack = !{listLargeMedals ? JSON.stringify(listLargeMedals):[]};
+            this.ribbonListComponent1 = new Rack(precedenceLists, biggerThanBuilder);
+            this.ribbonListComponent2 = new Rack(precedenceLists, biggerThanBuilder);
+            this.miniMedalListComponent = new Rack(precedenceLists, biggerThanBuilder);
+            this.largeMedalListComponent = new Rack(precedenceLists, biggerThanBuilder);
+            var $rack1Op = $("#rack1Op");
+            var $rack2Op = $("#rack2Op");
             var service = "!{order.service}";
 
             var guessedOP = this.ribbonListComponent1.guessOP(service);
-
-            if ($("#rack1Op").val() === "please_select") {
+            var rack1OpVal = $rack1Op.val();
+            var rack2OpVal = $rack2Op.val()
+            if (rack1OpVal === "please_select") {
                 $('#rack1Op option[value=' + guessedOP + ']').prop('selected', true);
                 precedence1 = guessedOP;
             } else {
-                this.ribbonListComponent1.setPrecedence($("#rack10p").val());
+                this.ribbonListComponent1.setPrecedence(rack1OpVal);
             }
-            if ($("#rack2Op").val() === "please_select") {
+            if (rack2OpVal === "please_select") {
                 $('#rack2Op option[value=' + guessedOP + ']').prop('selected', true);
                 precedence1 = guessedOP;
             } else {
-                this.ribbonListComponent2.setPrecedence($("#rack20p").val());
+                this.ribbonListComponent2.setPrecedence(rack2OpVal);
             }
 
-            $("#rack1Op").change(function () {
-                precedence1 = $("#rack1Op").val();
-                this.ribbonListComponent1.setPrecedence(precedence1).renderRack(rack1, rack1Selector);
-            });
-            $("#rack2Op").change(function () {
-                precedence1 = $("#rack2Op").val();
-                this.ribbonListComponent2.setPrecedence(precedence2).renderRack(rack2, rack2Selector);
+            $rack1Op.change(function () {
+                precedence1 = $rack1Op.val();
+                renderRack1();
             });
 
-            this.ribbonListComponent1.setPrecedence(precedence1).renderRack(rack1, rack1Selector);
-            this.ribbonListComponent2.setPrecedence(precedence2).renderRack(rack2, rack2Selector);
-            var rackForSubmit = ribbonListComponent1.getRackForSubmit(rack1Selector);
+            $rack2Op.change(function () {
+                precedence2 = $rack2Op.val();
+                renderRack2();
+            });
+
+            renderAll();
+            //var rackForSubmit = ribbonListComponent1.getRackForSubmit(rack1Selector);
         };
 
         function submitClick(event) {

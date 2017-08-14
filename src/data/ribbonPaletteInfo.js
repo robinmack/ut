@@ -411,5 +411,5 @@ exports.RibbonPaletteInfo = class RibbonPaletteInfo {
         });
         return ribbonObjList;
     }
-}
+};
 

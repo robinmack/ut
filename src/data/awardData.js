@@ -51,8 +51,14 @@ module.exports = {
                 if (!!cell) {
                     let [description, attachments] = cell.text.toString().split(", ");
                     let award = allRibbons[description];
-                    rowBuilding.columns.push({name:award.name,
-                                            code:award.code + (attachments? " " + attachments:"")});
+                    rowBuilding.columns.push({
+                        name:award.name,
+                        devicesAttachments: getDevicesAttachmentsObjArray(attachments),
+                        code:award.code + (attachments? " " + attachments:""),
+                        ribbonPrice:award.ribbonPrice,
+                        largeMedalPrice:award.largeMedalPrice,
+                        miniMedalPrice: award.miniMedalPrice
+                    });
                 } else {
                     rowBuilding.columns.push({name: "N/A"});
                 }
@@ -60,9 +66,48 @@ module.exports = {
             rows.push(rowBuilding);
         }
         return rows;
+    },
+
+    translateMedalsFromDB: function (ribbonData) {
+        //parse out individual ribbons
+        if (ribbonData !== "") {
+            let medalDataArray = ribbonData.split("<br>");
+            let columns = [];
+            medalDataArray.forEach(function (medal, index) {
+                if (medal !== "") {
+                    let [description, attachments] = medal.toString().split(", ");
+                    let award = allRibbons[description];
+
+                    columns.push({
+                        name: award.name,
+                        devicesAttachments: getDevicesAttachmentsObjArray(attachments),
+                        code: award.code + (attachments ? " " + attachments : ""),
+                        ribbonPrice: award.ribbonPrice,
+                        largeMedalPrice: award.largeMedalPrice,
+                        miniMedalPrice: award.miniMedalPrice
+                    });
+                }
+            });
+            return [{columns: columns}];
+        }
+        return [];
     }
 };
 
+function getDevicesAttachmentsObjArray(attachments) {
+    if (!!attachments) {
+        attachArray = attachments.split(' + ');
+
+        attachObjs = [];
+        attachArray.forEach(function (attachment) {
+            attachment = attachment.trim();
+            var attachObj = allDevicesAttachments[attachment];
+            attachObjs.push(attachObj);
+        });
+        return attachObjs;
+    }
+    return [];
+}
 function parseDbRibbonVals(ribbonVals){
     let ribbonTable = {};
     ribbonVals.forEach(function(ribbon){

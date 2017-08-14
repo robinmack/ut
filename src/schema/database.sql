@@ -71,7 +71,7 @@ CREATE TABLE public."order"
     card_number character varying COLLATE pg_catalog."default" NOT NULL,
     card_expire character varying COLLATE pg_catalog."default" NOT NULL,
     card_civ character varying COLLATE pg_catalog."default" NOT NULL,
-    shipping character varying COLLATE pg_catalog."default" NOT NULL,
+    shipping numeric(8,2) NOT NULL DEFAULT 0,
     number_ribbons integer NOT NULL DEFAULT 0,
     number_devices integer NOT NULL DEFAULT 0,
     number_attachments integer NOT NULL DEFAULT 0,

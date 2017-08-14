@@ -2,110 +2,15 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="7863d19a-8b91-4366-9aa2-e5e174114940" name="Default" comment="Corrected ribbon images (uppercase), added remove/add award, add device">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/javascripts/underscore-min.map" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/views/devicesAttachmentsPalette.pug" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/public/images/ribimages/DEVICES/GIF/1BOL.GIF" afterPath="$PROJECT_DIR$/public/images/ribimages/devices/gif/1BOL.gif" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/public/images/ribimages/DEVICES/GIF/1LBS.GIF" afterPath="$PROJECT_DIR$/public/images/ribimages/devices/gif/1LBS.gif" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/public/images/ribimages/DEVICES/GIF/1LGS.GIF" afterPath="$PROJECT_DIR$/public/images/ribimages/devices/gif/1LGS.gif" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/public/images/ribimages/DEVICES/GIF/1SBS.GIF" afterPath="$PROJECT_DIR$/public/images/ribimages/devices/gif/1SBS.gif" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/public/images/ribimages/DEVICES/GIF/1SK.GIF" afterPath="$PROJECT_DIR$/public/images/ribimages/devices/gif/1SK.gif" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/public/images/ribimages/DEVICES/GIF/2BK.GIF" afterPath="$PROJECT_DIR$/public/images/ribimages/devices/gif/2BK.gif" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/public/images/ribimages/DEVICES/GIF/2SK.GIF" afterPath="$PROJECT_DIR$/public/images/ribimages/devices/gif/2SK.gif" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/public/images/ribimages/DEVICES/GIF/3BK.GIF" afterPath="$PROJECT_DIR$/public/images/ribimages/devices/gif/3BK.gif" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/public/images/ribimages/DEVICES/GIF/4BK.GIF" afterPath="$PROJECT_DIR$/public/images/ribimages/devices/gif/4BK.gif" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/public/images/ribimages/DEVICES/GIF/5BK.GIF" afterPath="$PROJECT_DIR$/public/images/ribimages/devices/gif/5BK.gif" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/public/images/ribimages/DEVICES/GIF/5LGS.GIF" afterPath="$PROJECT_DIR$/public/images/ribimages/devices/gif/5LGS.gif" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/public/images/ribimages/DEVICES/GIF/6BK.GIF" afterPath="$PROJECT_DIR$/public/images/ribimages/devices/gif/6BK.gif" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/public/images/ribimages/DEVICES/GIF/7BK.GIF" afterPath="$PROJECT_DIR$/public/images/ribimages/devices/gif/7BK.gif" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/public/images/ribimages/DEVICES/GIF/ARROW.GIF" afterPath="$PROJECT_DIR$/public/images/ribimages/devices/gif/ARROW.gif" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/public/images/ribimages/DEVICES/GIF/B0.GIF" afterPath="$PROJECT_DIR$/public/images/ribimages/devices/gif/B0.gif" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/public/images/ribimages/DEVICES/GIF/B1.GIF" afterPath="$PROJECT_DIR$/public/images/ribimages/devices/gif/B1.gif" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/public/images/ribimages/DEVICES/GIF/B2.gif" afterPath="$PROJECT_DIR$/public/images/ribimages/devices/gif/B2.gif" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/public/images/ribimages/DEVICES/GIF/B3.gif" afterPath="$PROJECT_DIR$/public/images/ribimages/devices/gif/B3.gif" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/public/images/ribimages/DEVICES/GIF/B4.GIF" afterPath="$PROJECT_DIR$/public/images/ribimages/devices/gif/B4.gif" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/public/images/ribimages/DEVICES/GIF/B5.GIF" afterPath="$PROJECT_DIR$/public/images/ribimages/devices/gif/B5.gif" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/public/images/ribimages/DEVICES/GIF/B6.GIF" afterPath="$PROJECT_DIR$/public/images/ribimages/devices/gif/B6.gif" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/public/images/ribimages/DEVICES/GIF/B7.GIF" afterPath="$PROJECT_DIR$/public/images/ribimages/devices/gif/B7.gif" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/public/images/ribimages/DEVICES/GIF/B8.GIF" afterPath="$PROJECT_DIR$/public/images/ribimages/devices/gif/B8.gif" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/public/images/ribimages/DEVICES/GIF/B9.GIF" afterPath="$PROJECT_DIR$/public/images/ribimages/devices/gif/B9.gif" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/public/images/ribimages/DEVICES/GIF/BA.GIF" afterPath="$PROJECT_DIR$/public/images/ribimages/devices/gif/BA.gif" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/public/images/ribimages/DEVICES/GIF/BAD.gif" afterPath="$PROJECT_DIR$/public/images/ribimages/devices/gif/BAD.gif" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/public/images/ribimages/DEVICES/GIF/BBee.gif" afterPath="$PROJECT_DIR$/public/images/ribimages/devices/gif/BBEE.gif" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/public/images/ribimages/DEVICES/GIF/BCAP.gif" afterPath="$PROJECT_DIR$/public/images/ribimages/devices/gif/BCAP.gif" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/public/images/ribimages/DEVICES/GIF/BDIA.gif" afterPath="$PROJECT_DIR$/public/images/ribimages/devices/gif/BDIA.gif" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/public/images/ribimages/DEVICES/GIF/BE.GIF" afterPath="$PROJECT_DIR$/public/images/ribimages/devices/gif/BE.gif" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/public/images/ribimages/DEVICES/GIF/BHG.GIF" afterPath="$PROJECT_DIR$/public/images/ribimages/devices/gif/BHG.gif" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/public/images/ribimages/DEVICES/GIF/BM.GIF" afterPath="$PROJECT_DIR$/public/images/ribimages/devices/gif/BM.gif" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/public/images/ribimages/DEVICES/GIF/BNOA.gif" afterPath="$PROJECT_DIR$/public/images/ribimages/devices/gif/BNOA.gif" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/public/images/ribimages/DEVICES/GIF/BOL.GIF" afterPath="$PROJECT_DIR$/public/images/ribimages/devices/gif/BOL.gif" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/public/images/ribimages/DEVICES/GIF/BP.GIF" afterPath="$PROJECT_DIR$/public/images/ribimages/devices/gif/BP.gif" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/public/images/ribimages/DEVICES/GIF/BPROP.gif" afterPath="$PROJECT_DIR$/public/images/ribimages/devices/gif/BPROP.gif" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/public/images/ribimages/DEVICES/GIF/BS.GIF" afterPath="$PROJECT_DIR$/public/images/ribimages/devices/gif/BS.gif" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/public/images/ribimages/DEVICES/GIF/BV.GIF" afterPath="$PROJECT_DIR$/public/images/ribimages/devices/gif/BV.gif" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/public/images/ribimages/DEVICES/GIF/BWO.GIF" afterPath="$PROJECT_DIR$/public/images/ribimages/devices/gif/BWO.gif" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/public/images/ribimages/DEVICES/GIF/EA.gif" afterPath="$PROJECT_DIR$/public/images/ribimages/devices/gif/EA.gif" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/public/images/ribimages/DEVICES/GIF/G0.gif" afterPath="$PROJECT_DIR$/public/images/ribimages/devices/gif/G0.gif" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/public/images/ribimages/DEVICES/GIF/G1.gif" afterPath="$PROJECT_DIR$/public/images/ribimages/devices/gif/G1.gif" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/public/images/ribimages/DEVICES/GIF/G2.gif" afterPath="$PROJECT_DIR$/public/images/ribimages/devices/gif/G2.gif" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/public/images/ribimages/DEVICES/GIF/G3.gif" afterPath="$PROJECT_DIR$/public/images/ribimages/devices/gif/G3.gif" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/public/images/ribimages/DEVICES/GIF/G4.gif" afterPath="$PROJECT_DIR$/public/images/ribimages/devices/gif/G4.gif" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/public/images/ribimages/DEVICES/GIF/G5.gif" afterPath="$PROJECT_DIR$/public/images/ribimages/devices/gif/G5.gif" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/public/images/ribimages/DEVICES/GIF/G6.gif" afterPath="$PROJECT_DIR$/public/images/ribimages/devices/gif/G6.gif" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/public/images/ribimages/DEVICES/GIF/G7.gif" afterPath="$PROJECT_DIR$/public/images/ribimages/devices/gif/G7.gif" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/public/images/ribimages/DEVICES/GIF/G8.gif" afterPath="$PROJECT_DIR$/public/images/ribimages/devices/gif/G8.gif" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/public/images/ribimages/DEVICES/GIF/G9.gif" afterPath="$PROJECT_DIR$/public/images/ribimages/devices/gif/G9.gif" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/public/images/ribimages/DEVICES/GIF/GBee.gif" afterPath="$PROJECT_DIR$/public/images/ribimages/devices/gif/GBEE.gif" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/public/images/ribimages/DEVICES/GIF/GDIA.gif" afterPath="$PROJECT_DIR$/public/images/ribimages/devices/gif/GDIA.gif" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/public/images/ribimages/DEVICES/GIF/GF.GIF" afterPath="$PROJECT_DIR$/public/images/ribimages/devices/gif/GF.gif" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/public/images/ribimages/DEVICES/GIF/GHG.GIF" afterPath="$PROJECT_DIR$/public/images/ribimages/devices/gif/GHG.gif" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/public/images/ribimages/DEVICES/GIF/GN.gif" afterPath="$PROJECT_DIR$/public/images/ribimages/devices/gif/GN.gif" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/public/images/ribimages/DEVICES/GIF/GPROP.gif" afterPath="$PROJECT_DIR$/public/images/ribimages/devices/gif/GPROP.gif" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/public/images/ribimages/DEVICES/GIF/GV.GIF" afterPath="$PROJECT_DIR$/public/images/ribimages/devices/gif/GV.gif" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/public/images/ribimages/DEVICES/GIF/GWO.GIF" afterPath="$PROJECT_DIR$/public/images/ribimages/devices/gif/GWO.gif" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/public/images/ribimages/DEVICES/GIF/HA.gif" afterPath="$PROJECT_DIR$/public/images/ribimages/devices/gif/HA.gif" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/public/images/ribimages/DEVICES/GIF/LBL.GIF" afterPath="$PROJECT_DIR$/public/images/ribimages/devices/gif/LBL.gif" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/public/images/ribimages/DEVICES/GIF/LBS.gif" afterPath="$PROJECT_DIR$/public/images/ribimages/devices/gif/LBS.gif" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/public/images/ribimages/DEVICES/GIF/LGS.gif" afterPath="$PROJECT_DIR$/public/images/ribimages/devices/gif/LGS.gif" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/public/images/ribimages/DEVICES/GIF/LSE.GIF" afterPath="$PROJECT_DIR$/public/images/ribimages/devices/gif/LSE.gif" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/public/images/ribimages/DEVICES/GIF/LSL.GIF" afterPath="$PROJECT_DIR$/public/images/ribimages/devices/gif/LSL.gif" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/public/images/ribimages/DEVICES/GIF/LSS.GIF" afterPath="$PROJECT_DIR$/public/images/ribimages/devices/gif/LSS.gif" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/public/images/ribimages/DEVICES/GIF/ME.GIF" afterPath="$PROJECT_DIR$/public/images/ribimages/devices/gif/ME.gif" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/public/images/ribimages/DEVICES/GIF/NE.GIF" afterPath="$PROJECT_DIR$/public/images/ribimages/devices/gif/NE.gif" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/public/images/ribimages/DEVICES/GIF/NEW.GIF" afterPath="$PROJECT_DIR$/public/images/ribimages/devices/gif/NEW.gif" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/public/images/ribimages/DEVICES/GIF/PT.GIF" afterPath="$PROJECT_DIR$/public/images/ribimages/devices/gif/PT.gif" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/public/images/ribimages/DEVICES/GIF/SBS.gif" afterPath="$PROJECT_DIR$/public/images/ribimages/devices/gif/SBS.gif" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/public/images/ribimages/DEVICES/GIF/SBee.gif" afterPath="$PROJECT_DIR$/public/images/ribimages/devices/gif/SBEE.gif" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/public/images/ribimages/DEVICES/GIF/SCAP.gif" afterPath="$PROJECT_DIR$/public/images/ribimages/devices/gif/SCAP.gif" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/public/images/ribimages/DEVICES/GIF/SDIA.gif" afterPath="$PROJECT_DIR$/public/images/ribimages/devices/gif/SDIA.gif" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/public/images/ribimages/DEVICES/GIF/SE.gif" afterPath="$PROJECT_DIR$/public/images/ribimages/devices/gif/SE.gif" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/public/images/ribimages/DEVICES/GIF/SGS.GIF" afterPath="$PROJECT_DIR$/public/images/ribimages/devices/gif/SGS.gif" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/public/images/ribimages/DEVICES/GIF/SHG.GIF" afterPath="$PROJECT_DIR$/public/images/ribimages/devices/gif/SHG.gif" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/public/images/ribimages/DEVICES/GIF/SNOA.gif" afterPath="$PROJECT_DIR$/public/images/ribimages/devices/gif/SNOA.gif" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/public/images/ribimages/DEVICES/GIF/SO.GIF" afterPath="$PROJECT_DIR$/public/images/ribimages/devices/gif/SO.gif" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/public/images/ribimages/DEVICES/GIF/SOL.GIF" afterPath="$PROJECT_DIR$/public/images/ribimages/devices/gif/SOL.gif" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/public/images/ribimages/DEVICES/GIF/SPROP.gif" afterPath="$PROJECT_DIR$/public/images/ribimages/devices/gif/SPROP.gif" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/public/images/ribimages/DEVICES/GIF/SS.GIF" afterPath="$PROJECT_DIR$/public/images/ribimages/devices/gif/SS.gif" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/public/images/ribimages/DEVICES/GIF/SSS.GIF" afterPath="$PROJECT_DIR$/public/images/ribimages/devices/gif/SSS.gif" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/public/images/ribimages/DEVICES/GIF/SV.GIF" afterPath="$PROJECT_DIR$/public/images/ribimages/devices/gif/SV.gif" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/public/images/ribimages/DEVICES/GIF/SW.gif" afterPath="$PROJECT_DIR$/public/images/ribimages/devices/gif/SW.gif" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/public/images/ribimages/DEVICES/GIF/SWO.GIF" afterPath="$PROJECT_DIR$/public/images/ribimages/devices/gif/SWO.gif" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/public/images/ribimages/DEVICES/GIF/YY.gif" afterPath="$PROJECT_DIR$/public/images/ribimages/devices/gif/YY.gif" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/public/images/ribimages/DEVICES/GIF/fourthspace.gif" afterPath="$PROJECT_DIR$/public/images/ribimages/devices/gif/FOURTHSPACE.gif" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/public/images/ribimages/DEVICES/GIF/halfspace.gif" afterPath="$PROJECT_DIR$/public/images/ribimages/devices/gif/HALFSPACE.gif" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/public/images/ribimages/DEVICES/GIF/spacer.gif" afterPath="$PROJECT_DIR$/public/images/ribimages/devices/gif/SPACER.gif" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/data/ribbonData.js" afterPath="$PROJECT_DIR$/src/data/awardData.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/javascripts/rack.js" afterPath="$PROJECT_DIR$/public/javascripts/rack.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/stylesheets/style.css" afterPath="$PROJECT_DIR$/public/stylesheets/style.css" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/controllers/orders.js" afterPath="$PROJECT_DIR$/src/controllers/orders.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/data/awardConverter.js" afterPath="$PROJECT_DIR$/src/data/awardConverter.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/data/order.js" afterPath="$PROJECT_DIR$/src/data/order.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/data/awardData.js" afterPath="$PROJECT_DIR$/src/data/awardData.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/data/ribbonPaletteInfo.js" afterPath="$PROJECT_DIR$/src/data/ribbonPaletteInfo.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/schema/database.sql" afterPath="$PROJECT_DIR$/src/schema/database.sql" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/menuBar.pug" afterPath="$PROJECT_DIR$/views/menuBar.pug" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/services/orders.js" afterPath="$PROJECT_DIR$/src/services/orders.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/orderList.pug" afterPath="$PROJECT_DIR$/views/orderList.pug" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/orderView.pug" afterPath="$PROJECT_DIR$/views/orderView.pug" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/ribbonPalette.pug" afterPath="$PROJECT_DIR$/views/ribbonPalette.pug" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -123,7 +28,6 @@
     <option name="SHOW_EMPTY_GROUPS" value="false" />
     <option name="AUTO_SCROLL_FROM_SOURCE" value="false" />
   </component>
-  <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
     <splitter split-orientation="horizontal" split-proportion="0.5">
       <split-first>
@@ -131,8 +35,8 @@
           <file leaf-file-name="orderView.pug" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/views/orderView.pug">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="256">
-                  <caret line="261" column="34" lean-forward="true" selection-start-line="261" selection-start-column="34" selection-end-line="261" selection-end-column="34" />
+                <state relative-caret-position="15">
+                  <caret line="631" column="0" lean-forward="false" selection-start-line="631" selection-start-column="0" selection-end-line="631" selection-end-column="0" />
                   <folding />
                 </state>
               </provider>
@@ -141,8 +45,8 @@
           <file leaf-file-name="ribbonPaletteInfo.js" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/src/data/ribbonPaletteInfo.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="105">
-                  <caret line="7" column="6" lean-forward="false" selection-start-line="7" selection-start-column="6" selection-end-line="7" selection-end-column="6" />
+                <state relative-caret-position="6210">
+                  <caret line="414" column="0" lean-forward="false" selection-start-line="414" selection-start-column="0" selection-end-line="414" selection-end-column="0" />
                   <folding />
                 </state>
               </provider>
@@ -158,21 +62,11 @@
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="orders.js" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/src/services/orders.js">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="1365">
-                  <caret line="91" column="34" lean-forward="false" selection-start-line="91" selection-start-column="34" selection-end-line="91" selection-end-column="34" />
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
           <file leaf-file-name="style.css" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/public/stylesheets/style.css">
               <provider selected="true" editor-type-id="text-editor">
                 <state relative-caret-position="15">
-                  <caret line="1" column="20" lean-forward="true" selection-start-line="1" selection-start-column="20" selection-end-line="1" selection-end-column="20" />
+                  <caret line="1" column="20" lean-forward="false" selection-start-line="1" selection-start-column="20" selection-end-line="1" selection-end-column="20" />
                   <folding />
                 </state>
               </provider>
@@ -181,8 +75,18 @@
           <file leaf-file-name="awardData.js" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/src/data/awardData.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="169">
-                  <caret line="66" column="25" lean-forward="true" selection-start-line="66" selection-start-column="25" selection-end-line="66" selection-end-column="25" />
+                <state relative-caret-position="75">
+                  <caret line="5" column="0" lean-forward="false" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="orderList.pug" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/views/orderList.pug">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="435">
+                  <caret line="29" column="50" lean-forward="false" selection-start-line="29" selection-start-column="50" selection-end-line="29" selection-end-column="50" />
                   <folding />
                 </state>
               </provider>
@@ -202,19 +106,19 @@
       </split-first>
       <split-second>
         <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-          <file leaf-file-name="rack.js" pinned="false" current-in-tab="false">
+          <file leaf-file-name="rack.js" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/public/javascripts/rack.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="94">
-                  <caret line="98" column="51" lean-forward="false" selection-start-line="98" selection-start-column="51" selection-end-line="98" selection-end-column="51" />
+                <state relative-caret-position="183">
+                  <caret line="297" column="53" lean-forward="false" selection-start-line="297" selection-start-column="34" selection-end-line="297" selection-end-column="53" />
                   <folding>
-                    <marker date="1500349079000" expanded="true" signature="4067:4076" ph="..." />
-                    <marker date="1500349079000" expanded="true" signature="4067:4081" ph="..." />
-                    <marker date="1500349079000" expanded="true" signature="4216:4235" ph="..." />
-                    <marker date="1500349079000" expanded="true" signature="4733:4752" ph="..." />
-                    <marker date="1500349079000" expanded="true" signature="7322:7341" ph="..." />
-                    <marker date="1500349079000" expanded="true" signature="7534:7553" ph="..." />
-                    <marker date="1500349079000" expanded="true" signature="7710:7725" ph="..." />
+                    <marker date="1502241056000" expanded="true" signature="4417:4426" ph="..." />
+                    <marker date="1502241056000" expanded="true" signature="4417:4431" ph="..." />
+                    <marker date="1502241056000" expanded="true" signature="4566:4585" ph="..." />
+                    <marker date="1502241056000" expanded="true" signature="5177:5196" ph="..." />
+                    <marker date="1502241056000" expanded="true" signature="8625:8644" ph="..." />
+                    <marker date="1502241056000" expanded="true" signature="8837:8856" ph="..." />
+                    <marker date="1502241056000" expanded="true" signature="9013:9028" ph="..." />
                   </folding>
                 </state>
               </provider>
@@ -223,8 +127,8 @@
           <file leaf-file-name="ribbonPalette.pug" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/views/ribbonPalette.pug">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="243">
-                  <caret line="24" column="65" lean-forward="false" selection-start-line="24" selection-start-column="65" selection-end-line="24" selection-end-column="65" />
+                <state relative-caret-position="345">
+                  <caret line="23" column="75" lean-forward="false" selection-start-line="23" selection-start-column="74" selection-end-line="23" selection-end-column="75" />
                   <folding />
                 </state>
               </provider>
@@ -233,7 +137,7 @@
           <file leaf-file-name="devicesAttachmentsPalette.pug" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/views/devicesAttachmentsPalette.pug">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="134">
+                <state relative-caret-position="300">
                   <caret line="20" column="40" lean-forward="false" selection-start-line="20" selection-start-column="40" selection-end-line="20" selection-end-column="40" />
                   <folding />
                 </state>
@@ -243,8 +147,8 @@
           <file leaf-file-name="awardConverter.js" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/src/data/awardConverter.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="187">
-                  <caret line="33" column="47" lean-forward="true" selection-start-line="33" selection-start-column="47" selection-end-line="33" selection-end-column="47" />
+                <state relative-caret-position="495">
+                  <caret line="33" column="47" lean-forward="false" selection-start-line="33" selection-start-column="47" selection-end-line="33" selection-end-column="47" />
                   <folding />
                 </state>
               </provider>
@@ -253,8 +157,8 @@
           <file leaf-file-name="orders.js" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/src/controllers/orders.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="207">
-                  <caret line="58" column="61" lean-forward="false" selection-start-line="58" selection-start-column="61" selection-end-line="58" selection-end-column="61" />
+                <state relative-caret-position="870">
+                  <caret line="58" column="34" lean-forward="false" selection-start-line="58" selection-start-column="34" selection-end-line="58" selection-end-column="34" />
                   <folding />
                 </state>
               </provider>
@@ -263,18 +167,18 @@
           <file leaf-file-name="order.js" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/src/data/order.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="15">
-                  <caret line="294" column="73" lean-forward="false" selection-start-line="294" selection-start-column="73" selection-end-line="294" selection-end-column="73" />
+                <state relative-caret-position="1110">
+                  <caret line="74" column="4" lean-forward="false" selection-start-line="74" selection-start-column="4" selection-end-line="74" selection-end-column="4" />
                   <folding />
                 </state>
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="database.sql" pinned="false" current-in-tab="true">
+          <file leaf-file-name="database.sql" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/src/schema/database.sql">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="138">
-                  <caret line="132" column="0" lean-forward="false" selection-start-line="132" selection-start-column="0" selection-end-line="132" selection-end-column="0" />
+                <state relative-caret-position="1740">
+                  <caret line="116" column="4" lean-forward="false" selection-start-line="116" selection-start-column="4" selection-end-line="116" selection-end-column="4" />
                   <folding />
                 </state>
               </provider>
@@ -303,36 +207,36 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>prices</find>
-      <find>onclick</find>
-      <find>switch</find>
-      <find>data</find>
-      <find>JSON.string</find>
-      <find>view</find>
-      <find>rack2</find>
-      <find>u</find>
-      <find>undersc</find>
-      <find>undersco</find>
-      <find>underscor</find>
-      <find>underscore</find>
-      <find>underscore-</find>
-      <find>underscore-m</find>
-      <find>underscore-mi</find>
-      <find>underscore-min</find>
-      <find>underscore-min.</find>
-      <find>underscore-min.m</find>
-      <find>underscore-min.map</find>
-      <find>`</find>
-      <find>d</find>
-      <find>devices</find>
-      <find>devices_</find>
-      <find>devices_a</find>
-      <find>devices_at</find>
-      <find>devices_att</find>
-      <find>devices_atta</find>
-      <find>Fourth</find>
       <find>ribbonP</find>
       <find>ribbon</find>
+      <find>devices_atta</find>
+      <find>s</find>
+      <find>splice</find>
+      <find>rack</find>
+      <find>ribbonListComponent</find>
+      <find>rack1</find>
+      <find>columns</find>
+      <find>shipping</find>
+      <find>mini</find>
+      <find>ribbons_2</find>
+      <find>total_</find>
+      <find>total_medals numeric(8, 2)</find>
+      <find>check</find>
+      <find>space</find>
+      <find>/tr</find>
+      <find>rowHtml</find>
+      <find>debugger</find>
+      <find>add me</find>
+      <find>empty</find>
+      <find>miniMedalListComponent1</find>
+      <find>largeMedalListComponent</find>
+      <find>this.ribbonList</find>
+      <find>ribbonList</find>
+      <find>totalRibbons1</find>
+      <find>totalAll</find>
+      <find>totalAllRibbonsDevices</find>
+      <find>totalAllRibbonsDevice</find>
+      <find>numRibbon</find>
     </findStrings>
     <replaceStrings>
       <replace>UserResponse</replace>
@@ -367,7 +271,6 @@
         <option value="$PROJECT_DIR$/views/error.pug" />
         <option value="$PROJECT_DIR$/orders/config.json" />
         <option value="timers.js" />
-        <option value="$PROJECT_DIR$/src/services/orders.js" />
         <option value="vm:6320" />
         <option value="$PROJECT_DIR$/node_modules/pug-bootstrap/_bootstrap.pug" />
         <option value="$PROJECT_DIR$/views/changePassword.pug" />
@@ -388,24 +291,25 @@
         <option value="$PROJECT_DIR$/src/data/ribbonPalette.js" />
         <option value="$PROJECT_DIR$/src/data/ribbonInfo.js" />
         <option value="$PROJECT_DIR$/TODO.md" />
-        <option value="$PROJECT_DIR$/views/orderList.pug" />
         <option value="$PROJECT_DIR$/src/data/order.js" />
-        <option value="$PROJECT_DIR$/src/data/ribbonPaletteInfo.js" />
         <option value="$PROJECT_DIR$/views/menuBar.pug" />
         <option value="$PROJECT_DIR$/views/customerView.pug" />
         <option value="$PROJECT_DIR$/views/ribbonPalette.pug" />
         <option value="$PROJECT_DIR$/src/data/ribbonData.js" />
         <option value="$PROJECT_DIR$/src/data/devicesAttachments.js" />
-        <option value="$PROJECT_DIR$/src/controllers/orders.js" />
-        <option value="$PROJECT_DIR$/src/data/awardData.js" />
         <option value="$APPLICATION_CONFIG_DIR$/idea.properties" />
         <option value="$PROJECT_DIR$/src/data/awardConverter.js" />
         <option value="$PROJECT_DIR$/views/devicesAwardsPalette.pug" />
         <option value="$PROJECT_DIR$/public/stylesheets/style.css" />
         <option value="$PROJECT_DIR$/views/devicesAttachmentsPalette.pug" />
-        <option value="$PROJECT_DIR$/views/orderView.pug" />
-        <option value="$PROJECT_DIR$/public/javascripts/rack.js" />
         <option value="$PROJECT_DIR$/src/schema/database.sql" />
+        <option value="$PROJECT_DIR$/src/services/orders.js" />
+        <option value="$PROJECT_DIR$/src/data/ribbonPaletteInfo.js" />
+        <option value="$PROJECT_DIR$/src/data/awardData.js" />
+        <option value="$PROJECT_DIR$/views/orderList.pug" />
+        <option value="$PROJECT_DIR$/src/controllers/orders.js" />
+        <option value="$PROJECT_DIR$/public/javascripts/rack.js" />
+        <option value="$PROJECT_DIR$/views/orderView.pug" />
       </list>
     </option>
   </component>
@@ -416,6 +320,7 @@
     <exe-path />
     <annotation-enable>false</annotation-enable>
     <other-services-enabled>true</other-services-enabled>
+    <auto-save>true</auto-save>
   </component>
   <component name="JsGulpfileManager">
     <detection-done>true</detection-done>
@@ -449,237 +354,36 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="ProjectPane">
-        <subPane>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="ut" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="ut" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="ut" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="ut" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="views" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="ut" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="ut" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="ut" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="ut" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="services" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="ut" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="ut" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="schema" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="ut" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="ut" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="data" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="ut" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="ut" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="controllers" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="ut" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="ut" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="routes" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="ut" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="ut" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="public" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="ut" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="ut" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="public" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="stylesheets" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="ut" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="ut" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="public" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="javascripts" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="underscore-min.js" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.NestingTreeNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="ut" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="ut" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="public" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="javascripts" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="ut" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="ut" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="orders" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="ut" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="ut" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value=".idea" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-        </subPane>
-      </pane>
       <pane id="Scratches" />
       <pane id="PackagesPane" />
       <pane id="Scope" />
+      <pane id="ProjectPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="ut" type="b2602c69:ProjectViewProjectNode" />
+              <item name="ut" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="ut" type="b2602c69:ProjectViewProjectNode" />
+              <item name="ut" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="ut" type="b2602c69:ProjectViewProjectNode" />
+              <item name="ut" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="data" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="ut" type="b2602c69:ProjectViewProjectNode" />
+              <item name="ut" type="462c0819:PsiDirectoryNode" />
+              <item name="views" type="462c0819:PsiDirectoryNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -730,13 +434,14 @@
     </option>
   </component>
   <component name="RunManager" selected="Node.js.Debug app">
+    <configuration name="Debug app" type="NodeJSConfigurationType" factoryName="Node.js" path-to-node="/usr/local/bin/node" path-to-js-file="bin/www" application-parameters="debug" working-dir="$PROJECT_DIR$" />
+    <configuration name="Launch" type="NodeJSConfigurationType" factoryName="Node.js" path-to-node="/usr/local/bin/node" application-parameters="NODE_ENV=production" node-parameters="bin/www" working-dir="$PROJECT_DIR$" />
     <configuration default="true" type="Applet" factoryName="Applet">
       <option name="HTML_USED" value="false" />
       <option name="WIDTH" value="400" />
       <option name="HEIGHT" value="300" />
       <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
       <module />
-      <method />
     </configuration>
     <configuration default="true" type="Application" factoryName="Application">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
@@ -751,7 +456,68 @@
       <option name="PASS_PARENT_ENVS" value="true" />
       <module name="" />
       <envs />
-      <method />
+    </configuration>
+    <configuration default="true" type="js.build_tools.gulp" factoryName="Gulp.js">
+      <node-interpreter>project</node-interpreter>
+      <node-options />
+      <gulpfile />
+      <tasks />
+      <arguments />
+      <envs />
+    </configuration>
+    <configuration default="true" type="JUnit" factoryName="JUnit">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <module name="" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PACKAGE_NAME" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="METHOD_NAME" />
+      <option name="TEST_OBJECT" value="class" />
+      <option name="VM_PARAMETERS" value="-ea" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="singleModule" />
+      </option>
+      <envs />
+      <patterns />
+    </configuration>
+    <configuration default="true" type="Remote" factoryName="Remote">
+      <option name="USE_SOCKET_TRANSPORT" value="true" />
+      <option name="SERVER_MODE" value="false" />
+      <option name="SHMEM_ADDRESS" value="javadebug" />
+      <option name="HOST" value="localhost" />
+      <option name="PORT" value="5005" />
+    </configuration>
+    <configuration default="true" type="TestNG" factoryName="TestNG">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <module name="" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="SUITE_NAME" />
+      <option name="PACKAGE_NAME" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="METHOD_NAME" />
+      <option name="GROUP_NAME" />
+      <option name="TEST_OBJECT" value="CLASS" />
+      <option name="VM_PARAMETERS" value="-ea" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
+      <option name="OUTPUT_DIRECTORY" />
+      <option name="ANNOTATION_TYPE" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="singleModule" />
+      </option>
+      <option name="USE_DEFAULT_REPORTERS" value="false" />
+      <option name="PROPERTIES_FILE" />
+      <envs />
+      <properties />
+      <listeners />
     </configuration>
     <configuration default="true" type="CucumberJavaRunConfigurationType" factoryName="Cucumber java">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
@@ -837,27 +603,6 @@
       </ExternalSystemSettings>
       <method />
     </configuration>
-    <configuration default="true" type="JUnit" factoryName="JUnit">
-      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
-      <module name="" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="PACKAGE_NAME" />
-      <option name="MAIN_CLASS_NAME" />
-      <option name="METHOD_NAME" />
-      <option name="TEST_OBJECT" value="class" />
-      <option name="VM_PARAMETERS" value="-ea" />
-      <option name="PARAMETERS" />
-      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
-      <option name="ENV_VARIABLES" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <option name="TEST_SEARCH_SCOPE">
-        <value defaultName="singleModule" />
-      </option>
-      <envs />
-      <patterns />
-      <method />
-    </configuration>
     <configuration default="true" type="JarApplication" factoryName="JAR Application">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
       <envs />
@@ -923,51 +668,6 @@
     <configuration default="true" type="NodeJSConfigurationType" factoryName="Node.js" path-to-node="project" working-dir="">
       <method />
     </configuration>
-    <configuration default="true" type="Remote" factoryName="Remote">
-      <option name="USE_SOCKET_TRANSPORT" value="true" />
-      <option name="SERVER_MODE" value="false" />
-      <option name="SHMEM_ADDRESS" value="javadebug" />
-      <option name="HOST" value="localhost" />
-      <option name="PORT" value="5005" />
-      <method />
-    </configuration>
-    <configuration default="true" type="TestNG" factoryName="TestNG">
-      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
-      <module name="" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="SUITE_NAME" />
-      <option name="PACKAGE_NAME" />
-      <option name="MAIN_CLASS_NAME" />
-      <option name="METHOD_NAME" />
-      <option name="GROUP_NAME" />
-      <option name="TEST_OBJECT" value="CLASS" />
-      <option name="VM_PARAMETERS" value="-ea" />
-      <option name="PARAMETERS" />
-      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
-      <option name="OUTPUT_DIRECTORY" />
-      <option name="ANNOTATION_TYPE" />
-      <option name="ENV_VARIABLES" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <option name="TEST_SEARCH_SCOPE">
-        <value defaultName="singleModule" />
-      </option>
-      <option name="USE_DEFAULT_REPORTERS" value="false" />
-      <option name="PROPERTIES_FILE" />
-      <envs />
-      <properties />
-      <listeners />
-      <method />
-    </configuration>
-    <configuration default="true" type="js.build_tools.gulp" factoryName="Gulp.js">
-      <node-interpreter>project</node-interpreter>
-      <node-options />
-      <gulpfile />
-      <tasks />
-      <arguments />
-      <envs />
-      <method />
-    </configuration>
     <configuration default="true" type="js.build_tools.npm" factoryName="npm">
       <command value="run" />
       <scripts />
@@ -994,15 +694,9 @@
     <configuration default="true" type="osgi.bnd.run" factoryName="Test Launcher (JUnit)">
       <method />
     </configuration>
-    <configuration default="false" name="Launch" type="NodeJSConfigurationType" factoryName="Node.js" path-to-node="/usr/local/bin/node" application-parameters="NODE_ENV=production" node-parameters="bin/www" working-dir="$PROJECT_DIR$">
-      <method />
-    </configuration>
-    <configuration default="false" name="Debug app" type="NodeJSConfigurationType" factoryName="Node.js" path-to-node="/usr/local/bin/node" path-to-js-file="bin/www" application-parameters="debug" working-dir="$PROJECT_DIR$">
-      <method />
-    </configuration>
     <list size="2">
-      <item index="0" class="java.lang.String" itemvalue="Node.js.Launch" />
-      <item index="1" class="java.lang.String" itemvalue="Node.js.Debug app" />
+      <item index="0" class="java.lang.String" itemvalue="Node.js.Debug app" />
+      <item index="1" class="java.lang.String" itemvalue="Node.js.Launch" />
     </list>
   </component>
   <component name="SbtLocalSettings">
@@ -1037,21 +731,19 @@
     <editor active="true" />
     <layout>
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32824427" sideWeight="0.4969325" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32824427" sideWeight="0.5030675" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.39417177" sideWeight="0.5337423" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32824427" sideWeight="0.4969325" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32824427" sideWeight="0.48466256" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3297546" sideWeight="0.49386504" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32844037" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32055214" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3297546" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32844037" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.39417177" sideWeight="0.46625766" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.39541984" sideWeight="0.49079755" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Nl-Palette" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -1062,10 +754,12 @@
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Data View" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32824427" sideWeight="0.4969325" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="SonarLint" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32824427" sideWeight="0.4969325" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
     </layout>
     <layout-to-restore>
@@ -1103,7 +797,7 @@
     </layout-to-restore>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
-    <option name="processedProjectFiles" value="true" />
+    <option name="version" value="1" />
   </component>
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
@@ -1122,14 +816,8 @@
           <line>22</line>
           <option name="timeStamp" value="196" />
         </line-breakpoint>
-        <line-breakpoint enabled="true" type="javascript">
-          <url>file://$PROJECT_DIR$/src/data/awardData.js</url>
-          <line>15</line>
-          <properties />
-          <option name="timeStamp" value="257" />
-        </line-breakpoint>
       </breakpoints>
-      <option name="time" value="259" />
+      <option name="time" value="268" />
     </breakpoint-manager>
     <watches-manager />
   </component>
@@ -1194,25 +882,10 @@
         <state />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/views/orderList.pug">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="135">
-          <caret line="19" column="57" lean-forward="false" selection-start-line="19" selection-start-column="57" selection-end-line="19" selection-end-column="57" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/views/userView.pug">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/services/orders.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1365">
-          <caret line="91" column="34" lean-forward="false" selection-start-line="91" selection-start-column="34" selection-end-line="91" selection-end-column="34" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1227,10 +900,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="15">
           <caret line="6" column="22" lean-forward="false" selection-start-line="6" selection-start-column="22" selection-end-line="6" selection-end-column="22" />
-          <folding>
-            <marker date="1427323548000" expanded="true" signature="4211:4221" ph="..." />
-            <marker date="1427323548000" expanded="true" signature="4368:4377" ph="..." />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1312,7 +981,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="154">
           <caret line="42" column="20" lean-forward="true" selection-start-line="42" selection-start-column="20" selection-end-line="42" selection-end-column="20" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1323,19 +991,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/../ut-site/devices.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1950">
-          <caret line="137" column="0" lean-forward="false" selection-start-line="49" selection-start-column="3" selection-end-line="137" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/views/menuBar.pug">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="390">
           <caret line="26" column="43" lean-forward="false" selection-start-line="26" selection-start-column="43" selection-end-line="26" selection-end-column="43" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1344,17 +1003,8 @@
         <state split_layout="SPLIT">
           <first_editor relative-caret-position="270">
             <caret line="18" column="43" lean-forward="false" selection-start-line="18" selection-start-column="43" selection-end-line="18" selection-end-column="43" />
-            <folding />
           </first_editor>
           <second_editor />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/data/ribbonPaletteInfo.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="105">
-          <caret line="7" column="6" lean-forward="false" selection-start-line="7" selection-start-column="6" selection-end-line="7" selection-end-column="6" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1371,7 +1021,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1379,7 +1028,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="45">
           <caret line="3" column="0" lean-forward="false" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1387,7 +1035,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-900">
           <caret line="0" column="28" lean-forward="false" selection-start-line="0" selection-start-column="28" selection-end-line="0" selection-end-column="28" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1399,90 +1046,121 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/data/order.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="15">
-          <caret line="294" column="73" lean-forward="false" selection-start-line="294" selection-start-column="73" selection-end-line="294" selection-end-column="73" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/data/awardConverter.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="33" column="47" lean-forward="true" selection-start-line="33" selection-start-column="47" selection-end-line="33" selection-end-column="47" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/data/awardData.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="169">
-          <caret line="66" column="25" lean-forward="true" selection-start-line="66" selection-start-column="25" selection-end-line="66" selection-end-column="25" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/controllers/orders.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="207">
-          <caret line="58" column="61" lean-forward="false" selection-start-line="58" selection-start-column="61" selection-end-line="58" selection-end-column="61" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/public/stylesheets/style.css">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="15">
-          <caret line="1" column="20" lean-forward="true" selection-start-line="1" selection-start-column="20" selection-end-line="1" selection-end-column="20" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/views/ribbonPalette.pug">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="243">
-          <caret line="24" column="65" lean-forward="false" selection-start-line="24" selection-start-column="65" selection-end-line="24" selection-end-column="65" />
+          <caret line="1" column="20" lean-forward="false" selection-start-line="1" selection-start-column="20" selection-end-line="1" selection-end-column="20" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/views/devicesAttachmentsPalette.pug">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="134">
+        <state relative-caret-position="300">
           <caret line="20" column="40" lean-forward="false" selection-start-line="20" selection-start-column="40" selection-end-line="20" selection-end-column="40" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/views/orderView.pug">
+    <entry file="file://$PROJECT_DIR$/src/services/orders.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="256">
-          <caret line="261" column="34" lean-forward="true" selection-start-line="261" selection-start-column="34" selection-end-line="261" selection-end-column="34" />
+        <state relative-caret-position="1335">
+          <caret line="89" column="58" lean-forward="false" selection-start-line="89" selection-start-column="58" selection-end-line="89" selection-end-column="58" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/data/awardConverter.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="495">
+          <caret line="33" column="47" lean-forward="false" selection-start-line="33" selection-start-column="47" selection-end-line="33" selection-end-column="47" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../ut-site/devices.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1950">
+          <caret line="137" column="0" lean-forward="false" selection-start-line="49" selection-start-column="3" selection-end-line="137" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/data/ribbonPaletteInfo.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="6210">
+          <caret line="414" column="0" lean-forward="false" selection-start-line="414" selection-start-column="0" selection-end-line="414" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/schema/database.sql">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1740">
+          <caret line="116" column="4" lean-forward="false" selection-start-line="116" selection-start-column="4" selection-end-line="116" selection-end-column="4" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/ribbonPalette.pug">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="345">
+          <caret line="23" column="75" lean-forward="false" selection-start-line="23" selection-start-column="74" selection-end-line="23" selection-end-column="75" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/data/awardData.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="75">
+          <caret line="5" column="0" lean-forward="false" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/data/order.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1110">
+          <caret line="74" column="4" lean-forward="false" selection-start-line="74" selection-start-column="4" selection-end-line="74" selection-end-column="4" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/orderList.pug">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="435">
+          <caret line="29" column="50" lean-forward="false" selection-start-line="29" selection-start-column="50" selection-end-line="29" selection-end-column="50" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/controllers/orders.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="870">
+          <caret line="58" column="34" lean-forward="false" selection-start-line="58" selection-start-column="34" selection-end-line="58" selection-end-column="34" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/public/javascripts/rack.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="94">
-          <caret line="98" column="51" lean-forward="false" selection-start-line="98" selection-start-column="51" selection-end-line="98" selection-end-column="51" />
+        <state relative-caret-position="183">
+          <caret line="297" column="53" lean-forward="false" selection-start-line="297" selection-start-column="34" selection-end-line="297" selection-end-column="53" />
           <folding>
-            <marker date="1500349079000" expanded="true" signature="4067:4076" ph="..." />
-            <marker date="1500349079000" expanded="true" signature="4067:4081" ph="..." />
-            <marker date="1500349079000" expanded="true" signature="4216:4235" ph="..." />
-            <marker date="1500349079000" expanded="true" signature="4733:4752" ph="..." />
-            <marker date="1500349079000" expanded="true" signature="7322:7341" ph="..." />
-            <marker date="1500349079000" expanded="true" signature="7534:7553" ph="..." />
-            <marker date="1500349079000" expanded="true" signature="7710:7725" ph="..." />
+            <marker date="1502241056000" expanded="true" signature="4417:4426" ph="..." />
+            <marker date="1502241056000" expanded="true" signature="4417:4431" ph="..." />
+            <marker date="1502241056000" expanded="true" signature="4566:4585" ph="..." />
+            <marker date="1502241056000" expanded="true" signature="5177:5196" ph="..." />
+            <marker date="1502241056000" expanded="true" signature="8625:8644" ph="..." />
+            <marker date="1502241056000" expanded="true" signature="8837:8856" ph="..." />
+            <marker date="1502241056000" expanded="true" signature="9013:9028" ph="..." />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/schema/database.sql">
+    <entry file="file://$PROJECT_DIR$/views/orderView.pug">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="138">
-          <caret line="132" column="0" lean-forward="false" selection-start-line="132" selection-start-column="0" selection-end-line="132" selection-end-column="0" />
+        <state relative-caret-position="15">
+          <caret line="631" column="0" lean-forward="false" selection-start-line="631" selection-start-column="0" selection-end-line="631" selection-end-column="0" />
           <folding />
         </state>
       </provider>

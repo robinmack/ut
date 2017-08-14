@@ -56,9 +56,12 @@ module.exports = {
                         dataAwards.init()
                             .then(function () {
                                 let devicesAttachments = dataAwards.getAllDevicesAttachments();
+                                //let prices = dataAwards.getAllPrices();
                                 let ribbonData1 = dataAwards.translateFromDB(data["list_ribbons"]);
                                 let ribbonPaletteInfo = new RibbonPaletteInfo(dataAwards.getAllRibbons());
                                 let ribbonData2 = dataAwards.translateFromDB(data["list_ribbon_2"]);
+                                let listMiniMedals = dataAwards.translateMedalsFromDB(data["list_mini_medals"]);
+                                let listLargeMedals = dataAwards.translateMedalsFromDB(data["list_large_medals"]);
                                 let precedenceLists = ribbonPaletteInfo.getPrecedenceLists();
                                 res.render('orderView', {
                                     appTitle: "Edit Order",
@@ -69,6 +72,8 @@ module.exports = {
                                     order: orderData,
                                     listRibbons1: ribbonData1,
                                     listRibbons2: ribbonData2,
+                                    listMiniMedals: listMiniMedals,
+                                    listLargeMedals: listLargeMedals,
                                     ribbonPalettes: ribbonPaletteInfo.tabs,
                                     precedenceLists: precedenceLists,
                                     devicesAttachments: devicesAttachments

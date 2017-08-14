@@ -3,7 +3,6 @@ function Rack(precedenceLists, biggerThanBuilder) {
     this.precedenceLists = precedenceLists;
     this.biggerThanBuilder = biggerThanBuilder;
     this.service = "";
-    this.emptyIndexes=[];
 
     this.guessOP = function (service) {
         var retVal="";
@@ -17,7 +16,7 @@ function Rack(precedenceLists, biggerThanBuilder) {
             case "air force":
                 retVal = "af";
                 break;
-            case "marine corpse":
+            case "marines":
                 retVal = "marine";
                 break;
             case "coast guard":
@@ -85,7 +84,7 @@ function Rack(precedenceLists, biggerThanBuilder) {
         return this;
     };
 
-    this.renderRack = function (rack, rackSelector) {
+    this.renderRack = function (rack, rackSelector, medals) {
         if (!!rack) {
             var sortedRack = [],
                 bareRibbons = [],
@@ -93,54 +92,75 @@ function Rack(precedenceLists, biggerThanBuilder) {
             if (this.service === "army-right" || this.service === "army-left"){
                 colWidth = 4;
             }
-            emptyIndexes=[];
-            rack.forEach(function (row) {
-                row.columns.forEach(function (column, index){
-                    if (this.emptyIndexes.length == 0 && (column.code == undefined || column.code === "")){
-                        this.emptyIndexes.push(index)
+
+            var emptyIndexes = [];
+
+
+            rack.forEach(function (row, rowIndex) {
+                row.columns.forEach(function (column, colIndex){
+                    if (column.name === "N/A" || column.code == undefined || column.code === ""){
+                        emptyIndexes.push((rowIndex*colWidth)+ colIndex);
                     } else {
                         bareRibbons.push(column);
                     }
                 });
             });
             //grab empties
+            if (medals) {
+                colWidth = 5;
+            }
 
             this.precedence.forEach(function (award) {
                 bareRibbons.forEach(function (column) {
-                    if (award === column.code.split(" ")[0]) {
+                    if (! column.code){
+                        debugger;
+                    }
+                    if (column.code && award === column.code.split(" ")[0]) {
                         sortedRack.push(column);
                     }
                 });
             });
-            this.emptyIndexes.forEach(function (index){
+            emptyIndexes.forEach(function (index){
                 sortedRack.splice(index,0,{name:"N/A"});
             });
 
+            var displayRack=[];
             var colIndex = 0;
             $(rackSelector).empty();
+            var awardButtonText = "Add Ribbon";
+            if (medals){
+                awardButtonText = "Add Medal";
+            }
             var rowHtml =
                 '<div style="col-md-12 well">' +
                 '<table class="table">' +
                 '   <tbody>' +
-                '       <tr><td colspan = 5><div style="text-align: center;"><a class="button" href="#" data-toggle="modal" data-target="#ribbonPalette" data-awardsource="' + rackSelector + '" onclick="setAwardSource(event)"><i class="fa fa-plus" aria-hidden="true"></i>Add Ribbon</a></div></td></tr>';
-
+                '       <tr><td colspan = 5><div style="text-align: center;"><a class="button" href="#" data-toggle="modal" data-target="#ribbonPalette" data-awardsource="' + rackSelector + '" onclick="setAwardSource(event)"><i class="fa fa-plus" aria-hidden="true"></i>' + awardButtonText + '</a></div></td></tr>';
+            var columns = [];
             sortedRack.forEach(function (ribbon, index) {
-                if(colIndex == 0) {
-                    rowHtml +=
-                        '<tr class="rack-row">' +
-                        '<td class="col-md-2 ribbon">' +
-                        '<div style="text-align: center;">' +
-                        '   <input name="ribbonQtyRow" class="single-digit form-control input-medium" value= ' + colWidth.toString() + ' readonly=' + !this.biggerThanBuilder + '/>';
-                }
-                if (index == 0) {
-                    rowHtml +=
-                    ' / <input name="ribbonMaxRow" class="single-digit form-control input-medium" value= ' + colWidth.toString() + ' readonly=' + !this.biggerThanBuilder + '/>';
+                if (!medals) {
+                    if (colIndex == 0) {
+                        rowHtml +=
+                            '<tr class="rack-row">' +
+                            '<td class="col-md-2 ribbon">' +
+                            '<div style="text-align: center;">' +
+                            '   <input name="ribbonQtyRow" class="single-digit form-control input-medium" value= ' + colWidth.toString() + ' readonly=' + !this.biggerThanBuilder + '/>';
+                    }
+                    if (colIndex == 0) {
+                        rowHtml +=
+                            ' / <input name="ribbonMaxRow" class="single-digit form-control input-medium" value= ' + colWidth.toString() + ' readonly=' + !this.biggerThanBuilder + '/>';
 
+                    }
+                    rowHtml += '</div> </td>';
+                } else if (colIndex ==0) {
+                    rowHtml +=
+                        '<tr class="rack-row">';
                 }
-                rowHtml += '</div> </td>';
                 var img = "";
                 var ribbonName="";
-                var addDeviceAttachmentButton = '<a class="button" href="#" data-toggle="modal" data-target="#devicesAttachmentsPalette" data-award=\'' + JSON.stringify(ribbon) + '\' data-awardsource="' + rackSelector + '" onclick="setDeviceAttachmentSource(event)"><i class="fa fa-plus" aria-hidden="true"></i>Att/Dev</a>';
+                var addDeviceAttachmentButton = '<a class="button" href="#" data-toggle="modal" data-target="#devicesAttachmentsPalette" data-award=\'' + JSON.stringify(ribbon) + '\' data-awardsource="' + rackSelector + '" onclick="setDeviceAttachmentSource(event)"><i class="fa fa-plus" aria-hidden="true"></i>Att/Dev</a>' +
+                                                '<a class="button" href="#" data-award=\'' + encodeURI(JSON.stringify(ribbon)) + '\' data-awardsource="' + rackSelector + '" onclick="removeDeviceAttachment(event)"><i class="fa fa-minus" aria-hidden="true"></i>Att/Dev</a>';
+
                 if (ribbon.code != "" && ribbon.code != undefined){
                     img = '<img src="/images/ribimages/' + ribbon.code.split(" ")[0] +'.jpg" class = "ribbon" data-code="' + ribbon.code + '" title= "' + ribbon.name + '" alt="N/A">';
                     ribbonName=ribbon.name;
@@ -170,10 +190,13 @@ function Rack(precedenceLists, biggerThanBuilder) {
                 if (attachmentLayer.length > 0) {
                     attachmentLayer += "</div>"
                 }
-
+                var insertSpacer = "";
+                if (! medals) {
+                    insertSpacer = '<a class="button" href="#" data-toggle="modal" data-award="' + encodeURI(JSON.stringify(ribbon)) + '" data-awardsource="' + rackSelector + '" onclick="insertSpacer(event)"><i class="fa fa-plus" aria-hidden="true"></i>Space</a>';
+                }
                 rowHtml +=
                     '<td class="col-md-2">' +
-                        '<div class = "ribbon-cell">' +
+                        '<div class = "ribbon-cell" data-award="' + encodeURI(JSON.stringify(ribbon)) + '">' +
                             '<div style="text-align: center;" class="ribbon-img">' +
                                 img +
                                 attachmentLayer +
@@ -183,6 +206,7 @@ function Rack(precedenceLists, biggerThanBuilder) {
                                         '<span style="font-size: 90%;">' +
                                             '<a class="button" href="#" data-award-source="' + rackSelector + '" data-ribbon=\'' + JSON.stringify(ribbon) + '\' onclick="removeAward(event)"><i class="fa fa-trash-o" aria-hidden="true"></i></a>' +
                                             addDeviceAttachmentButton +
+                                            insertSpacer +
                                         '</span>' +
                                 '</div>' +
                             '</div>' +
@@ -194,14 +218,21 @@ function Rack(precedenceLists, biggerThanBuilder) {
                     rowHtml +=
                         '</tr>' +
                         '<tr class="rack-row-spacer"> </tr>';
+                    columns.push(ribbon);
+                    displayRack.push({columns: columns});
+                    columns = [];
                 } else {
                     colIndex ++;
+                    columns.push(ribbon);
                 }
-
             });
+            if (columns.length > 0) {
+                displayRack.push({columns: columns});
+            }
             rowHtml += '</tbody></table></div>';
             $(rackSelector).append(rowHtml);
         }
+        return displayRack;
     };
 
     this.getRackForSubmit = function (rackSelector){
@@ -223,5 +254,49 @@ function Rack(precedenceLists, biggerThanBuilder) {
         return rack;
     };
 
+    this.getTotalsForRack = function (rackSelector, type){
+        var awardCount = 0,
+            awardDeviceCount = 0,
+            awardAttachmentCount = 0,
+            awardTotal = 0;
+        $(rackSelector + " .rack-row").each(function (index, row) {
+            $(row).find('.ribbon-cell').each(function (index, selectedCell) {
+
+                var award = JSON.parse(decodeURI($(selectedCell).data("award").toString()));
+                if (award.name !== "N/A") {
+                    awardCount++;
+                    switch (type) {
+                        case "miniMedal":
+                            awardTotal += parseFloat(award["miniMedalPrice"]);
+                            break;
+                        case "largeMedal":
+                            awardTotal += parseFloat(award["largeMedalPrice"]);
+                            break;
+                        case "ribbon":
+                            awardTotal += parseFloat(award["ribbonPrice"]);
+                            break;
+                    }
+                    if (!!award.devicesAttachments) {
+                        award.devicesAttachments.forEach(function (deviceAttachment) {
+                            if (!!deviceAttachment.price) {
+                                if (deviceAttachment.type === "device") {
+                                    awardDeviceCount++;
+                                } else {
+                                    awardAttachmentCount++;
+                                }
+                                awardTotal += parseFloat(deviceAttachment.price);
+                            }
+                        });
+                    }
+                }
+            });
+        });
+        return {
+            awardCount: awardCount,
+            awardDeviceCount: awardDeviceCount,
+            awardAttachmentCount: awardAttachmentCount,
+            awardTotal: awardTotal.toFixed(2) || 0.00
+        }
+    };
     return this;
 }

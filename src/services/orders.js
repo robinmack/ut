@@ -88,7 +88,6 @@ module.exports = {
 
     extractCustomerOrder: function(orderFields) {
         //before insert, make certain order is not a dupe\
-        const that=this;
         let order = dataOrder.orderFromStringArray(orderFields);
         console.log("In extract CustomerOrder");
         return new Promise(function (resolve, reject) {

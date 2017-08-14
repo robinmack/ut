@@ -17,12 +17,17 @@ if (!!customerOrders && customerOrders.length > 0)
                     td #{customerOrder.lastname}
                     td #{customerOrder.firstname}
                     td
-                        - console.log(customerOrder.date)
+                        - console.log("raw date: " + customerOrder.date.toString())
+                        - var dateString = customerOrder.date.toString();
+                        - var dateChunks = dateString.split(" ");
+                        - var date = new Date(Date.parse(dateString.toString().split(" 00")[0]));
+                        - console.log("date tostring(): " + date.toLocaleDateString());
                         a(href="mailto:" + customerOrder.email) #{customerOrder.email}
                     td #{customerOrder.city}
                     td #{customerOrder.state}
                     td #{customerOrder.service}
-                    td #{customerOrder.date.getMonth() +"/"+ customerOrder.date.getDate() +"/"+ customerOrder.date.getYear()}
+                    //td #{date.getMonth() +"/"+ date.getDay() +"/"+ date.getFullYear()}
+                    td #{date.toLocaleDateString()}
                     td #{customerOrder.total_grand}
                     td
                         a(class="action button" href="/orders/edit/" + customerOrder.id) edit
