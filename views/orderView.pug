@@ -593,8 +593,8 @@ append body
             $("#numRibbons").val(totals.awardCount);
             $("#numDevices").val(totals.awardDeviceCount);
             $("#numAttach").val(totals.awardAttachmentCount);
-            var total=totals.awardTotal * parseInt($("#numPin").val());
-            total += totals.awardTotal * parseInt($("#numMagnetic").val());
+            var total=totals.awardCount * parseInt($("#numPin").val());
+            total += totals.awardTotal * parseInt($("#numMagnetic").val()) * getPriceForName("magnetic_ribbons");
             $("#totalRibbons1").val(total.toFixed(2));
         }
 
@@ -604,7 +604,7 @@ append body
             $("#numDevices2").val(totals.awardDeviceCount);
             $("#numAttach2").val(totals.awardAttachmentCount);
             var total = totals.awardTotal * parseInt($("#numPin2").val());
-            total += totals.awardTotal * parseInt($("#numMagnetic2").val());
+            total += totals.awardCount * parseInt($("#numMagnetic2").val()) * getPriceForName("magnetic_ribbons");
             $("#totalRibbons2").val(total.toFixed(2));
         }
 
@@ -689,9 +689,14 @@ append body
             this.ribbonListComponent2 = new Rack(precedenceLists, biggerThanBuilder);
             this.miniMedalListComponent = new Rack(precedenceLists, biggerThanBuilder);
             this.largeMedalListComponent = new Rack(precedenceLists, biggerThanBuilder);
-            var $rack1Op = $("#rack1Op");
-            var $rack2Op = $("#rack2Op");
-            var $anodize = $("#anodize");
+            var $rack1Op = $("#rack1Op"),
+                $rack2Op = $("#rack2Op"),
+                $anodize = $("#anodize"),
+                $rack1Pin = $("#numPin"),
+                $rack2Pin = $("#numPin2"),
+                $rack1Magnetic = $("#numMagnetic"),
+                $rack2Magnetic = $("#numMagnetic2");
+
             var service = "!{order.service}";
 
             var guessedOP = this.ribbonListComponent1.guessOP(service);
@@ -712,6 +717,10 @@ append body
             $anodize.change(function() {
                 updateTotals();
             });
+            $rack1Pin.change(updateTotals);
+            $rack2Pin.change(updateTotals);
+            $rack1Magnetic.change(updateTotals);
+            $rack2Magnetic.change(updateTotals);
             $rack1Op.change(function () {
                 precedence1 = $rack1Op.val();
                 renderRack1();

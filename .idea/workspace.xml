@@ -2,9 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="7863d19a-8b91-4366-9aa2-e5e174114940" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/data/basePrices.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/controllers/orders.js" afterPath="$PROJECT_DIR$/src/controllers/orders.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/orderView.pug" afterPath="$PROJECT_DIR$/views/orderView.pug" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -30,8 +28,8 @@
           <file leaf-file-name="orderView.pug" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/views/orderView.pug">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="211">
-                  <caret line="602" column="18" lean-forward="true" selection-start-line="602" selection-start-column="18" selection-end-line="602" selection-end-column="18" />
+                <state relative-caret-position="235">
+                  <caret line="606" column="38" lean-forward="false" selection-start-line="606" selection-start-column="38" selection-end-line="606" selection-end-column="38" />
                   <folding />
                 </state>
               </provider>
@@ -835,7 +833,8 @@
     <MESSAGE value="Corrected ribbon images (uppercase), added remove/add award, add device" />
     <MESSAGE value="Refinements to totalling system, prepping to add ribbon/name tag/etc &#10;prices from DB" />
     <MESSAGE value="Totalling system complete except for Anodized large medals,&#10;added fontawesome" />
-    <option name="LAST_COMMIT_MESSAGE" value="Totalling system complete except for Anodized large medals,&#10;added fontawesome" />
+    <MESSAGE value="Anodized large medal total correct;&#10;TODO: ribbon pin/magnetic prices" />
+    <option name="LAST_COMMIT_MESSAGE" value="Anodized large medal total correct;&#10;TODO: ribbon pin/magnetic prices" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1193,8 +1192,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/views/orderView.pug">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="211">
-          <caret line="602" column="18" lean-forward="true" selection-start-line="602" selection-start-column="18" selection-end-line="602" selection-end-column="18" />
+        <state relative-caret-position="235">
+          <caret line="606" column="38" lean-forward="false" selection-start-line="606" selection-start-column="38" selection-end-line="606" selection-end-column="38" />
           <folding />
         </state>
       </provider>
