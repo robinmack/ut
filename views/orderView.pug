@@ -168,11 +168,11 @@ append body
             div(class="col-md-12")
                 div(class="col-md-3")
                     fieldset
-                        label(for="numPin") Number of Pins
+                        label(for="numPin2") Number of Pins
                             input#numPin2.form-control.input-medium(value= !!order ? order.number_pin_2 : "" readonly=!biggerThanBuilder)
                 div(class="col-md-3")
                     fieldset
-                        label(for="numMagnetic") Number of Magnetic
+                        label(for="numMagnetic2") Number of Magnetic
                             input#numMagnetic2.form-control.input-medium(value= !!order ? order.number_magnetic_2 : "" readonly=!biggerThanBuilder)
             div(class="col-md-12")
                 div(class="col-md-3")
@@ -255,7 +255,7 @@ append body
             div(class="col-md-12")
                 div(class="col-md-3")
                     fieldset
-                        label(for="reverse") Anodize
+                        label(for="anodize") Anodize
                             input#anodize.form-control.input-medium(type='checkbox' name='anodize' readonly=!biggerThanBuilder checked = rchecked = (order.anodize === "annodize" ? "checked" : undefined))
                 div(class="col-md-3")
                     fieldset
@@ -333,7 +333,7 @@ append body
             div(class="col-md-12")
                 div(class="col-md-3")
                     fieldset
-                        label(for="totalOrder") Total Order
+                        label(for="totalOrder") Grand Total
                             input#totalGrand.form-control.input-medium(value= !!order ? order.total_grand : "" readonly=true)
             div(class="col-md-12")
                 input(type="submit" onclick="submitClick(event)" class="submit button" value=buttonText)
@@ -361,11 +361,11 @@ append body
 
         function setDeviceAttachmentSource(e){
             var deviceAttachmentSource = $(e.target).data("awardsource");
-            var deviceAttachmentAward = $(e.target).data("award");
+            var deviceAttachmentAward = JSON.parse(decodeURI($(e.target).attr("awardJSON")));
             $('#device-attachment-source').val(deviceAttachmentSource);
             $('#device-attachment-award').val(JSON.stringify(deviceAttachmentAward));
-
         }
+
         function addAward(){
             switch ($('#award-source').val()){
                 case "#ribbonRack1":
@@ -390,30 +390,32 @@ append body
             e.preventDefault();
             switch ($(e.target).data('awardsource')) {
                 case "#ribbonRack1":
-                    rack1 = removeDeviceAttachmentFromAward(rack1, $(e.target).data("award"));
+                    rack1 = removeDeviceAttachmentFromAward(rack1, $(e.target));
                     renderRack1();
                     break;
                 case "#ribbonRack2":
-                    rack2 = removeDeviceAttachmentFromAward(rack2, $(e.target).data("award"));
+                    rack2 = removeDeviceAttachmentFromAward(rack2, $(e.target));
                     renderRack2();
                     break;
                 case "#miniMedalRack":
-                    miniMedalRack = removeDeviceAttachmentFromAward(miniMedalRack, $(e.target).data("award"));
+                    miniMedalRack = removeDeviceAttachmentFromAward(miniMedalRack, $(e.target));
                     renderMiniMedalRack();
                     break;
                 case "#largeMedalRack":
-                    largeMedalRack = removeDeviceAttachmentFromAward(largeMedalRack, $(e.target).data("award"));
+                    largeMedalRack = removeDeviceAttachmentFromAward(largeMedalRack, $(e.target));
                     renderLargeMedalRack();
                     break;
                 
             }
         }
-        function removeDeviceAttachmentFromAward(rack, selectedAward) {
+        function removeDeviceAttachmentFromAward(rack, $selectorAward) {
             var awardCode = "";
             var coordinates = [];
+            var awardJSON = JSON.parse(decodeURI($selectorAward.attr("awardJSON")));
+
             rack.forEach(function (row, rowIndex) {
                 row.columns.forEach(function (column, columnIndex) {
-                    if (column.name !== "N/A" && column.code.split(" ")[0] === selectedAward.code.split(" ")[0]) {
+                    if (column.name !== "N/A" && column.code.split(" ")[0] === awardJSON.code.split(" ")[0]) {
                         coordinates = [rowIndex, columnIndex];
                         awardCode = column.code;
                     }
@@ -434,27 +436,31 @@ append body
             } else if (awardCode.indexOf(" ") > -1){
                 awardCode = awardCode.split(" ")[0];
             }
+            if (awardJSON.devicesAttachments.length > 0) {
+                awardJSON.devicesAttachments.pop();
+            }
+            rack[coordinates[0]].columns[coordinates[1]].devicesAttachments = awardJSON.devicesAttachments;
             rack[coordinates[0]].columns[coordinates[1]].code = awardCode;
             return rack;
         }
 
         function addDeviceAttachment() {
-            var deviceAttachmentAward = JSON.parse($("#device-attachment-award").val())
+            var deviceAttachmentAward = JSON.parse(decodeURI($("#device-attachment-award").val()))
             switch ($('#device-attachment-source').val()) {
                 case "#ribbonRack1":
-                    addDeviceAttachmentToAward(rack1, deviceAttachmentAward, selectedDeviceAttachmentCode);
+                    addDeviceAttachmentToAward(rack1, deviceAttachmentAward, selectedDeviceAttachment);
                     renderRack1();
                     break;
                 case "#ribbonRack2":
-                    addDeviceAttachmentToAward(rack2, deviceAttachmentAward, selectedDeviceAttachmentCode);
+                    addDeviceAttachmentToAward(rack2, deviceAttachmentAward, selectedDeviceAttachment);
                     renderRack2();
                     break;
                 case "#miniMedalRack":
-                    miniMedalRack = addDeviceAttachmentToAward(miniMedalRack, deviceAttachmentAward, selectedDeviceAttachmentCode);
+                    miniMedalRack = addDeviceAttachmentToAward(miniMedalRack, deviceAttachmentAward, selectedDeviceAttachment);
                     renderMiniMedalRack();
                     break;
                 case "#largeMedalRack":
-                    largeMedalRack = addDeviceAttachmentToAward(largeMedalRack, deviceAttachmentAward, selectedDeviceAttachmentCode);
+                    largeMedalRack = addDeviceAttachmentToAward(largeMedalRack, deviceAttachmentAward, selectedDeviceAttachment);
                     renderLargeMedalRack();
                     break;
             }
@@ -474,13 +480,17 @@ append body
             if (rack[coordinates[0]].columns[coordinates[1]].code.split(" ").length < 2) {
                 awardConcatenator = " ";
             }
-            rack[coordinates[0]].columns[coordinates[1]].code += awardConcatenator + selectedDeviceAttachment;
+            rack[coordinates[0]].columns[coordinates[1]].code += awardConcatenator + selectedDeviceAttachment.code;
+            if (!rack[coordinates[0]].columns[coordinates[1]].devicesAttachments){
+                rack[coordinates[0]].columns[coordinates[1]].devicesAttachments = [];
+            }
+            rack[coordinates[0]].columns[coordinates[1]].devicesAttachments.push(selectedDeviceAttachment);
             return rack;
         }
 
         function insertSpacer(e) {
             var rackSelector = $(e.target).data("awardsource");
-            var ribbonToReplaceWithSpace = $(e.target).data("award");
+            var ribbonToReplaceWithSpace = $(e.target).attr("awardJSON");
 
             switch(rackSelector) {
                 case "#ribbonRack1":
@@ -569,32 +579,53 @@ append body
 
         function renderMiniMedalRack() {
             miniMedalRack = this.miniMedalListComponent.setPrecedence(precedence1).renderRack(miniMedalRack, miniMedalRackSelector, true);
-            updateTotals;
+            updateTotals();
         }
 
         function renderLargeMedalRack() {
             largeMedalRack = this.largeMedalListComponent.setPrecedence(precedence1).renderRack(largeMedalRack, largeMedalRackSelector, true);
-            updateTotals;
+            updateTotals();
         }
 
-        function updateRack1Totals () {
-            var totals = ribbonListComponent1.getTotalsForRack(rack1Selector, "ribbon");
+        function updateTotalRack1 () {
+            var totals = ribbonListComponent1.getTotalsForRack(rack1, "ribbon");
             $("#numRibbons").val(totals.awardCount);
             $("#numDevices").val(totals.awardDeviceCount);
             $("#numAttach").val(totals.awardAttachmentCount);
-            $("#totalRibbons1").val(totals.awardTotal.toFixed(2));
+            var total=totals.awardTotal * parseInt($("#numPin").val());
+            total += totals.awardTotal * parseInt($("#numMagnetic").val());
+            $("#totalRibbons1").val(total);
         }
 
-        function updateRack2Totals() {
-            var totals = ribbonListComponent1.getTotalsForRack(rack2Selector, "ribbon");
+        function updateTotalRack2() {
+            var totals = ribbonListComponent1.getTotalsForRack(rack2, "ribbon");
             $("#numRibbons2").val(totals.awardCount);
             $("#numDevices2").val(totals.awardDeviceCount);
             $("#numAttach2").val(totals.awardAttachmentCount);
-            $("#totalRibbons2").val(totals.awardTotal.toFixed(2));
+            var total = totals.awardTotal * parseInt($("#numPin2").val());
+            total += totals.awardTotal * parseInt($("#numMagnetic2").val());
+            $("#totalRibbons2").val(total);
         }
+
+        function updateTotalMiniMedals() {
+            var totals = this.miniMedalListComponent.getTotalsForRack(miniMedalRack, "miniMedal");
+            $("#numMiniMedals").val(totals.awardCount);
+            $("#numMiniMedalDevice").val(totals.awardDeviceCount);
+            $("#numMiniMedalAttach").val(totals.awardAttachmentCount);
+            $("#totalMiniMedals").val(totals.awardTotal);
+        }
+
+        function updateTotalLargeMedals() {
+            var totals = this.largeMedalListComponent.getTotalsForRack(largeMedalRack, "largeMedal");
+            $("#numLargeMedalSets").val(totals.awardCount);
+            $("#numLargeMedalDevice").val(totals.awardDeviceCount);
+            $("#numLargeMedalAttach").val(totals.awardAttachmentCount);
+            $("#largeMedalsTotal").val(totals.awardTotal);
+        }
+
         function updateTotals() {
-            updateRack1Totals();
-            updateRack2Totals();
+            updateTotalRack1();
+            updateTotalRack2();
             updateTotalMiniMedals();
             updateTotalLargeMedals();
 
@@ -610,6 +641,8 @@ append body
             var numPins2 = parseInt($("#numPin2").val() || 0);
             var numMagnetic1 = parseInt($("#numMagnetic").val() || 0);
             var numMagnetic2 = parseInt($("#numMagnetic2").val() || 0);
+            var miniMedals = parseFloat($("#totalMiniMedals").val() || 0);
+            var largeMedals = parseFloat($("#largeMedalsTotal").val() || 0);
 
             $("#totalAllRibbonsQuantity").val((numRibbons1 + numRibbons2).toString());
             $("#totalAllRibbonsDevices").val((devices1 + devices2).toString());
@@ -620,25 +653,13 @@ append body
 
 
             $("#totalAllRibbons").val((ribbons1 + ribbons2).toFixed(2).toString());
-        }
-
-        function updateTotalMiniMedals() {
-            var totals = this.miniMedalListComponent.getTotalsForRack(miniMedalRackSelector, "miniMedal");
-            $("#numMiniMedals").val(totals.awardCount);
-            $("#numMiniMedalDevice").val(totals.awardDeviceCount);
-            $("#numMiniMedalAttach").val(totals.awardAttachmentCount);
-            $("#totalMiniMedals").val(totals.awardTotal.toFixed(2));
-        }
-
-        function updateTotalLargeMedals() {
-            var totals = this.largeMedalListComponent.getTotalsForRack(largeMedalRackSelector, "miniMedal");
-            $("#numLargeMedalSets").val(totals.awardCount);
-            $("#numLargeMedalDevice").val(totals.awardDeviceCount);
-            $("#numLargeMedalAttach").val(totals.awardAttachmentCount);
-            $("#totalLargeMedals").val(totals.awardTotal.toFixed(2));
+            var total = ribbons1 + ribbons2 + miniMedals + largeMedals;
+            $("#totalOrder").val(total.toFixed(2));
+            $("#totalGrand").val((total + parseFloat($("#shipping").val())).toFixed(2));
         }
 
         function setupRackComponents(){
+            //var allDeviceAttachments = !{JSON.stringify(devicesAttachments)}
             var precedenceLists = !{JSON.stringify(precedenceLists)};
             var biggerThanBuilder = !{biggerThanBuilder};
             rack1 = !{listRibbons1 ? JSON.stringify(listRibbons1):[]};
@@ -678,9 +699,7 @@ append body
                 precedence2 = $rack2Op.val();
                 renderRack2();
             });
-
             renderAll();
-            //var rackForSubmit = ribbonListComponent1.getRackForSubmit(rack1Selector);
         };
 
         function submitClick(event) {

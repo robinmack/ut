@@ -158,10 +158,10 @@ function Rack(precedenceLists, biggerThanBuilder) {
                 }
                 var img = "";
                 var ribbonName="";
-                var addDeviceAttachmentButton = '<a class="button" href="#" data-toggle="modal" data-target="#devicesAttachmentsPalette" data-award=\'' + JSON.stringify(ribbon) + '\' data-awardsource="' + rackSelector + '" onclick="setDeviceAttachmentSource(event)"><i class="fa fa-plus" aria-hidden="true"></i>Att/Dev</a>' +
-                                                '<a class="button" href="#" data-award=\'' + encodeURI(JSON.stringify(ribbon)) + '\' data-awardsource="' + rackSelector + '" onclick="removeDeviceAttachment(event)"><i class="fa fa-minus" aria-hidden="true"></i>Att/Dev</a>';
+                var addDeviceAttachmentButton = '<a class="button" href="#" data-toggle="modal" data-target="#devicesAttachmentsPalette" awardJSON="' + encodeURI(JSON.stringify(ribbon)) + '" data-awardsource="' + rackSelector + '" onclick="setDeviceAttachmentSource(event)"><i class="fa fa-plus" aria-hidden="true"></i>Att/Dev</a>' +
+                                                '<a class="button" href="#" awardJSON=\'' + encodeURI(JSON.stringify(ribbon)) + '\' data-awardsource="' + rackSelector + '" onclick="removeDeviceAttachment(event)"><i class="fa fa-minus" aria-hidden="true"></i>Att/Dev</a>';
 
-                if (ribbon.code != "" && ribbon.code != undefined){
+                if (ribbon.code !== "" && ribbon.code !== undefined){
                     img = '<img src="/images/ribimages/' + ribbon.code.split(" ")[0] +'.jpg" class = "ribbon" data-code="' + ribbon.code + '" title= "' + ribbon.name + '" alt="N/A">';
                     ribbonName=ribbon.name;
                 } else {
@@ -254,15 +254,15 @@ function Rack(precedenceLists, biggerThanBuilder) {
         return rack;
     };
 
-    this.getTotalsForRack = function (rackSelector, type){
+    this.getTotalsForRack = function (rack, type){
         var awardCount = 0,
             awardDeviceCount = 0,
             awardAttachmentCount = 0,
             awardTotal = 0;
-        $(rackSelector + " .rack-row").each(function (index, row) {
-            $(row).find('.ribbon-cell').each(function (index, selectedCell) {
+        rack.forEach(function (row, index) {
+            row.columns.forEach(function (award, index) {
 
-                var award = JSON.parse(decodeURI($(selectedCell).data("award").toString()));
+                //var award = JSON.parse(decodeURI($(selectedCell).data("award").toString()));
                 if (award.name !== "N/A") {
                     awardCount++;
                     switch (type) {

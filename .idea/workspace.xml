@@ -1,15 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="7863d19a-8b91-4366-9aa2-e5e174114940" name="Default" comment="Corrected ribbon images (uppercase), added remove/add award, add device">
+    <list default="true" id="7863d19a-8b91-4366-9aa2-e5e174114940" name="Default" comment="Totalling system complete except for Anodized large medals,&#10;added fontawesome">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/font-awesome-4.7.0/fonts/FontAwesome.otf" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/font-awesome-4.7.0/fonts/fontawesome-webfont.eot" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/font-awesome-4.7.0/fonts/fontawesome-webfont.ttf" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/font-awesome-4.7.0/fonts/fontawesome-webfont.woff" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/font-awesome-4.7.0/fonts/fontawesome-webfont.woff2" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/font-awesome-4.7.0/css/font-awesome.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/font-awesome-4.7.0/css/font-awesome.min.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/font-awesome-4.7.0/fonts/fontawesome-webfont.svg" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/javascripts/rack.js" afterPath="$PROJECT_DIR$/public/javascripts/rack.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/controllers/orders.js" afterPath="$PROJECT_DIR$/src/controllers/orders.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/data/awardData.js" afterPath="$PROJECT_DIR$/src/data/awardData.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/data/ribbonPaletteInfo.js" afterPath="$PROJECT_DIR$/src/data/ribbonPaletteInfo.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/schema/database.sql" afterPath="$PROJECT_DIR$/src/schema/database.sql" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/services/orders.js" afterPath="$PROJECT_DIR$/src/services/orders.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/orderList.pug" afterPath="$PROJECT_DIR$/views/orderList.pug" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/devicesAttachmentsPalette.pug" afterPath="$PROJECT_DIR$/views/devicesAttachmentsPalette.pug" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/orderView.pug" afterPath="$PROJECT_DIR$/views/orderView.pug" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -35,8 +38,18 @@
           <file leaf-file-name="orderView.pug" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/views/orderView.pug">
               <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="95">
+                  <caret line="657" column="75" lean-forward="false" selection-start-line="657" selection-start-column="75" selection-end-line="657" selection-end-column="75" />
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="fontawesome-webfont.svg" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/public/font-awesome-4.7.0/fonts/fontawesome-webfont.svg">
+              <provider selected="true" editor-type-id="text-editor">
                 <state relative-caret-position="15">
-                  <caret line="631" column="0" lean-forward="false" selection-start-line="631" selection-start-column="0" selection-end-line="631" selection-end-column="0" />
+                  <caret line="1" column="48" lean-forward="false" selection-start-line="1" selection-start-column="48" selection-end-line="1" selection-end-column="48" />
                   <folding />
                 </state>
               </provider>
@@ -109,16 +122,16 @@
           <file leaf-file-name="rack.js" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/public/javascripts/rack.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="183">
-                  <caret line="297" column="53" lean-forward="false" selection-start-line="297" selection-start-column="34" selection-end-line="297" selection-end-column="53" />
+                <state relative-caret-position="121">
+                  <caret line="179" column="24" lean-forward="false" selection-start-line="179" selection-start-column="24" selection-end-line="179" selection-end-column="24" />
                   <folding>
-                    <marker date="1502241056000" expanded="true" signature="4417:4426" ph="..." />
-                    <marker date="1502241056000" expanded="true" signature="4417:4431" ph="..." />
-                    <marker date="1502241056000" expanded="true" signature="4566:4585" ph="..." />
-                    <marker date="1502241056000" expanded="true" signature="5177:5196" ph="..." />
-                    <marker date="1502241056000" expanded="true" signature="8625:8644" ph="..." />
-                    <marker date="1502241056000" expanded="true" signature="8837:8856" ph="..." />
-                    <marker date="1502241056000" expanded="true" signature="9013:9028" ph="..." />
+                    <marker date="1502774200000" expanded="true" signature="4417:4426" ph="..." />
+                    <marker date="1502774200000" expanded="true" signature="4417:4431" ph="..." />
+                    <marker date="1502774200000" expanded="true" signature="4566:4585" ph="..." />
+                    <marker date="1502774200000" expanded="true" signature="5177:5196" ph="..." />
+                    <marker date="1502774200000" expanded="true" signature="8634:8653" ph="..." />
+                    <marker date="1502774200000" expanded="true" signature="8846:8865" ph="..." />
+                    <marker date="1502774200000" expanded="true" signature="9022:9037" ph="..." />
                   </folding>
                 </state>
               </provider>
@@ -137,8 +150,8 @@
           <file leaf-file-name="devicesAttachmentsPalette.pug" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/views/devicesAttachmentsPalette.pug">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="300">
-                  <caret line="20" column="40" lean-forward="false" selection-start-line="20" selection-start-column="40" selection-end-line="20" selection-end-column="40" />
+                <state relative-caret-position="316">
+                  <caret line="26" column="78" lean-forward="false" selection-start-line="26" selection-start-column="78" selection-end-line="26" selection-end-column="78" />
                   <folding />
                 </state>
               </provider>
@@ -157,7 +170,7 @@
           <file leaf-file-name="orders.js" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/src/controllers/orders.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="870">
+                <state relative-caret-position="191">
                   <caret line="58" column="34" lean-forward="false" selection-start-line="58" selection-start-column="34" selection-end-line="58" selection-end-column="34" />
                   <folding />
                 </state>
@@ -167,7 +180,7 @@
           <file leaf-file-name="order.js" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/src/data/order.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="1110">
+                <state relative-caret-position="217">
                   <caret line="74" column="4" lean-forward="false" selection-start-line="74" selection-start-column="4" selection-end-line="74" selection-end-column="4" />
                   <folding />
                 </state>
@@ -207,11 +220,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>ribbonP</find>
-      <find>ribbon</find>
-      <find>devices_atta</find>
-      <find>s</find>
-      <find>splice</find>
       <find>rack</find>
       <find>ribbonListComponent</find>
       <find>rack1</find>
@@ -237,6 +245,11 @@
       <find>totalAllRibbonsDevices</find>
       <find>totalAllRibbonsDevice</find>
       <find>numRibbon</find>
+      <find>data</find>
+      <find>attr</find>
+      <find>prop</find>
+      <find>encode</find>
+      <find>push</find>
     </findStrings>
     <replaceStrings>
       <replace>UserResponse</replace>
@@ -301,15 +314,15 @@
         <option value="$PROJECT_DIR$/src/data/awardConverter.js" />
         <option value="$PROJECT_DIR$/views/devicesAwardsPalette.pug" />
         <option value="$PROJECT_DIR$/public/stylesheets/style.css" />
-        <option value="$PROJECT_DIR$/views/devicesAttachmentsPalette.pug" />
         <option value="$PROJECT_DIR$/src/schema/database.sql" />
         <option value="$PROJECT_DIR$/src/services/orders.js" />
         <option value="$PROJECT_DIR$/src/data/ribbonPaletteInfo.js" />
         <option value="$PROJECT_DIR$/src/data/awardData.js" />
         <option value="$PROJECT_DIR$/views/orderList.pug" />
         <option value="$PROJECT_DIR$/src/controllers/orders.js" />
-        <option value="$PROJECT_DIR$/public/javascripts/rack.js" />
+        <option value="$PROJECT_DIR$/views/devicesAttachmentsPalette.pug" />
         <option value="$PROJECT_DIR$/views/orderView.pug" />
+        <option value="$PROJECT_DIR$/public/javascripts/rack.js" />
       </list>
     </option>
   </component>
@@ -355,14 +368,23 @@
     </navigator>
     <panes>
       <pane id="Scratches" />
-      <pane id="PackagesPane" />
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
             <path>
               <item name="ut" type="b2602c69:ProjectViewProjectNode" />
               <item name="ut" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="ut" type="b2602c69:ProjectViewProjectNode" />
+              <item name="ut" type="462c0819:PsiDirectoryNode" />
+              <item name="public" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="ut" type="b2602c69:ProjectViewProjectNode" />
+              <item name="ut" type="462c0819:PsiDirectoryNode" />
+              <item name="public" type="462c0819:PsiDirectoryNode" />
+              <item name="font-awesome-4.7.0" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="ut" type="b2602c69:ProjectViewProjectNode" />
@@ -384,6 +406,8 @@
           <select />
         </subPane>
       </pane>
+      <pane id="PackagesPane" />
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -731,19 +755,21 @@
     <editor active="true" />
     <layout>
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32822084" sideWeight="0.49386504" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.39417177" sideWeight="0.5337423" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32822084" sideWeight="0.506135" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32824427" sideWeight="0.48466256" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3297546" sideWeight="0.49386504" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32822084" sideWeight="0.4815951" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32844037" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3297546" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.33435583" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32822084" sideWeight="0.49386504" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.39417177" sideWeight="0.46625766" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.39417177" sideWeight="0.46625766" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Nl-Palette" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -754,12 +780,10 @@
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Data View" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32824427" sideWeight="0.4969325" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="SonarLint" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32824427" sideWeight="0.4969325" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
     </layout>
     <layout-to-restore>
@@ -806,7 +830,9 @@
     <MESSAGE value="Added ability for customer view to display/edit orders, and for order display to allow view/edit of customers." />
     <MESSAGE value="refactored to share db connection, split all db functions into separate&#10;data objects" />
     <MESSAGE value="Corrected ribbon images (uppercase), added remove/add award, add device" />
-    <option name="LAST_COMMIT_MESSAGE" value="Corrected ribbon images (uppercase), added remove/add award, add device" />
+    <MESSAGE value="Refinements to totalling system, prepping to add ribbon/name tag/etc &#10;prices from DB" />
+    <MESSAGE value="Totalling system complete except for Anodized large medals,&#10;added fontawesome" />
+    <option name="LAST_COMMIT_MESSAGE" value="Totalling system complete except for Anodized large medals,&#10;added fontawesome" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -826,11 +852,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/public/images/ribimages/98.jpg">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/data/user.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-375">
@@ -1038,14 +1059,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/orders/config.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="4" column="20" lean-forward="false" selection-start-line="4" selection-start-column="20" selection-end-line="4" selection-end-column="20" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/public/stylesheets/style.css">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="15">
@@ -1054,26 +1067,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/views/devicesAttachmentsPalette.pug">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="300">
-          <caret line="20" column="40" lean-forward="false" selection-start-line="20" selection-start-column="40" selection-end-line="20" selection-end-column="40" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/services/orders.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1335">
           <caret line="89" column="58" lean-forward="false" selection-start-line="89" selection-start-column="58" selection-end-line="89" selection-end-column="58" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/data/awardConverter.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="495">
-          <caret line="33" column="47" lean-forward="false" selection-start-line="33" selection-start-column="47" selection-end-line="33" selection-end-column="47" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1093,34 +1090,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/schema/database.sql">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1740">
-          <caret line="116" column="4" lean-forward="false" selection-start-line="116" selection-start-column="4" selection-end-line="116" selection-end-column="4" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/views/ribbonPalette.pug">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="345">
-          <caret line="23" column="75" lean-forward="false" selection-start-line="23" selection-start-column="74" selection-end-line="23" selection-end-column="75" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/data/awardData.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="75">
           <caret line="5" column="0" lean-forward="false" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/data/order.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1110">
-          <caret line="74" column="4" lean-forward="false" selection-start-line="74" selection-start-column="4" selection-end-line="74" selection-end-column="4" />
           <folding />
         </state>
       </provider>
@@ -1133,34 +1106,90 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/views/ribbonPalette.pug">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="345">
+          <caret line="23" column="75" lean-forward="false" selection-start-line="23" selection-start-column="74" selection-end-line="23" selection-end-column="75" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/data/awardConverter.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="495">
+          <caret line="33" column="47" lean-forward="false" selection-start-line="33" selection-start-column="47" selection-end-line="33" selection-end-column="47" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/schema/database.sql">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1740">
+          <caret line="116" column="4" lean-forward="false" selection-start-line="116" selection-start-column="4" selection-end-line="116" selection-end-column="4" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/orders/config.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="4" column="20" lean-forward="false" selection-start-line="4" selection-start-column="20" selection-end-line="4" selection-end-column="20" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/data/order.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="217">
+          <caret line="74" column="4" lean-forward="false" selection-start-line="74" selection-start-column="4" selection-end-line="74" selection-end-column="4" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/controllers/orders.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="870">
+        <state relative-caret-position="191">
           <caret line="58" column="34" lean-forward="false" selection-start-line="58" selection-start-column="34" selection-end-line="58" selection-end-column="34" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/font-awesome-4.7.0/fonts/fontawesome-webfont.svg">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="15">
+          <caret line="1" column="48" lean-forward="false" selection-start-line="1" selection-start-column="48" selection-end-line="1" selection-end-column="48" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/devicesAttachmentsPalette.pug">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="316">
+          <caret line="26" column="78" lean-forward="false" selection-start-line="26" selection-start-column="78" selection-end-line="26" selection-end-column="78" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/public/javascripts/rack.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="183">
-          <caret line="297" column="53" lean-forward="false" selection-start-line="297" selection-start-column="34" selection-end-line="297" selection-end-column="53" />
+        <state relative-caret-position="121">
+          <caret line="179" column="24" lean-forward="false" selection-start-line="179" selection-start-column="24" selection-end-line="179" selection-end-column="24" />
           <folding>
-            <marker date="1502241056000" expanded="true" signature="4417:4426" ph="..." />
-            <marker date="1502241056000" expanded="true" signature="4417:4431" ph="..." />
-            <marker date="1502241056000" expanded="true" signature="4566:4585" ph="..." />
-            <marker date="1502241056000" expanded="true" signature="5177:5196" ph="..." />
-            <marker date="1502241056000" expanded="true" signature="8625:8644" ph="..." />
-            <marker date="1502241056000" expanded="true" signature="8837:8856" ph="..." />
-            <marker date="1502241056000" expanded="true" signature="9013:9028" ph="..." />
+            <marker date="1502774200000" expanded="true" signature="4417:4426" ph="..." />
+            <marker date="1502774200000" expanded="true" signature="4417:4431" ph="..." />
+            <marker date="1502774200000" expanded="true" signature="4566:4585" ph="..." />
+            <marker date="1502774200000" expanded="true" signature="5177:5196" ph="..." />
+            <marker date="1502774200000" expanded="true" signature="8634:8653" ph="..." />
+            <marker date="1502774200000" expanded="true" signature="8846:8865" ph="..." />
+            <marker date="1502774200000" expanded="true" signature="9022:9037" ph="..." />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/views/orderView.pug">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="15">
-          <caret line="631" column="0" lean-forward="false" selection-start-line="631" selection-start-column="0" selection-end-line="631" selection-end-column="0" />
+        <state relative-caret-position="95">
+          <caret line="657" column="75" lean-forward="false" selection-start-line="657" selection-start-column="75" selection-end-line="657" selection-end-column="75" />
           <folding />
         </state>
       </provider>

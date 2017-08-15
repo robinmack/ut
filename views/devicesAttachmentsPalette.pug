@@ -10,21 +10,20 @@ if devicesAttachments
                     input#device-attachment-source(type="hidden")
                     input#device-attachment-award(type="hidden")
                     each deviceAttachmentObj in devicesAttachments
-                        div(class="device-attachment" name=deviceAttachmentObj.code data-award-device-code=deviceAttachmentObj.code)
+                        div(class="device-attachment" name=deviceAttachmentObj.code data-device-attachment=encodeURI(JSON.stringify(deviceAttachmentObj)))
                             center
-                                img(src="/images/ribimages/devices/gif/" + deviceAttachmentObj.code +".gif" title=deviceAttachmentObj.name alt="N/A")
+                                img(src="/images/ribimages/devices/gif/" + deviceAttachmentObj.code + ".gif" title=deviceAttachmentObj.name alt="N/A")
                                 p=deviceAttachmentObj.code
                 div(class="modal-footer")
                     button(type="button" class="btn btn-primary" onclick="addDeviceAttachment(event)") Choose
                     button(type="button" class="btn btn-secondary" data-dismiss="modal") Close
     script.
-        var selectedDeviceAttachmentCode = {};
+        var selectedDeviceAttachment = {};
         $(document).ready(function() {
-
             $('.device-attachment').on('click', function (e) {
                 $('.device-attachment').removeClass('device-attachment-selected');
                 e.preventDefault();
                 $(this).toggleClass('device-attachment-selected');
-                selectedDeviceAttachmentCode = $(this).data("award-device-code");
+                selectedDeviceAttachment = JSON.parse(decodeURI($(this).data("device-attachment")));
             });
         });
