@@ -1,6 +1,7 @@
 const orderService = require("../services/orders"),
     dataOrder = require('../data/order'),
     dataAwards = require('../data/awardData'),
+    dataBasePrices = require('../data/basePrices'),
     {RibbonPaletteInfo} = require('../data/ribbonPaletteInfo');
 module.exports = {
     getNewOrders: function(req, res, next) {
@@ -49,40 +50,43 @@ module.exports = {
             if (!isNaN(req.params.id)) {
                 let orderId = parseInt(req.params.id),
                     orderData = {};
-                dataOrder.getSingleOrder(orderId)
+                dataBasePrices.getAllPrices()
+                    .then(function (prices) {
+                        dataOrder.getSingleOrder(orderId)
 
-                    .then(function (data) {
-                        orderData = data;
-                        dataAwards.init()
-                            .then(function () {
-                                let devicesAttachments = dataAwards.getAllDevicesAttachments();
-                                //let prices = dataAwards.getAllPrices();
-                                let ribbonData1 = dataAwards.translateFromDB(data["list_ribbons"]);
-                                let ribbonPaletteInfo = new RibbonPaletteInfo(dataAwards.getAllRibbons());
-                                let ribbonData2 = dataAwards.translateFromDB(data["list_ribbon_2"]);
-                                let listMiniMedals = dataAwards.translateMedalsFromDB(data["list_mini_medals"]);
-                                let listLargeMedals = dataAwards.translateMedalsFromDB(data["list_large_medals"]);
-                                let precedenceLists = ribbonPaletteInfo.getPrecedenceLists();
-                                res.render('orderView', {
-                                    appTitle: "Edit Order",
-                                    role: req.session.role,
-                                    method: "PUT",
-                                    action: "/api/orders/" + orderId,
-                                    buttonText: "Submit Changes",
-                                    order: orderData,
-                                    listRibbons1: ribbonData1,
-                                    listRibbons2: ribbonData2,
-                                    listMiniMedals: listMiniMedals,
-                                    listLargeMedals: listLargeMedals,
-                                    ribbonPalettes: ribbonPaletteInfo.tabs,
-                                    precedenceLists: precedenceLists,
-                                    devicesAttachments: devicesAttachments
-                                });
+                            .then(function (data) {
+                                orderData = data;
+                                dataAwards.init()
+                                    .then(function () {
+                                        let devicesAttachments = dataAwards.getAllDevicesAttachments();
+                                        let ribbonData1 = dataAwards.translateFromDB(data["list_ribbons"]);
+                                        let ribbonPaletteInfo = new RibbonPaletteInfo(dataAwards.getAllRibbons());
+                                        let ribbonData2 = dataAwards.translateFromDB(data["list_ribbon_2"]);
+                                        let listMiniMedals = dataAwards.translateMedalsFromDB(data["list_mini_medals"]);
+                                        let listLargeMedals = dataAwards.translateMedalsFromDB(data["list_large_medals"]);
+                                        let precedenceLists = ribbonPaletteInfo.getPrecedenceLists();
+                                        res.render('orderView', {
+                                            appTitle: "Edit Order",
+                                            role: req.session.role,
+                                            method: "PUT",
+                                            action: "/api/orders/" + orderId,
+                                            buttonText: "Submit Changes",
+                                            order: orderData,
+                                            listRibbons1: ribbonData1,
+                                            listRibbons2: ribbonData2,
+                                            listMiniMedals: listMiniMedals,
+                                            listLargeMedals: listLargeMedals,
+                                            ribbonPalettes: ribbonPaletteInfo.tabs,
+                                            precedenceLists: precedenceLists,
+                                            devicesAttachments: devicesAttachments,
+                                            prices: prices
+                                        });
+                                    })
+                                    .catch(function (err) {
+                                        next(err);
+                                        console.log(err);
+                                    });
                             })
-                            .catch(function (err) {
-                                next(err);
-                                console.log(err);
-                            });
                     })
                     .catch(function (err) {
                         next(err);

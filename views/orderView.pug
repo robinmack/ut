@@ -349,7 +349,8 @@ append body
             rack1Selector="#ribbonRack1",
             rack2Selector="#ribbonRack2",
             miniMedalRackSelector="#miniMedalRack",
-            largeMedalRackSelector="#largeMedalRack";
+            largeMedalRackSelector="#largeMedalRack",
+            prices=[];
         window.onload = (function (){
             //setup rack component(s)
             setupRackComponents();
@@ -594,7 +595,7 @@ append body
             $("#numAttach").val(totals.awardAttachmentCount);
             var total=totals.awardTotal * parseInt($("#numPin").val());
             total += totals.awardTotal * parseInt($("#numMagnetic").val());
-            $("#totalRibbons1").val(total);
+            $("#totalRibbons1").val(total.toFixed(2));
         }
 
         function updateTotalRack2() {
@@ -604,7 +605,7 @@ append body
             $("#numAttach2").val(totals.awardAttachmentCount);
             var total = totals.awardTotal * parseInt($("#numPin2").val());
             total += totals.awardTotal * parseInt($("#numMagnetic2").val());
-            $("#totalRibbons2").val(total);
+            $("#totalRibbons2").val(total.toFixed(2));
         }
 
         function updateTotalMiniMedals() {
@@ -615,12 +616,29 @@ append body
             $("#totalMiniMedals").val(totals.awardTotal);
         }
 
+        function getPriceForName(name){
+            var priceObj = prices.filter(function (price) {
+                return price.name === name
+            });
+            return parseFloat(priceObj[0].price);
+        }
+
         function updateTotalLargeMedals() {
             var totals = this.largeMedalListComponent.getTotalsForRack(largeMedalRack, "largeMedal");
+
             $("#numLargeMedalSets").val(totals.awardCount);
             $("#numLargeMedalDevice").val(totals.awardDeviceCount);
             $("#numLargeMedalAttach").val(totals.awardAttachmentCount);
-            $("#largeMedalsTotal").val(totals.awardTotal);
+            var total = totals.awardTotal;
+            if ($("#anodize").prop("checked")) {
+                var anodizeTotal = getPriceForName("annodized_medal") * totals.awardCount;
+                $("#anodizedTotal").val(anodizeTotal.toFixed(2));
+                total = parseFloat(total) + parseFloat(anodizeTotal);
+            } else {
+                $("#anodizedTotal").val("0.00");
+            }
+            $("#largeMedalsTotal").val(parseFloat(total).toFixed(2));
+
         }
 
         function updateTotals() {
@@ -662,6 +680,7 @@ append body
             //var allDeviceAttachments = !{JSON.stringify(devicesAttachments)}
             var precedenceLists = !{JSON.stringify(precedenceLists)};
             var biggerThanBuilder = !{biggerThanBuilder};
+            prices = !{prices ? JSON.stringify(prices) : []};
             rack1 = !{listRibbons1 ? JSON.stringify(listRibbons1):[]};
             rack2 = !{listRibbons2 ? JSON.stringify(listRibbons2):[]};
             miniMedalRack = !{listMiniMedals ? JSON.stringify(listMiniMedals):[]};
@@ -672,6 +691,7 @@ append body
             this.largeMedalListComponent = new Rack(precedenceLists, biggerThanBuilder);
             var $rack1Op = $("#rack1Op");
             var $rack2Op = $("#rack2Op");
+            var $anodize = $("#anodize");
             var service = "!{order.service}";
 
             var guessedOP = this.ribbonListComponent1.guessOP(service);
@@ -689,7 +709,9 @@ append body
             } else {
                 this.ribbonListComponent2.setPrecedence(rack2OpVal);
             }
-
+            $anodize.change(function() {
+                updateTotals();
+            });
             $rack1Op.change(function () {
                 precedence1 = $rack1Op.val();
                 renderRack1();
