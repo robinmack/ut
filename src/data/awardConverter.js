@@ -1,5 +1,4 @@
-const db = require("../util/dbUtil"),
-    Promise = require('promise');
+const db = require("../util/dbUtil");
 let ready = false,
     ribbons = {},
     devicesAttachments = {};

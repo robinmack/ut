@@ -15,8 +15,6 @@ B
 src/data/user.js,d/0/d077eb916f90a5d9ad66adb3869660f3d58f95f5
 7
 TODO.md,b/5/b5b096f958319b1c7782c800c78c4c358a58d709
-E
-src/util/dbQueries.js,e/0/e06b7a21508b4ac29f0dcad618dbdb0d494704c4
 G
 src/schema/database.sql,9/8/985a2b1d192030ddb6a7f009a4bfdfbd5b71f395
 A
@@ -25,8 +23,6 @@ I
 src/controllers/orders.js,c/7/c7ab0502033727c3fb192b528d1e2fce3819a7bb
 B
 orders/config.json,0/8/088779ad9663d36d11c87a1e939a8ee3179a4ec7
-D
-orders/fileContents),4/e/4ed215e5b51f574cb877561ef5da4db2359cd35d
 7
 bin/www,f/9/f9f3ad31c1666c9d010b84cbbe24e70370a40411
 ?
@@ -49,3 +45,25 @@ G
 src/controllers/main.js,2/c/2cf6c3f09c747b1f59d402e9d6ab7808b69b4029
 L
 src/controllers/customers.js,0/3/0333f8807830075a4205d7f38738ccf61237bccc
+D
+src/data/customer.js,c/9/c9171b658120318403d51a373cc83b75861aa508
+F
+src/data/basePrices.js,c/b/cb91d43da20c054c4b76dfc629bcdf476ba475a5
+g
+7public/font-awesome-4.7.0/fonts/fontawesome-webfont.svg,a/5/a57915897a72699216c78990451c63eb6208ae0b
+M
+src/data/ribbonPaletteInfo.js,2/f/2fea3902e71079621dc7bb850de6ece0e6f5f0d5
+L
+public/stylesheets/style.css,3/7/373d337c32dec564fe0da458c6478733eec21e5a
+E
+src/data/awardData.js,b/9/b9b799c5f09fc2859ae9090f966388feb9ef887c
+C
+views/orderList.pug,f/4/f4bc32b521a7b4e8a2eb5d155e7a99cb3313b48a
+6
+app.js,4/a/4a68969ef8e858229267b842dedf42ab5dde4d50
+J
+public/javascripts/rack.js,d/d/dde8b7d4879a8daa20873c6b6a5d2cdcb8538700
+G
+views/ribbonPalette.pug,4/a/4aa93e26e26cc0a9d1797e909822f4f30190b2ea
+J
+src/data/awardConverter.js,2/f/2fda3f627262c30bbb18ac1c2f258aa644d38de0

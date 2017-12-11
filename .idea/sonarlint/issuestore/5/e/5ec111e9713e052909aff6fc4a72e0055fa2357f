@@ -1,21 +1,2 @@
 
-ujavascript:S3776"TRefactor this function to reduce its Cognitive Complexity from 27 to the 15 allowed.(¶Î½8€›ò¼Ç+
->javascript:S3353"Make "pgFormat" "const".(ú¸ëûÿÿÿÿ8×èí»Ç+
-;javascript:S3353"Make "order" "const".(»Èø¿ùÿÿÿÿ8€›ò¼Ç+
-?javascript:S2228"Remove this logging statement.(’õÓÅ8€›ò¼Ç+
-kjavascript:S2583"EChange this condition so that it does not always evaluate to "false".(¯ŞÇ‘üÿÿÿÿ8€›ò¼Ç+
-4javascript:S3353"Make "sql" "const".(›Å¯ö8€›ò¼Ç+
-?javascript:S2228"Remove this logging statement.(ãØâ‡8€›ò¼Ç+
-Djavascript:S2228"Remove this logging statement.(€åøËúÿÿÿÿ8€›ò¼Ç+
-zjavascript:S3776"TRefactor this function to reduce its Cognitive Complexity from 21 to the 15 allowed.(¢–ŞËıÿÿÿÿ8€›ò¼Ç+
-|javascript:S1488"[Immediately return this expression instead of assigning it to the temporary variable "sql".(›Å¯ö8€›ò¼Ç+
-=javascript:S3353"Make "options" "const".(Ç³¯ûÿÿÿÿ8Œº„¼Ç+
-8javascript:S3353"Make "cn" "const".(Ö·ÊŸøÿÿÿÿ8ƒºñ¼Ç+
-Djavascript:S2228"Remove this logging statement.(•ñÊıÿÿÿÿ8½ÆåÀÇ+
-:javascript:S3353"Make "data" "const".(ÂÄ™¦şÿÿÿÿ8€›ò¼Ç+
-=javascript:S3353"Make "monitor" "const".(§½¥¯ûÿÿÿÿ8‰é¼Ç+
-;javascript:S3353"Make "order" "const".(»Èø¿ùÿÿÿÿ8€›ò¼Ç+
-Djavascript:S2228"Remove this logging statement.(ÔƒÓûÿÿÿÿ8€›ò¼Ç+
-ƒjavascript:S1488"]Immediately return this expression instead of assigning it to the temporary variable "order".(»Èø¿ùÿÿÿÿ8€›ò¼Ç+
-4javascript:S3353"Make "pgp" "const".(ÁµŒ8ƒºñ¼Ç+
-?javascript:S2228"Remove this logging statement.(®Œ«ß8€›ò¼Ç+
+€javascript:S2703"_Add the "let", "const" or "var" keyword to this declaration of "dateArray" to make it explicit.(ÕÅ‚Û8Ñ«¶Ş+
