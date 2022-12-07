@@ -11,7 +11,7 @@
     "body-parser": "^1.17.2",
     "cookie-parser": "^1.4.3",
     "debug": "^2.6.8",
-    "express": "^4.15.3",
+    "express": "^4.17.3",
     "express-session": "^1.15.3",
     "is-regex": "^1.0.4",
     "morgan": "^1.8.2",
